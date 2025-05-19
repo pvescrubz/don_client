@@ -1,0 +1,8 @@
+.root {
+  --padding: 14px;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+  max-width: calc(1420px + (var(--padding) * 2));
+  width: 100%;
+  margin: 0 auto;
+}

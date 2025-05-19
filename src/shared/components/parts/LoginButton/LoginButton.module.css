@@ -1,0 +1,21 @@
+.root {
+  width: 280px;
+  z-index: 5;
+}
+
+.root span {
+  display: inline;
+}
+
+.svg {
+  margin-top: 1px;
+}
+
+@media screen and (max-width: 1200px) {
+  .root {
+    max-width: fit-content;
+  }
+  span.hidden {
+    display: none;
+  }
+}

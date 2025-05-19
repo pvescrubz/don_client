@@ -1,0 +1,49 @@
+:root {
+  --background-red: linear-gradient(144deg, #de1717 0%, #780d0d 100%);
+  --text-primary: #fff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --bg-color: #1a1c21;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+
+  overflow-x: hidden;
+  font-style: normal;
+  background: var(--bg-color);
+}
+
+a,
+button {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a:focus,
+a:focus-visible,
+a:active,
+button:focus,
+button:focus-visible,
+button:active {
+  outline: none;
+}
+
+
+footer {
+  margin-top: auto;
+}
+
+.stop__scroll {
+  overflow: hidden;
+}

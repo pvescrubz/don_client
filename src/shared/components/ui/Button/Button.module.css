@@ -1,0 +1,125 @@
+.root {
+  width: 100%;
+  padding-inline: 14px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  line-height: 130%;
+  color: var(--text-primary);
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease-in-out;
+  text-transform: uppercase;
+}
+
+.small {
+  font-size: 14px;
+  padding-block: 15.9px;
+}
+
+.normal {
+  font-size: 20px;
+  padding-block: 17px;
+}
+
+.large {
+  font-size: 20px;
+  padding-block: 22px;
+}
+
+.primary {
+  background: linear-gradient(144deg, #de1717 0%, #780d0d 100%);
+}
+
+.secondary {
+  background: none;
+  position: relative;
+  backdrop-filter: blur(24px);
+  background: rgba(80, 80, 80, 0.3);
+}
+
+.secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid #fff;
+  border-radius: inherit;
+  opacity: 0.2;
+  transition: opacity 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.span {
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  transition: transform 0.4s ease-in-out;
+}
+.span::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  transform-origin: center;
+  transform: scale(0);
+  transition: transform 0.4s ease-in-out;
+  background-color: #fff;
+  bottom: -2px;
+  left: 0;
+}
+
+.root:disabled {
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .root:focus-visible span::after {
+    transform: scale(1);
+  }
+
+  .primary:hover,
+  .secondary:hover {
+    transform: scale(0.99);
+  }
+  .primary:hover .span,
+  .secondary:hover .span {
+    transform: scale(1.1);
+  }
+
+  .secondary:hover::before {
+    opacity: 0.9;
+  }
+}
+
+.primary:active .span,
+.secondary:active .span {
+  transform: scale(0.99);
+}
+
+@media screen and (max-width: 768px) {
+  .normal,
+  .large {
+    font-size: 18px;
+  }
+  .normal,
+  .large {
+    font-size: 18px;
+  }
+}
+
+.icon {
+  position: absolute;
+  left: 0;
+  max-width: 20px;
+}
+
+.with_icon .span {
+  padding-left: 30px;
+}
