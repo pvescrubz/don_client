@@ -39,3 +39,10 @@ color: #de1717;
   }
   
 }
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+   grid-template-columns: repeat(1, 1fr);
+  }
+  
+}

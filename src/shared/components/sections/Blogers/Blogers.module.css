@@ -11,6 +11,13 @@
   }
 }
 
+
+@media (max-width: 768px) {
+  .bloggers_slider {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 .blogger_card {
   display: block;
   text-decoration: none;
