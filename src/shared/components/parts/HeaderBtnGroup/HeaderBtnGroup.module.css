@@ -1,12 +1,12 @@
 .root {
   display: flex;
   gap: 20px;
+  overflow: hidden;
+  justify-content: flex-end;
 }
 
 @media screen and (max-width: 1024px) {
   .root {
-    margin-left: auto;
-    margin-left: auto;
     display: flex;
     gap: 10px;
   }

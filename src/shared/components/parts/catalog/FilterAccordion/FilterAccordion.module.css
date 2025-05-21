@@ -1,0 +1,68 @@
+.button {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: #fff;
+  padding-block: 8px;
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+}
+.text {
+  position: relative;
+}
+.text::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  transition: transform 0.4s ease-in-out;
+  transform-origin: center;
+  transform: scale(0);
+}
+
+.accordion {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.4s ease-in-out;
+}
+
+.wrap {
+  min-height: 0;
+}
+
+.accordion.active {
+  grid-template-rows: 1fr;
+}
+
+.sroll_box {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.arrow {
+  transition: transform 0.4s ease-in-out;
+}
+.arrow.active {
+  transform: rotate(180deg);
+}
+
+.button:focus-visible .text::after {
+  transform: scale(1);
+}
+
+@media (hover: hover) {
+  .button:hover {
+    transform: scale(1.03);
+  }
+}

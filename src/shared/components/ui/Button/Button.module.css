@@ -40,6 +40,11 @@
   background: rgba(80, 80, 80, 0.3);
 }
 
+.pg_null {
+  padding-block: 0;
+  padding-inline: 0;
+}
+
 .secondary::before {
   content: "";
   position: absolute;
@@ -57,7 +62,6 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-
   position: relative;
   transition: transform 0.4s ease-in-out;
 }

@@ -20,19 +20,19 @@ class Dashboard {
 
   SKINS = {
     name: "Купить скины",
-    slug: "/skins",
+    slug: "/skins/cs",
     forHeader: true,
   } satisfies IDashboardItem;
 
   SKINS_CS2 = {
     name: "Купить скины cs2",
-    slug: "/skins/cs2",
+    slug: "/skins/cs",
     tag: "skins",
   } satisfies IDashboardItem;
 
   SKINS_DOTA2 = {
     name: "Купить скины dota2",
-    slug: "/skins/dota2",
+    slug: "/skins/dota",
     tag: "skins",
   } satisfies IDashboardItem;
 
@@ -44,7 +44,7 @@ class Dashboard {
 
   BALANCE = {
     name: "Пополнить баланс",
-    slug: "/service",
+    slug: "/service/steam",
     forHeader: true,
   } satisfies IDashboardItem;
 

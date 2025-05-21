@@ -1,0 +1,9 @@
+.root {
+  max-width: 200px;
+}
+
+.box {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-block: 8px;
+  margin-bottom: 50px;
+}

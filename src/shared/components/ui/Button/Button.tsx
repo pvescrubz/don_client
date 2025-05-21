@@ -7,6 +7,7 @@ interface IButton extends TButton {
   size?: "small" | "normal" | "large";
   variant?: "primary" | "secondary";
   icon?: ReactNode;
+  noPadding?: boolean;
 }
 
 export const Button: FC<IButton> = ({
@@ -15,6 +16,7 @@ export const Button: FC<IButton> = ({
   size = "normal",
   variant = "primary",
   icon,
+  noPadding,
   ...rest
 }) => {
   return (
@@ -28,6 +30,7 @@ export const Button: FC<IButton> = ({
           [styles.primary]: variant === "primary",
           [styles.secondary]: variant === "secondary",
           [styles.with_icon]: icon,
+          [styles.pg_null]: noPadding,
         },
         className
       )}
