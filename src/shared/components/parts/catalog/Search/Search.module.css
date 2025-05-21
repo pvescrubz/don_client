@@ -1,0 +1,9 @@
+.root {
+  display: flex;
+  width: 100%;
+}
+
+.input {
+  max-width: 488px;
+  flex-grow: 1;
+}

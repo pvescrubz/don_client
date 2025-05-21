@@ -10,6 +10,7 @@ export interface IButton extends TAnchor {
   isPublicLink?: boolean;
   href: string;
   icon?: ReactNode;
+  noPadding?: boolean;
 }
 
 export const ButtonLink: FC<IButton> = ({
@@ -19,6 +20,7 @@ export const ButtonLink: FC<IButton> = ({
   variant = "primary",
   isPublicLink = false,
   href,
+  noPadding,
   icon,
   ...rest
 }) => {
@@ -36,12 +38,16 @@ export const ButtonLink: FC<IButton> = ({
               [styles.primary]: variant === "primary",
               [styles.secondary]: variant === "secondary",
               [styles.with_icon]: icon,
+              [styles.pg_null]: noPadding,
             },
             className
           )}
           {...rest}
         >
-          <span className={styles.span}>{children}</span>
+          <span className={styles.span}>
+            {children}
+            {icon && <span className={styles.icon}>{icon}</span>}
+          </span>
         </Link>
       )}
       {isPublicLink && (
@@ -61,7 +67,10 @@ export const ButtonLink: FC<IButton> = ({
           )}
           {...rest}
         >
-          <span className={styles.span}>{children}</span>
+          <span className={styles.span}>
+            {children}
+            {icon && <span className={styles.icon}>{icon}</span>}
+          </span>
         </a>
       )}
     </>
