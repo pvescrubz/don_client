@@ -64,5 +64,5 @@ export const useModalStore = createWithEqualityFn<ModalStore>(
         return { modals: currentModals };
       }),
   }),
-  Object.is // или можно указать свою функцию сравнения
+  Object.is 
 );

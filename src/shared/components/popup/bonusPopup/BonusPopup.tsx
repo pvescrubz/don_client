@@ -1,6 +1,8 @@
 // src/components/modals/BonusPopup/BonusPopup.tsx
 "use client";
+import { APP_PAGES } from "@/shared/dashboard/app.dashboard";
 import { useModalStore } from "@/shared/stores/popup.store";
+import { TDiv } from "@/shared/typing/elements.type";
 import clsx from "clsx";
 import Image from "next/image";
 import { FC } from "react";
@@ -8,18 +10,12 @@ import { ButtonLink } from "../../ui/Button/ButtonLink";
 import { IconClose } from "../../ui/svg/IconClose";
 import styles from "./BonusPopup.module.css";
 
-interface BonusPopupProps {
-  title?: string;
-  minAmount?: number;
-  bonusPercent?: number;
-}
 
-export const BonusPopup: FC<BonusPopupProps> = ({
+
+export const BonusPopup: FC<TDiv> = ({
 }) => {
 
-
-
-
+  
   const [modalStore, setOpenModal] = useModalStore((state) => [
     state.modals.BonusPopup,
     state.setOpenModal,
@@ -31,13 +27,7 @@ export const BonusPopup: FC<BonusPopupProps> = ({
     }
   };
 
-  const resolve = () => {
-    modalStore.resolve!();
-    close();
-  };
-
   const reject = () => {
-    modalStore.reject!();
     close();
   };
 
@@ -54,18 +44,18 @@ export const BonusPopup: FC<BonusPopupProps> = ({
           height={80}
           className={styles.image}
         />
-        <p className={styles.title}>ПОДПИШИСЬ</p>
+        <p className={styles.title}>УСПЕЙ ПОЛУЧИТЬ БОНУС</p>
         <p className={styles.text}>
-         и получай лучшие предложение раньше остальных
+         Пополни свой лицевой счет от 10 000 ₽ прямо сейчас и получи 10% в виде бонуса на свой счет!
         </p>
         <ButtonLink
-          href="/"
+          href={APP_PAGES.BALANCE_STEAM.slug}
           size="small"
           variant="primary"
           className={styles.button}
-          onClick={resolve}
+       
         >
-          ПОПОЛНИТЬ СЧЕТ
+          ПОЛУЧИТЬ
         </ButtonLink>
       </div>
     </div>

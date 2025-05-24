@@ -4,9 +4,7 @@ import { FC } from "react";
 export const IconClose: FC<TSvg> = ({ className }) => {
   return (
     <>
-      <style>
-
-    </style>
+      
     <svg
       width="20"
       height="20"

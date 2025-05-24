@@ -2,8 +2,16 @@
 // src/components/modals/modalsDescriber.ts
 
 
+import { AuthPopup } from "./authPopup/AuthPopup";
+import { AuthPopupDescription } from "./authPopup/AuthPopup.description";
 import { BonusPopupDescription } from "./bonusPopup/BonsPopup.description";
 import { BonusPopup } from "./bonusPopup/BonusPopup";
+import { CouponPopupDescription } from "./couponPopup/CouponPopup.description";
+import { CouponPopup } from "./couponPopup/СouponPopup";
+import { PriceCheckPopup } from "./priceCheckPopup/PriceCheckPopup";
+import { PriceCheckPopupDescription } from "./priceCheckPopup/PriceCheckPopup.description";
+import { SubscriptionPopup } from "./subscriptionPopup/SubscriptionPopup";
+import { SubscriptionPopupDescription } from "./subscriptionPopup/SubscriptionPopup.description";
 
 
 export interface ModalDescription {
@@ -25,6 +33,10 @@ const registerModal = (component: React.FC<any>, description: any) => {
 };
 
 registerModal(BonusPopup, BonusPopupDescription);
+registerModal(AuthPopup, AuthPopupDescription);
+registerModal(CouponPopup, CouponPopupDescription);
+registerModal(SubscriptionPopup, SubscriptionPopupDescription);
+registerModal(PriceCheckPopup, PriceCheckPopupDescription);
 
 export { modals };
 
