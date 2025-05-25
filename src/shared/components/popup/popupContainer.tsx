@@ -2,7 +2,7 @@
 "use client";
 
 import { useModalStore } from "@/shared/stores/popup.store";
-import { modals as modalsDescriber } from "./popupDescriber";
+import { modals as modalsDescriber } from "./PopupDescriber";
 
 export const ModalsContainer = () => {
   const [modals] = useModalStore((state) => [state.modals]);

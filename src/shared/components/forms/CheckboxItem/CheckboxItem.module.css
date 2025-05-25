@@ -1,0 +1,36 @@
+.root {
+  position: relative;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: clamp(18px, 2dvw, 20px);
+  line-height: 130%;
+  color: rgba(22, 22, 22, 1);
+  background-color: #23252a;
+  transition: background-color 0.4s ease-in-out;
+  z-index: 3;
+}
+
+.label {
+  max-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0.8rem 0.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.input {
+  display: none;  
+}
+
+@media (hover: hover) {
+  .root:hover {
+    background-color: rgb(69, 69, 70);
+  }
+  .root:focus-visible {
+    background-color: red;
+  }
+}
+
