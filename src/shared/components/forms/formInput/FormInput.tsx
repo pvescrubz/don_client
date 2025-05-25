@@ -17,6 +17,8 @@ export const FormInput: FC<IFromInput> = ({ fieldName, register, error }) => {
     required,
     placeholder,
     defaultValue,
+    iconRigth,
+    iconLeft,
     patternRegExp,
     patternMessage,
   } = POST_INPUTS[fieldName];
@@ -36,6 +38,8 @@ export const FormInput: FC<IFromInput> = ({ fieldName, register, error }) => {
               : undefined,
         }),
       }}
+      iconLeft={iconLeft}
+     iconRigth={iconRigth}
       error={error}
     />
   );

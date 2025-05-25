@@ -1,13 +1,14 @@
-import { TFormProps } from "@/shared/typing/forms.type";
 import { FC } from "react";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 import { Button } from "../../ui/Button/Button";
-import { FormInput } from "../formInput/FormInput";
+import { FormInput } from "../FormInput/FormInput";
 import { AVAILABLE_FIELDS } from "../input.info";
 import styles from "./SubscrForm.module.css";
 
-export const SubscrForm: FC<TFormProps> = ({ onClose }) => {
+export type TSubscrFormProps = {
+  onClose?: () => void;
+};
+export const SubscrForm: FC<TSubscrFormProps> = ({ onClose }) => {
   
   const {
     register,
@@ -22,7 +23,6 @@ export const SubscrForm: FC<TFormProps> = ({ onClose }) => {
 
     if (onClose) {
      onClose();
-     toast.success("Подписка оформлена");
     }
     console.log(data);
    
@@ -36,7 +36,7 @@ export const SubscrForm: FC<TFormProps> = ({ onClose }) => {
       error={!!errors[AVAILABLE_FIELDS.EMAIL]}
     />
     <Button size="small" variant="primary" className={styles.button}>
-      ОТПРАВИТЬ
+      Получить
     </Button>
   </form>
   )
