@@ -38,7 +38,7 @@ export const AddBalance = () => {
           <div className={styles.nav}>
             {platforms.map((platform) => {
               const isActive = currentPlatform === platform;
-              const { icon, name, image } = gameConfigs[platform];
+              const { navicon, name, navimage } = gameConfigs[platform];
 
               return (
                 <Link
@@ -46,17 +46,17 @@ export const AddBalance = () => {
                   href={`/service/${platform}`}
                   className={`${styles.link} ${isActive ? styles.active : ""}`}
                   style={{
-                    backgroundImage: `url(${image})`,
+                    backgroundImage: `url(${navimage})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
                 >
                   <Image
-                    src={icon}
+                    src={navicon}
                     alt={name}
                     width={60}
                     height={60}
-                    className={styles.icon}
+                    className={styles.navicon}
                   />
                   <span className={styles.button_text}>{name}</span>
                 </Link>
