@@ -2,7 +2,7 @@
 import { gameConfigs, GamePlatform } from "@/shared/lib/addBalanceGame.config";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { notFound, usePathname } from "next/navigation";
 import { AddBalanceGameForm } from "../../forms/addBalanceGamesForm/AddBalanceGameForm";
 import { Title } from "../../ui/Title/Title";
 import { Container } from "../../ui/containers/Container/Container";
@@ -22,7 +22,7 @@ export const AddBalance = () => {
     const platforms = Object.keys(gameConfigs) as GamePlatform[];
 
   if (!config) {
-    return <p>Конфигурация не найдена</p>;
+    return notFound();
   }
 
 
@@ -42,8 +42,8 @@ export const AddBalance = () => {
 
               return (
                 <Link
-                  key={platform}
-                  href={`/service/${platform}`}
+                  key={name}
+                  href={`/service/${name}`}
                   className={`${styles.link} ${isActive ? styles.active : ""}`}
                   style={{
                     backgroundImage: `url(${navimage})`,

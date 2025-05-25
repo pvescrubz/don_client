@@ -8,7 +8,7 @@ export const gameConfigs = {
     image2: "/images/steam2icon.png",
     description: "Заполните форму для пополнения баланса",
   },
-  epicgames: {
+  "epic-games" : {
     navimage:"/images/epicbg.png",
     name: "Epic Games",
     navicon:"/images/epicgamesicon.png",
@@ -17,7 +17,7 @@ export const gameConfigs = {
     image2: "/images/origin2icon.png",
     description: "Заполните форму для пополнения баланса",
   },
-  playstation: {
+  "play-station": {
     name: "Play Station",
     navimage:"/images/playstationbg.png",
      navicon:"/images/playstationicon.png",
@@ -26,7 +26,7 @@ export const gameConfigs = {
     image2: "/images/origin2icon.png",
     description: "Заполните форму для пополнения баланса",
   },
-  xbox: {
+  "xbox": {
     name: "Xbox",
      navicon:"/images/xboxicon.png",
      navimage:"/images/xboxbg.png",
@@ -35,7 +35,7 @@ export const gameConfigs = {
     image2: "/images/origin2icon.png",
     description: "Заполните форму для пополнения баланса",
   },
-    blizzard: {
+    "blizzard": {
       name: "Blizzard",
       navimage:"/images/blizzardbg.png",
       navicon:"/images/blizzardicon.png",
