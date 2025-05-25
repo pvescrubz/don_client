@@ -68,7 +68,7 @@ export const Bloggers: FC<IBloggersProps> = ({ bloggers: propBloggers }) => {
         {visibleCount < displayBloggers.length && (
           <div className={styles.show_more_container}>
             <Button
-              size="normal"
+              size="large"
               variant="primary"
               onClick={handleShowMore}
               className={styles.show_more_button}

@@ -1,0 +1,23 @@
+.button {
+  padding-inline: 10px;
+
+}
+
+.button span {
+  width: 100%;
+  gap: 4px;
+}
+
+.button .span {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.arrow {
+  transition: transform 0.4s ease-in-out;
+}
+.active.arrow {
+  transform: rotate(180deg);
+}

@@ -11,6 +11,7 @@ export interface IButton extends TAnchor {
   href: string;
   icon?: ReactNode;
   noPadding?: boolean;
+  scroll?: boolean;
 }
 
 export const ButtonLink: FC<IButton> = ({
@@ -22,6 +23,7 @@ export const ButtonLink: FC<IButton> = ({
   href,
   noPadding,
   icon,
+  scroll,
   ...rest
 }) => {
   return (
@@ -43,6 +45,7 @@ export const ButtonLink: FC<IButton> = ({
             className
           )}
           {...rest}
+          scroll={scroll}
         >
           <span className={styles.span}>
             {children}

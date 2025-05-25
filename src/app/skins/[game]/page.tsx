@@ -1,16 +1,25 @@
 import SkinksPage from "@/pages/SkinksPage";
+import { isMobileDevice } from "@/shared/lib/isMobileDevice";
+import { TQuery } from "@/shared/typing/query.type";
 
 const Page = async ({
   params,
   searchParams,
 }: {
   params: Promise<{ game: string }>;
-  searchParams: Promise<{ [key: string]: string | undefined }>;
+  searchParams: Promise<TQuery>;
 }) => {
   const { game } = await params;
   const queryParams = await searchParams;
-  
-  return <>{game && <SkinksPage game={game} query={queryParams} />}</>;
+  const isMobile = await isMobileDevice();
+
+  return (
+    <>
+      {game && (
+        <SkinksPage game={game} query={queryParams} isMobile={isMobile} />
+      )}
+    </>
+  );
 };
 
 export default Page;

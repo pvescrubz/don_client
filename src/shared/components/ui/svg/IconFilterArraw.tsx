@@ -13,7 +13,7 @@ export const IconFilterArraw: FC<TSvg> = (props) => {
     >
       <path
         d="M4 7.5L9.00081 12.08L14 7.5"
-        stroke="white"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
