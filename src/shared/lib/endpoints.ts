@@ -3,28 +3,44 @@ type TMethods = "GET" | "POST" | "PUT" | "DELETE";
 type TEndpointsPt = {
   method: TMethods;
   url: string;
+  auth: boolean;
 };
 
 export const ENDPOINTS = {
   steamLogin: {
     method: "GET",
     url: "/api/auth/steam-login",
+    auth: false,
   },
   steamCallback: {
     method: "GET",
     url: "/api/auth/steam-callback",
+    auth: false,
   },
   logout: {
     method: "POST",
     url: "/api/auth/logout",
+    auth: false,
   },
   checkAccess: {
     method: "POST",
     url: "/api/auth/check-access",
+    auth: true,
   },
   checkRefresh: {
     method: "POST",
     url: "/api/auth/check-refresh",
+    auth: true,
+  },
+  filters: {
+    method: "GET",
+    url: "/api/filters",
+    auth: false,
+  },
+  skins: {
+    method: "GET",
+    url: "/api/skins", // + /{game}
+    auth: false,
   },
 } as const satisfies Record<string, TEndpointsPt>;
 

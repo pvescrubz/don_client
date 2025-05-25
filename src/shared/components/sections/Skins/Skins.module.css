@@ -17,7 +17,28 @@
   border-radius: inherit;
 }
 
-.flex {
-  display: flex;
+.grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
   padding-top: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+
+  padding: 0 10px 10px;
+}
+  .grid {
+    display: contents;
+    padding-top: 16px;
+  }
+
+
+  .box {
+    display: grid;
+  }
+
+  .filters_top {
+    grid-row: 3;
+  }
 }

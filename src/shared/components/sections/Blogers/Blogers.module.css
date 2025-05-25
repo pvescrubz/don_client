@@ -11,7 +11,6 @@
   }
 }
 
-
 @media (max-width: 768px) {
   .bloggers_slider {
     grid-template-columns: repeat(1, 1fr);
@@ -60,39 +59,29 @@
 }
 
 .blogger_name {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 130%;
-    text-align: center;
-    color: #fff;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  text-align: center;
+  color: #fff;
 }
 
 .blogger_followers {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 130%;
-    text-align: center;
-    color: #de1717;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  text-align: center;
+  color: #de1717;
 }
 
 .show_more_container {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .show_more_button {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 130%;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    color: #fff;
-    transition: opacity 0.3s ease;
-    max-width: 360px;
+  max-width: 360px;
 }
-

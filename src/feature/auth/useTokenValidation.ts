@@ -18,9 +18,7 @@ export const useTokenValidation = () => {
 
   const { isSuccess, isError, isLoading, data } = resp;
 
-
   useEffect(() => {
-
     if (isSuccess && !isLoading) {
       setUser(data);
       setIsAuth(true);

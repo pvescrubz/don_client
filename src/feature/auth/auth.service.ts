@@ -1,11 +1,11 @@
-import { apiFetch } from "@/shared/lib/apiFetch";
 import { ENDPOINTS } from "@/shared/lib/endpoints";
+import { midFetch } from "@/shared/lib/midFetch";
 import { TUser } from "../user/user.type";
 
 class AuthService {
   async checkAuth(): Promise<TUser> {
     try {
-      const resp = await apiFetch({ endpoint: ENDPOINTS.checkAccess });
+      const resp = await midFetch({ endpoint: ENDPOINTS.checkAccess });
 
       if (!resp.ok) {
         const errData = await resp.json();
@@ -20,7 +20,7 @@ class AuthService {
   }
   async logout(): Promise<void> {
     try {
-      const resp = await apiFetch({ endpoint: ENDPOINTS.logout });
+      const resp = await midFetch({ endpoint: ENDPOINTS.logout });
 
       if (!resp.ok) {
         const errData = await resp.json();

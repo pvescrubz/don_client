@@ -12,7 +12,6 @@
 }
 
 body {
-
   overflow-x: hidden;
   font-style: normal;
   background: var(--bg-color);
@@ -39,7 +38,6 @@ button:active {
   outline: none;
 }
 
-
 footer {
   margin-top: auto;
 }
@@ -47,7 +45,6 @@ footer {
 .stop__scroll {
   overflow: hidden;
 }
-
 
 .scrollbar::-webkit-scrollbar {
   width: 5px;

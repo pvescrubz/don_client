@@ -1,5 +1,6 @@
 import { ButtonLink } from "@/shared/components/ui/Button/ButtonLink";
 import { Container } from "@/shared/components/ui/containers/Container/Container";
+import { APP_PAGES } from "@/shared/dashboard/app.dashboard";
 import { TDiv } from "@/shared/typing/elements.type";
 import { FC } from "react";
 import styles from "./HeroBasic.module.css";
@@ -54,7 +55,7 @@ export const HeroBasic: FC<TDiv> = () => {
           </p>
           <div className={styles.buttons_wrapper}>
             <ButtonLink
-              href="/skins"
+              href={APP_PAGES.SKINS_CS2.slug}
               size="large"
               variant="primary"
               className={styles.red_btn}
@@ -62,7 +63,7 @@ export const HeroBasic: FC<TDiv> = () => {
               КУПИТЬ СКИНЫ
             </ButtonLink>
             <ButtonLink
-              href="/skins"
+              href={APP_PAGES.BALANCE_STEAM.slug}
               size="large"
               variant="secondary"
               className={styles.gray_btn}
