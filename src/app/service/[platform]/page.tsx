@@ -1,10 +1,12 @@
-// app/service/[platform]/page.tsx
-
 import AddBalancePage from "@/pages/AddBalance";
 
-export const Page = () => {
-return (<AddBalancePage />); 
-  
+const Page = async ({
+  params,
+}: {
+  params: Promise<{ platform: string }>;
+}) => {
+  const { platform } = await params;
+  return <AddBalancePage platform={platform} />;
 };
 
 export default Page;

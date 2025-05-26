@@ -1,6 +1,6 @@
-import { GameConfig } from '../lib/addBalanceGame.config';
+import { TGamePlatform } from "../lib/platorms.config";
 
-export type TFormProps = {
+export interface IForm {
   onClose?: () => void;
-    config?: GameConfig;
-};
+  config?: TGamePlatform;
+}

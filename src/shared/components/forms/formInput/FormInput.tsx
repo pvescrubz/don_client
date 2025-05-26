@@ -1,7 +1,9 @@
+'use client'
 import { FC } from "react";
 import { FieldValues, UseFormRegister } from "react-hook-form";
 import { StyledInput } from "../../ui/StyledInput/StyledInput";
 import { POST_INPUTS, TFieldKeys } from "../input.info";
+
 
 
 interface IFromInput {

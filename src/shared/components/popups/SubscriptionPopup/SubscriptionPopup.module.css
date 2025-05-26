@@ -1,0 +1,58 @@
+.root {
+position: fixed;
+bottom: 20px;
+left: 20px;
+backdrop-filter: blur(7px);
+box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
+background: rgba(35, 37, 42, 0.8);
+border: 1px solid  rgba(206, 208, 211, 0.4);
+border-radius: 15px;
+z-index: 4;
+}
+
+.container {
+  width: 330px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px 20px 25px;
+}
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: all 0.3s ease;
+}
+
+.close {
+  color: white;
+  cursor: pointer;
+  transition: color 0.5s linear, transform 0.3s linear;
+}
+
+.close:hover {
+  color: #de1717;
+ transform: rotate(90deg);
+}
+.title {
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 20px;
+line-height: 120%;
+text-align: center;
+color: #fff;
+}
+
+.text {
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+line-height: 120%;
+text-align: center;
+color: rgba(255, 255, 255, 0.6);
+}
