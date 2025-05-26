@@ -1,8 +1,7 @@
-// src/components/modals/ModalsContainer.tsx
 "use client";
 
 import { useModalStore } from "@/shared/stores/popup.store";
-import { modals as modalsDescriber } from "./PopupDescriber";
+import { modals as modalsDescriber } from "./popupDescriber";
 
 export const ModalsContainer = () => {
   const [modals] = useModalStore((state) => [state.modals]);

@@ -1,3 +1,4 @@
+// src/components/modals/BonusPopup/BonusPopup.tsx
 "use client";
 import { useModalStore } from "@/shared/stores/popup.store";
 import { TDiv } from "@/shared/typing/elements.type";
@@ -8,7 +9,11 @@ import { SubscrForm } from "../../forms/SubscrForm/SubscrForm";
 import { IconClose } from "../../ui/svg/IconClose";
 import styles from "./SubscriptionPopup.module.css";
 
-export const SubscriptionPopup: FC<TDiv> = ({}) => {
+
+
+export const SubscriptionPopup: FC<TDiv> = ({
+}) => {
+
   const [modalStore, setOpenModal] = useModalStore((state) => [
     state.modals.SubscriptionPopup,
     state.setOpenModal,
@@ -28,7 +33,7 @@ export const SubscriptionPopup: FC<TDiv> = ({}) => {
     <div className={clsx(styles.root)}>
       <div className={styles.container}>
         <button className={styles.closeButton} onClick={reject}>
-          <IconClose className={styles.close} />
+          <IconClose className={styles.close}/>
         </button>
         <Image
           src="/images/subscriptionpopup.png"
@@ -39,7 +44,7 @@ export const SubscriptionPopup: FC<TDiv> = ({}) => {
         />
         <p className={styles.title}>ПОДПИШИСЬ</p>
         <p className={styles.text}>
-          и получай лучшие предложение раньше остальных
+         и получай лучшие предложение раньше остальных
         </p>
         <SubscrForm onClose={reject} />
       </div>

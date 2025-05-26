@@ -10,10 +10,10 @@ import { IconRubl } from "../ui/svg/IconRubl";
 export const AVAILABLE_FIELDS = {
   EMAIL: "email",
   ONLY_NUMBERS: "onlyNumbers",
-  ADD_LOGIN: 'addLogin',
-  ADD_PROMO: 'addPromo',
-    THEMES: "themes",
-  LINK:'link'
+  ADD_LOGIN: "addLogin",
+  ADD_PROMO: "addPromo",
+  THEMES: "themes",
+  LINK: "link",
 } as const;
 
 export type TFieldKeys =
@@ -40,9 +40,9 @@ export const POST_INPUTS: Record<TFieldKeys, IPostInput> = {
     type: "text",
     label: true,
     placeholder: "Укажите свой логин",
-    required: 'Необходимо указать логин',
+    required: "Необходимо указать логин",
     patternRegExp: /^[a-zA-Z]{3,}$/,
-    patternMessage: 'Некорректная сумма',
+    patternMessage: "Некорректная сумма",
   },
   [AVAILABLE_FIELDS.ADD_PROMO]: {
     iconLeft: <IconPromo />,
@@ -51,9 +51,10 @@ export const POST_INPUTS: Record<TFieldKeys, IPostInput> = {
     label: true,
     placeholder: "Укажите промокод",
     patternRegExp: /^[a-zA-Z]{3,}$/,
-    patternMessage: 'Проомакод должен содержать только буквы и быть не менее 3 символов',
+    patternMessage:
+      "Проомакод должен содержать только буквы и быть не менее 3 символов",
   },
-    [AVAILABLE_FIELDS.THEMES]: {
+  [AVAILABLE_FIELDS.THEMES]: {
     name: AVAILABLE_FIELDS.THEMES,
     type: "text",
     label: true,
@@ -64,19 +65,20 @@ export const POST_INPUTS: Record<TFieldKeys, IPostInput> = {
     type: "text",
     label: true,
     placeholder: "Введите ссылку на скин",
-    required: 'Укажите ссылку на товар',
-    patternRegExp: /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/[^\s]*)?$/i,
-    patternMessage: 'Некорректный email',
+    required: "Укажите ссылку на товар",
+    patternRegExp:
+      /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/[^\s]*)?$/i,
+    patternMessage: "Некорректный email",
   },
-    [AVAILABLE_FIELDS.EMAIL]: {
-      iconLeft: <IconMail  />,
+  [AVAILABLE_FIELDS.EMAIL]: {
+    iconLeft: <IconMail />,
     name: AVAILABLE_FIELDS.EMAIL,
     type: "text",
     label: true,
     placeholder: "Введите ваш email",
     required: 'Поле "Email" не может быть пустым',
     patternRegExp: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
-    patternMessage: 'Некорректный email',
+    patternMessage: "Некорректный email",
   },
   [AVAILABLE_FIELDS.ONLY_NUMBERS]: {
     iconLeft: <IconRubl />,
@@ -84,9 +86,8 @@ export const POST_INPUTS: Record<TFieldKeys, IPostInput> = {
     type: "text",
     label: true,
     placeholder: "200 ₽",
-    required: 'Поле не может быть пустым',
+    required: "Поле не может быть пустым",
     patternRegExp: /^\d+$/,
-    patternMessage: 'Введите сумму',
+    patternMessage: "Введите сумму",
   },
-
 };

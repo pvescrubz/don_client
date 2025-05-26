@@ -1,17 +1,18 @@
-import { FormInput } from "@/shared/components/forms/formInput/FormInput";
+"use client";
+import { FormInput } from "@/shared/components/forms/FormInput/FormInput";
 import { AVAILABLE_FIELDS } from "@/shared/components/forms/input.info";
 import { Button } from "@/shared/components/ui/Button/Button";
 import { APP_PAGES } from "@/shared/dashboard/app.dashboard";
-import { TFormProps } from "@/shared/typing/forms.type"; // Убедитесь, что TFormProps определяет 'config'
+import { IForm } from "@/shared/typing/forms.type";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import { useForm, useWatch } from "react-hook-form";
-import { FormSelect } from "../formSelect/FormSelect";
+import { FormSelect } from "../FormSelect/FormSelect";
 import styles from "./AddBalanceGameForm.module.css";
 
-export const AddBalanceGameForm: FC<TFormProps> = ({ config }) => {
+export const AddBalanceGameForm: FC<IForm> = ({ config }) => {
   const {
     register,
     handleSubmit,
@@ -29,16 +30,14 @@ export const AddBalanceGameForm: FC<TFormProps> = ({ config }) => {
     control,
     name: AVAILABLE_FIELDS.ADD_PROMO,
   });
-  if (!config) {
-    return <p>Данные формы не загружены</p>;
-  }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
     console.log(data);
   };
+  if (!config) return null;
 
-  const { name , title, formimage, navicon, description } = config;
+  const { name, title, formimage, navicon, description } = config;
 
   return (
     <form className={styles.root} onSubmit={handleSubmit(onSubmit)}>
@@ -63,13 +62,11 @@ export const AddBalanceGameForm: FC<TFormProps> = ({ config }) => {
         <div className={clsx(styles.description_container, styles.pointer)}>
           <p className={styles.description}>{description}</p>
           {name !== "Steam" && (
-          <FormSelect
-          control={control}
-          fieldName={AVAILABLE_FIELDS.THEMES}
-          error={
-            !!errors[AVAILABLE_FIELDS.THEMES] 
-          }
-        />
+            <FormSelect
+              control={control}
+              fieldName={AVAILABLE_FIELDS.THEMES}
+              error={!!errors[AVAILABLE_FIELDS.THEMES]}
+            />
           )}
           <FormInput
             fieldName={AVAILABLE_FIELDS.ADD_LOGIN}

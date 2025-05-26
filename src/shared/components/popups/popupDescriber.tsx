@@ -1,18 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // src/components/modals/modalsDescriber.ts
 
-
-import { AuthPopup } from "./authPopup/AuthPopup";
-import { AuthPopupDescription } from "./authPopup/AuthPopup.description";
-import { BonusPopupDescription } from "./bonusPopup/BonsPopup.description";
-import { BonusPopup } from "./bonusPopup/BonusPopup";
-import { CouponPopupDescription } from "./couponPopup/CouponPopup.description";
-import { CouponPopup } from "./couponPopup/СouponPopup";
-import { PriceCheckPopup } from "./priceCheckPopup/PriceCheckPopup";
-import { PriceCheckPopupDescription } from "./priceCheckPopup/PriceCheckPopup.description";
-import { SubscriptionPopup } from "./subscriptionPopup/SubscriptionPopup";
-import { SubscriptionPopupDescription } from "./subscriptionPopup/SubscriptionPopup.description";
-
+import { AuthPopup } from "./AuthPopup/AuthPopup";
+import { AuthPopupDescription } from "./AuthPopup/AuthPopup.description";
+import { BonusPopupDescription } from "./BonusPopup/BonsPopup.description";
+import { BonusPopup } from "./BonusPopup/BonusPopup";
+import { CouponPopupDescription } from "./CouponPopup/CouponPopup.description";
+import { CouponPopup } from "./CouponPopup/СouponPopup";
+import { PriceCheckPopup } from "./PriceCheckPopup/PriceCheckPopup";
+import { PriceCheckPopupDescription } from "./PriceCheckPopup/PriceCheckPopup.description";
+import { SubscriptionPopup } from "./SubscriptionPopup/SubscriptionPopup";
+import { SubscriptionPopupDescription } from "./SubscriptionPopup/SubscriptionPopup.description";
 
 export interface ModalDescription {
   name: string;
@@ -39,4 +37,3 @@ registerModal(SubscriptionPopup, SubscriptionPopupDescription);
 registerModal(PriceCheckPopup, PriceCheckPopupDescription);
 
 export { modals };
-
