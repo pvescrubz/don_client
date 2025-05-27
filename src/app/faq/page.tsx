@@ -1,17 +1,12 @@
-import { StyledInput } from "@/shared/components/ui/StyledInput/StyledInput";
-import { Container } from "../../shared/components/ui/containers/Container/Container";
+import FAQPage from '../../pages/FaqPage';
 
-const Page = async () => {
-  return (
-    <Container style={{ padding: 20 }}>
-      <StyledInput
-        InputProps={{
-          placeholder: "123",
-        }}
-        small
-      />
-    </Container>
-  );
+const Page = async ({
+  params,
+}: {
+  params: Promise<{ platform: string }>;
+}) => {
+  const { platform } = await params;
+  return <FAQPage platform={platform} />;
 };
 
 export default Page;

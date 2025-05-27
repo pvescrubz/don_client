@@ -1,23 +1,18 @@
 "use client";
 
 import clsx from "clsx";
+import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 
+import { TFaq } from "@/shared/lib/faq.config";
 import { TUl } from "@/shared/typing/elements.type";
-import Image from "next/image";
 import styles from "./Accordion.module.css";
 
-
-export type TAccordionItem = {
-  title: string;
-  descr: string;
-};
 interface IAccordion extends TUl {
-  items: TAccordionItem[];
+  config?: TFaq; // Это уже массив вопросов
 }
 
-
-export const Accordion: FC<IAccordion> = ({ items, className, ...rest }) => {
+export const Accordion: FC<IAccordion> = ({ config, className, ...rest }) => {
   const [openDropdown, setOpenDropdown] = useState<number | null>(0);
 
   const handleOpenDropdown = (index: number) => {
@@ -25,14 +20,16 @@ export const Accordion: FC<IAccordion> = ({ items, className, ...rest }) => {
   };
 
   useEffect(() => {
-    if (items && items.length > 0) {
-      setOpenDropdown(0);
+    if (config && config.length > 0) {
+      setOpenDropdown(0); // открываем первый элемент по умолчанию
     }
-  }, [items]);
+  }, [config]);
+
+  if (!config  ) return null;
 
   return (
     <ul className={clsx(styles.content, className)} {...rest}>
-      {items.map((item, index) => (
+      {config.map((item, index) => (
         <li key={index} className={styles.item}>
           <button
             className={styles.title}
