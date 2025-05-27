@@ -1,7 +1,7 @@
 // CouponPopup.tsx
 "use client";
 
-import { useStopScroll } from "@/shared/hooks/useStopScroll";
+import { useStopScroll } from "@/shared/lib/hooks/useStopScroll";
 import { useModalStore } from "@/shared/stores/popup.store";
 import { TDiv } from "@/shared/typing/elements.type";
 import clsx from "clsx";
