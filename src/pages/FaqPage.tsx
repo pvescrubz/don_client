@@ -1,15 +1,10 @@
 import { Faq } from "@/shared/components/sections/Faq/Faq";
 import { FC } from "react";
-interface IFaqPage {
-  platform: string;
-}
 
-export const FAQPage: FC<IFaqPage> = ({ platform }) => {
-
-  console.log( platform );
+export const FAQPage: FC = () => {
   return (
     <>
-    <Faq platform={platform} />
+      <Faq platform={"/faq"} />
     </>
   );
 };

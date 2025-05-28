@@ -93,9 +93,9 @@ class Dashboard {
   } satisfies IDashboardItem;
 
   HOME = {
-  name: "Главная",
-  slug: "/",
-  forHeader: true,
+    name: "Главная",
+    slug: "/",
+    forHeader: false,
   } satisfies IDashboardItem;
 
   BLOG = {

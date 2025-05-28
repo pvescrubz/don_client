@@ -1,12 +1,7 @@
-import FAQPage from '../../pages/FaqPage';
+import FAQPage from "../../pages/FaqPage";
 
-const Page = async ({
-  params,
-}: {
-  params: Promise<{ platform: string }>;
-}) => {
-  const { platform } = await params;
-  return <FAQPage platform={platform} />;
+const Page = () => {
+  return <FAQPage />;
 };
 
 export default Page;
