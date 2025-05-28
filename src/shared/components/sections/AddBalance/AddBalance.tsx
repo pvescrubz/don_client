@@ -1,13 +1,14 @@
 import { PLATFORM_CONFIG } from "@/shared/lib/platorms.config";
 import { FC } from "react";
 import { AddBalanceGameForm } from "../../forms/addBalanceGamesForm/AddBalanceGameForm";
+import { Allbalancebg } from "../../parts/AllBalanceBg/AllBalancebg";
 import { AllBalanceNav } from "../../parts/AllBalanceNav/AllBalanceNav";
 import { HowToAddBalance } from "../../parts/HowAddBalance/HowAddBalance";
 import { Title } from "../../ui/Title/Title";
 import { Container } from "../../ui/containers/Container/Container";
 import { Section } from "../../ui/containers/Section/Section";
 import { Faq } from "../Faq/Faq";
-
+import styles from "./AddBalance.module.css";
 interface IAddBalance {
   platform: string;
 }
@@ -17,7 +18,9 @@ export const AddBalance: FC<IAddBalance> = ({ platform }) => {
   return (
     <>
       <Section>
-        <Container>
+   
+        <Container className={styles.container}>
+               <Allbalancebg platform={config} />
           <Title>Пополнить баланс</Title>
           <AllBalanceNav />
          {config && (
