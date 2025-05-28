@@ -1,12 +1,7 @@
 import HomePage from "@/pages/HomePage";
 
-const Page = async ({
-  params,
-}: {
-  params: Promise<{ platform: string }>;
-}) => {
-  const { platform } = await params;
-  return <HomePage platform={platform} />;
+const Page = () => {
+  return <HomePage />;
 };
 
 export default Page;
