@@ -2,7 +2,7 @@
 "use client";
 import { ISortItem, TSortName } from "@/feature/filters/sort.type";
 import { Button } from "@/shared/components/ui/Button/Button";
-import { IconFilterArraw } from "@/shared/components/ui/svg/IconFilterArraw";
+import { IconArraw } from "@/shared/components/ui/svg/IconFilterArraw";
 import { IconSortHighToLow } from "@/shared/components/ui/svg/IconSortHighToLow";
 import { IconPriceLowToHigh } from "@/shared/components/ui/svg/IconSortLowToHigh";
 import { IconSortPopular } from "@/shared/components/ui/svg/IconSortPopular";
@@ -35,7 +35,7 @@ export const SortButton: FC<ISortButton> = ({ item, active, ...rest }) => {
           {SORT_SVG_MAP[item.name]}
           {item.ruName}
         </span>
-        <IconFilterArraw
+        <IconArraw
           className={clsx(styles.arrow, active && styles.active)}
         />
       </Button>

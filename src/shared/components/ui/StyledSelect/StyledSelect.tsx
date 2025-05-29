@@ -1,15 +1,15 @@
 "use client";
 
 import { TDiv } from "@/shared/typing/elements.type";
+import { ITheme } from '@/shared/typing/post-form.type';
 import { blockAllText } from "@/shared/utils/block-all-text";
-import { FC, InputHTMLAttributes, useEffect, useState } from "react";
 import Image from "next/image";
+import { FC, InputHTMLAttributes, useEffect, useState } from "react";
 import { CheckboxList } from "../../forms/CheckboxList/CheckboxList";
 import { StyledInput } from "../StyledInput/StyledInput";
-import { ITheme } from '@/shared/typing/post-form.type';
+import { IconArraw } from "../svg/IconFilterArraw";
 import { IconRegion } from "../svg/IconRegion";
-import { IconFilterArraw } from "../svg/IconFilterArraw";
-import styles from './StyledSelect.module.css'
+import styles from './StyledSelect.module.css';
 
 export interface IStyledSelect extends TDiv {
   InputProps: InputHTMLAttributes<HTMLInputElement>;
@@ -82,7 +82,7 @@ const handleCheckboxChange = (value: string, checked: boolean) => {
                 height={26}
                 className={styles.icon}
               />
-              <IconFilterArraw />
+              <IconArraw />
               </>
             )
           }

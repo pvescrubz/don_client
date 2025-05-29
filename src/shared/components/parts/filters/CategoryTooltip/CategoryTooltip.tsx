@@ -2,13 +2,12 @@
 import { ICaregoryItem } from "@/feature/filters/filters.type";
 import { Button } from "@/shared/components/ui/Button/Button";
 import { IconBack } from "@/shared/components/ui/svg/IconBack";
-import { IS_CLIENT } from "@/shared/constans/constans";
 import { useStopScroll } from "@/shared/hooks/useStopScroll";
 import { useWindowSize } from "@/shared/hooks/useWindowSize";
 import clsx from "clsx";
 import { FC, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { IconFilterArraw } from "../../../ui/svg/IconFilterArraw";
+import { IconArraw } from "../../../ui/svg/IconFilterArraw";
 import { CategoryCheckbox } from "./CategoryCheckbox/CategoryCheckbox";
 import styles from "./CategoryTooltip.module.css";
 
@@ -23,7 +22,12 @@ export const CategoryTooltip: FC<ICategoryTooltip> = ({ item }) => {
   const windowWidth = useWindowSize();
   const [leftwardShift, setLeftwardShift] = useState(false);
   const [active, setActive] = useState(false);
-  const portalContainer = IS_CLIENT ? document.body : null;
+  const [portalContainer, setPortalContainer] = useState<HTMLElement>();
+
+  useEffect(() => {
+    setPortalContainer(document.body);
+  }, []);
+
 
   useEffect(() => {
     if (active && popoverRef.current && windowWidth > 1024) {
@@ -75,7 +79,7 @@ export const CategoryTooltip: FC<ICategoryTooltip> = ({ item }) => {
             className={styles.button}
           >
             <span className={styles.text}>{ruName ? ruName : name}</span>
-            <IconFilterArraw className={styles.svg} />
+            <IconArraw className={styles.svg} />
           </button>
           {windowWidth > 1024 && (
             <div

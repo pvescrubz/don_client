@@ -1,4 +1,4 @@
-import SkinksPage from "@/pages/SkinksPage";
+import SkinPage from "@/pages/SkinsPage";
 import { isMobileDevice } from "@/shared/lib/isMobileDevice";
 import { TQuery } from "@/shared/typing/query.type";
 
@@ -16,7 +16,7 @@ const Page = async ({
   return (
     <>
       {game && (
-        <SkinksPage game={game} query={queryParams} isMobile={isMobile} />
+        <SkinPage game={game} query={queryParams} isMobile={isMobile} />
       )}
     </>
   );

@@ -6,9 +6,16 @@ import styles from "./RedContainer.module.css";
 
 export const RedContainer: FC<TDiv> = ({ children, className, ...rest }) => {
   return (
-    <div className={clsx(styles.red, className)} {...rest}>
+    <div className={clsx(styles.root, className)} {...rest}>
       {children}
-      <Image src="/images/redbg.webp" alt="red" width={1920} height={3420} className={styles.image} />
+      <Image
+        src="/images/redbg.png"
+        alt="red"
+        width={1920}
+        height={3420}
+        className={styles.image}
+        quality={100}
+      />
     </div>
   );
 };

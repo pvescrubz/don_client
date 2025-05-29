@@ -1,4 +1,13 @@
+.root {
+  padding-top: 100px;
+}
 
 .container {
   position: relative;
+}
+
+@media screen and (max-width: 567px) {
+  .root {
+    padding-top: 75px
+  }
 }

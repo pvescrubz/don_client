@@ -5,7 +5,7 @@ import { FC, useState } from "react";
 
 import { IFilter } from "@/feature/filters/filters.type";
 import { Checkbox } from "@/shared/components/parts/filters/FilterAccordion/Checkbox/Checkbox";
-import { IconFilterArraw } from "@/shared/components/ui/svg/IconFilterArraw";
+import { IconArraw } from "@/shared/components/ui/svg/IconFilterArraw";
 import { TDiv } from "@/shared/typing/elements.type";
 import styles from "./FilterAccordion.module.css";
 
@@ -30,7 +30,7 @@ export const FilterAccordion: FC<IFilterAccordion> = ({
         <div className={clsx(styles.root, className)} {...rest}>
           <button onClick={handleClick} className={styles.button}>
             <span className={styles.text}>{ruName ? ruName : name}</span>
-            <IconFilterArraw
+            <IconArraw
               className={clsx(styles.arrow, active && styles.active)}
             />
           </button>

@@ -1,7 +1,7 @@
 import { apiFetch } from "@/shared/lib/apiFetch";
 import { ENDPOINTS } from "@/shared/lib/endpoints";
 import { TQuery } from "@/shared/typing/query.type";
-import { TCatalogRes } from "./skins.type";
+import { TCatalogRes, TCatalogSkin } from "./skins.type";
 
 class SkinsService {
   async getSkins(
@@ -17,6 +17,31 @@ class SkinsService {
         params: game,
         query: query,
         cacheTime: 300,
+      });
+      return data;
+    } catch (error) {
+      console.error("Ошибка при получении скинов:", error);
+      return null;
+    }
+  }
+
+  async getWeeklyProducts(): Promise<TCatalogSkin[] | null> {
+    try {
+      const data = await apiFetch<TCatalogSkin[]>({
+        endpoint: ENDPOINTS.weekly,
+        cacheTime: 60 * 60,
+      });
+      return data;
+    } catch (error) {
+      console.error("Ошибка при получении скинов:", error);
+      return null;
+    }
+  }
+  async getLastBuy(): Promise<TCatalogSkin[] | null> {
+    try {
+      const data = await apiFetch<TCatalogSkin[]>({
+        endpoint: ENDPOINTS.lastBuy,
+        cacheTime: 60 * 5,
       });
       return data;
     } catch (error) {

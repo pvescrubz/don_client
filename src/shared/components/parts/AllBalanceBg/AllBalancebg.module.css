@@ -1,34 +1,27 @@
-.bg {
-position: absolute;
-top: clamp(-23px, -1.5vw, -43px);
-right: 16px;
-max-height: 116px;
-object-fit: cover;
-aspect-ratio: 1/1;
-z-index: -1;
+.root {
+  position: absolute;
+  z-index: -1;
+  right: 10px;
+  top: -90px;
+  height: auto;
+  
 }
 
 
-@media screen and (max-width: 1024px) {
-  .bg {
-    max-width: 100px;
-    height: auto;
-    top: -10px;
-    right: 20px;
+@media screen and (max-width: 1200px) {
+  .root {
+  max-width: 150px;
+  top: -80px;
   }
 }
-
-@media screen and (max-width: 800px) {
-  .bg {
-    max-width: 70px;
-    height: 70px;
-    top: -20px;
-    right: 0;
+@media screen and (max-width: 768px) {
+  .root {
+  max-width: 100px;
+  top: -50px;
   }
 }
-
-@media screen and (max-width: 500px) {
-  .bg {
+@media screen and (max-width: 567px) {
+  .root {
     display: none;
   }
 }

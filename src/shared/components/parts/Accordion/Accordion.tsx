@@ -1,15 +1,15 @@
 "use client";
 
 import clsx from "clsx";
-import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 
 import { TFaq } from "@/shared/lib/faq.config";
 import { TUl } from "@/shared/typing/elements.type";
+import { IconArraw } from "../../ui/svg/IconFilterArraw";
 import styles from "./Accordion.module.css";
 
 interface IAccordion extends TUl {
-  config?: TFaq; // Это уже массив вопросов
+  config?: TFaq;
 }
 
 export const Accordion: FC<IAccordion> = ({ config, className, ...rest }) => {
@@ -21,11 +21,11 @@ export const Accordion: FC<IAccordion> = ({ config, className, ...rest }) => {
 
   useEffect(() => {
     if (config && config.length > 0) {
-      setOpenDropdown(0); // открываем первый элемент по умолчанию
+      setOpenDropdown(0);
     }
   }, [config]);
 
-  if (!config  ) return null;
+  if (!config) return null;
 
   return (
     <ul className={clsx(styles.content, className)} {...rest}>
@@ -36,11 +36,7 @@ export const Accordion: FC<IAccordion> = ({ config, className, ...rest }) => {
             onClick={() => handleOpenDropdown(index)}
           >
             <span>{item.title}</span>
-            <Image
-              src="/images/arrow.svg"
-              alt="arrow"
-              width={12}
-              height={7}
+            <IconArraw
               className={clsx(
                 styles.icon,
                 openDropdown === index && styles.open

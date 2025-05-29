@@ -1,7 +1,7 @@
 "use client";
 
 import { TMeta } from "@/feature/skins/skins.type";
-import { IconFilterArraw } from "@/shared/components/ui/svg/IconFilterArraw";
+import { IconArraw } from "@/shared/components/ui/svg/IconFilterArraw";
 import { useFilter } from "@/shared/hooks/useFilter";
 import { useWindowSize } from "@/shared/hooks/useWindowSize";
 import { useScrollElementStore } from "@/shared/stores/scroll-element.store";
@@ -49,7 +49,7 @@ export const Pagination: FC<IPagination> = ({ meta }) => {
     <div className={styles.root}>
       {currentPage !== 1 && (
         <PaginationButton onClick={() => handleClick(currentPage - 1)}>
-          <IconFilterArraw className={styles.prev} />
+          <IconArraw className={styles.prev} />
         </PaginationButton>
       )}
       {visiblePages[0] !== 1 && (
@@ -78,7 +78,7 @@ export const Pagination: FC<IPagination> = ({ meta }) => {
       )}
       {currentPage !== totalPages && (
         <PaginationButton onClick={() => handleClick(currentPage + 1)}>
-          <IconFilterArraw className={styles.next} />
+          <IconArraw className={styles.next} />
         </PaginationButton>
       )}
     </div>
