@@ -1,0 +1,10 @@
+.reviwe__wrapper {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  
+}
+.card {
+  min-height: 100%;
+  flex-grow: 1;
+}

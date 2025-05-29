@@ -9,7 +9,7 @@ interface IConfig {
   platform: string;
 }
 
-export const Faq: FC<IConfig> = ({platform}) => {
+export const Faq: FC<IConfig> = ({ platform }) => {
   const config = FAQ_CONFIG[platform];
   return (
     <>

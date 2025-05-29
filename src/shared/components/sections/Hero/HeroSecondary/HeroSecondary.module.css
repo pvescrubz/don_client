@@ -33,13 +33,21 @@
   flex-direction: column;
 }
 
+.image {
+  width: auto;
+}
+
+
 @media screen and (max-width: 1200px) {
   .root {
     grid-template-columns: repeat(2, 1fr);
   }
+  .item {
+    align-items: center;
+  }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .root {
     grid-template-columns: repeat(1, 1fr);
   }

@@ -1,7 +1,7 @@
 import { TSvg } from "@/shared/typing/elements.type";
 import { FC } from "react";
 
-export const IconFilterArraw: FC<TSvg> = (props) => {
+export const IconArraw: FC<TSvg> = (props) => {
   return (
     <svg
       width="18"

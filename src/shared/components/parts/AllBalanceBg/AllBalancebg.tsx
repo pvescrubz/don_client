@@ -7,15 +7,15 @@ interface IAllBalanceBg {
   platform: TGamePlatform;
 }
 
-export const Allbalancebg: FC<IAllBalanceBg> = ({ platform }) => {
+export const AllbalanceBg: FC<IAllBalanceBg> = ({ platform }) => {
   const { sectionbgimage } = platform;
   return (
     <Image
       src={sectionbgimage}
-      width={130}
-      height={150}
+      width={184}
+      height={184}
       alt={sectionbgimage}
-      className={styles.bg}
+      className={styles.root}
     />
   );
 };

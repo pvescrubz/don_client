@@ -1,0 +1,16 @@
+.slide {
+  max-width: 180px;
+}
+
+.swiper-slide {
+  min-height: 240px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .reviwe__wrapper {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+} */

@@ -42,6 +42,16 @@ export const ENDPOINTS = {
     url: "/api/skins", // + /{game}
     auth: false,
   },
+  weekly: {
+    method: "GET",
+    url: "/api/skins/weekly",
+    auth: false,
+  },
+  lastBuy: {
+    method: "GET",
+    url: "/api/skins/last-buy",
+    auth: false,
+  },
 } as const satisfies Record<string, TEndpointsPt>;
 
 export type TEndpoints = (typeof ENDPOINTS)[keyof typeof ENDPOINTS];

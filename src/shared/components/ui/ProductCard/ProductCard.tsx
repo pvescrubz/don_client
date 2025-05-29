@@ -3,13 +3,15 @@ import {
   TKillCounter,
   TSouvenir,
 } from "@/feature/skins/skins.type";
+import { TDiv } from "@/shared/typing/elements.type";
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import { IconCartSmall } from "../svg/IconCartSmall";
 import styles from "./ProductCard.module.css";
 
-interface IProductCard {
+interface IProductCard extends TDiv {
   skin: TCatalogSkin;
 }
 
@@ -25,11 +27,11 @@ export const Top: FC<IStatTagProps> = ({ killCounter, souvenir }) => {
   return (killCounter || souvenir) && <p className={styles.top} />;
 };
 
-export const ProductCard: FC<IProductCard> = ({ skin }) => {
+export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
   const { name, price, imageUrl, slug, killCounter, souvenir } = skin;
 
   return (
-    <div className={styles.root}>
+    <div className={clsx(styles.root, className)} {...rest}>
       <Top killCounter={killCounter} souvenir={souvenir} />
       <div className={styles.box}>
         <Image

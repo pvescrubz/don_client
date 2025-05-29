@@ -1,6 +1,6 @@
 "use client";
 import { ISortItem } from "@/feature/filters/sort.type";
-import { IconFilterArraw } from "@/shared/components/ui/svg/IconFilterArraw";
+import { IconArraw } from "@/shared/components/ui/svg/IconFilterArraw";
 import { TButton } from "@/shared/typing/elements.type";
 import clsx from "clsx";
 import { FC } from "react";
@@ -18,7 +18,7 @@ export const SortListItem: FC<ISortButton> = ({ item, active, ...rest }) => {
       <button className={clsx(styles.root, active && styles.active)} {...rest}>
         {SORT_SVG_MAP[item.name] && SORT_SVG_MAP[item.name]}
         <span className={styles.span}>{item.ruName}</span>
-        <IconFilterArraw className={styles.svg} />
+        <IconArraw className={styles.svg} />
       </button>
     </>
   );
