@@ -1,3 +1,4 @@
+
 import { apiFetch } from "@/shared/lib/apiFetch";
 import { ENDPOINTS } from "@/shared/lib/endpoints";
 import { TQuery } from "@/shared/typing/query.type";

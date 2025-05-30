@@ -1,6 +1,6 @@
 // src/shared/components/ShowBonusPopupButton.tsx
 "use client";
-import { showModal } from "@/shared/lib/showModal";
+import { showModal } from "@/shared/content/lib/showModal";
 
 
 export const ShowBonusPopupButton = () => {

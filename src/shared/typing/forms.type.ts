@@ -1,4 +1,4 @@
-import { TGamePlatform } from "../lib/platorms.config";
+import { TGamePlatform } from "../content/lib/platorms.config";
 
 export interface IForm {
   onClose?: () => void;

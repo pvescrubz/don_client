@@ -17,7 +17,6 @@ interface ISkinksPage {
 const Skins: FC<ISkinksPage> = async ({ game, query, isMobile }) => {
   const filters = await filtersService.getFilters(game);
   const { category, sort, ...restFiltres } = filters || {};
-
   return (
     <section className={styles.root}>
       <Container>

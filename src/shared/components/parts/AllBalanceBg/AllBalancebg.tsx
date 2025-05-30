@@ -1,4 +1,5 @@
-import { TGamePlatform } from "@/shared/lib/platorms.config";
+
+import { TGamePlatform } from "@/shared/content/platorms.config";
 import Image from "next/image";
 import { FC } from "react";
 import styles from "./AllBalancebg.module.css";

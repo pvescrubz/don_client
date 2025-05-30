@@ -1,4 +1,5 @@
-import { PLATFORM_CONFIG, TGamePlatform } from "@/shared/lib/platorms.config";
+
+import { PLATFORM_CONFIG, TGamePlatform } from "@/shared/content/platorms.config";
 import { FC } from "react";
 import { AllBalanceNavButton } from "../AllBalanceNavButton/AllBalanceNavButton";
 import styles from "./AllBalanceNav.module.css";

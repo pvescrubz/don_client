@@ -1,4 +1,5 @@
 "use client";
+
 import { bloggers } from "@/shared/lib/bloggers";
 import Image from "next/image";
 import Link from "next/link";
