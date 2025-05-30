@@ -1,4 +1,5 @@
-import { FAQ_CONFIG } from "@/shared/lib/faq.config";
+
+import { FAQ_CONFIG } from "@/shared/content/faq.config";
 import { FC } from "react";
 import { Accordion } from "../../parts/Accordion/Accordion";
 import { Container } from "../../ui/containers/Container/Container";

@@ -2,7 +2,8 @@
 
 import { redirect } from "next/navigation";
 import { FC } from "react";
-import { ENDPOINTS } from "../../../lib/endpoints";
+
+import { ENDPOINTS } from "@/shared/lib/endpoints";
 import { Button } from "../../ui/Button/Button";
 import { IconSteam } from "../../ui/svg/IconSteam";
 import styles from "./LoginButton.module.css";

@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import { FC, useEffect, useState } from "react";
 
-import { TFaq } from "@/shared/lib/faq.config";
+import { TFaq } from "@/shared/content/lib/faq.config";
 import { TUl } from "@/shared/typing/elements.type";
 import { IconArraw } from "../../ui/svg/IconFilterArraw";
 import styles from "./Accordion.module.css";

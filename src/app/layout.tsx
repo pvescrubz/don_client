@@ -2,6 +2,7 @@ import { Footer } from "@/shared/components/layout/Footer/Footer";
 import { Header } from "@/shared/components/layout/Header/Header";
 import { Page } from "@/shared/components/ui/containers/Page/Page";
 import { fonts } from "@/shared/lib/fonts";
+
 import { AllProviders } from "@/shared/providers/AllProviders";
 import "@/shared/styles/globals.css";
 import { Metadata } from "next";

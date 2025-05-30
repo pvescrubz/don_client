@@ -1,3 +1,4 @@
+
 import { ENDPOINTS } from "@/shared/lib/endpoints";
 import { midFetch } from "@/shared/lib/midFetch";
 import { TUser } from "../user/user.type";

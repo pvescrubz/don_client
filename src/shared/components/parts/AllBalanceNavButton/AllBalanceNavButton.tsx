@@ -1,5 +1,5 @@
 "use client";
-import { TGamePlatform } from "@/shared/lib/platorms.config";
+import { TGamePlatform } from "@/shared/content/lib/platorms.config";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";

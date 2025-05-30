@@ -2,6 +2,7 @@ import { IFilters } from "@/feature/filters/filters.type";
 import { apiFetch } from "@/shared/lib/apiFetch";
 import { ENDPOINTS } from "@/shared/lib/endpoints";
 
+
 class FiltersService {
   async getFilters(game: string = 'cs'): Promise<IFilters | null> {
     try {

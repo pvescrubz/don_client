@@ -1,4 +1,5 @@
-import { PLATFORM_CONFIG } from "@/shared/lib/platorms.config";
+
+import { PLATFORM_CONFIG } from "@/shared/content/platorms.config";
 import Image from "next/image";
 import { FC } from "react";
 import { Container } from "../../ui/containers/Container/Container";

@@ -1,4 +1,5 @@
-import { PLATFORM_CONFIG } from "@/shared/lib/platorms.config";
+
+import { PLATFORM_CONFIG } from "@/shared/content/platorms.config";
 import { FC } from "react";
 import { AddBalanceGameForm } from "../../forms/addBalanceGamesForm/AddBalanceGameForm";
 import { AllbalanceBg } from "../../parts/AllBalanceBg/AllBalancebg";

@@ -1,5 +1,6 @@
 import SkinPage from "@/pages/SkinsPage";
 import { isMobileDevice } from "@/shared/lib/isMobileDevice";
+
 import { TQuery } from "@/shared/typing/query.type";
 
 const Page = async ({
