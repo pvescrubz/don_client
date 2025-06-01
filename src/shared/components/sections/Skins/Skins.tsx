@@ -27,7 +27,7 @@ const Skins: FC<ISkinksPage> = async ({ game, query, isMobile }) => {
           <Categories categories={category} />
           <FiltersTopGroup sort={sort} className={styles.filters_top} />
           <div className={styles.grid}>
-            {restFiltres && <Filters filtres={restFiltres} />}
+            {restFiltres && <Filters filtres={restFiltres} query={query} />}
             <Catalog
               game={game}
               query={query}

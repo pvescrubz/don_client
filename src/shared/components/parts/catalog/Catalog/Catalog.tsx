@@ -4,6 +4,7 @@ import { FC } from "react";
 
 import { TDiv } from "@/shared/typing/elements.type";
 import clsx from "clsx";
+
 import { CatalogList } from "../CatalogList/CatalogList";
 import { Pagination } from "../Pagination/Pagination";
 import styles from "./Catalog.module.css";

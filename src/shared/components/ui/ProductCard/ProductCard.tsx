@@ -4,6 +4,7 @@ import {
   TSouvenir,
 } from "@/feature/skins/skins.type";
 import { TDiv } from "@/shared/typing/elements.type";
+import { formatedPrice } from "@/shared/utils/formatedPrice";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,7 +44,7 @@ export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
         />
         <div className={styles.descr}>
           <p className={styles.name}>{name}</p>
-          <p className={styles.price}>{price} ₽</p>
+          <p className={styles.price}>{formatedPrice(price)} ₽</p>
         </div>
         <button className={styles.button}>
           <IconCartSmall />В корзину

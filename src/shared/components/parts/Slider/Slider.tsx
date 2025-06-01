@@ -25,6 +25,7 @@ const Slider: FC<ISlider> = ({ items }) => {
           initialSlide={3}
           speed={6000}
           spaceBetween={10}
+          
           breakpoints={{
             768: { spaceBetween: 20 },
           }}

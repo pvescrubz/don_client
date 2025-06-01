@@ -7,10 +7,12 @@ import { IFilter } from "@/feature/filters/filters.type";
 import { Checkbox } from "@/shared/components/parts/filters/FilterAccordion/Checkbox/Checkbox";
 import { IconArraw } from "@/shared/components/ui/svg/IconFilterArraw";
 import { TDiv } from "@/shared/typing/elements.type";
+import { TQuery } from "@/shared/typing/query.type";
 import styles from "./FilterAccordion.module.css";
 
 interface IFilterAccordion extends TDiv {
   item: IFilter;
+  query: TQuery;
 }
 
 export const FilterAccordion: FC<IFilterAccordion> = ({

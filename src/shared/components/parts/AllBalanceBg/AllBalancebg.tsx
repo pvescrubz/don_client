@@ -1,21 +1,20 @@
 
-import { TGamePlatform } from "@/shared/content/platorms.config";
 import Image from "next/image";
 import { FC } from "react";
 import styles from "./AllBalancebg.module.css";
 
 interface IAllBalanceBg {
-  platform: TGamePlatform;
+  image: string;
 }
 
-export const AllbalanceBg: FC<IAllBalanceBg> = ({ platform }) => {
-  const { sectionbgimage } = platform;
+export const AllbalanceBg: FC<IAllBalanceBg> = ({ image }) => {
+
   return (
     <Image
-      src={sectionbgimage}
+      src={image}
       width={184}
       height={184}
-      alt={sectionbgimage}
+      alt={'bg'}
       className={styles.root}
     />
   );

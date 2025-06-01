@@ -1,7 +1,7 @@
 .root {
   min-width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 180px));
   gap: 16px;
 }
 
@@ -10,7 +10,7 @@
     min-width: 100%;
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
     gap: 16px;
   }
 }

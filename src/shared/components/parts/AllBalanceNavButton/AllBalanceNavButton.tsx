@@ -1,5 +1,6 @@
 "use client";
-import { TGamePlatform } from "@/shared/content/lib/platorms.config";
+
+import { TGamePlatform } from "@/shared/content/platorms.config";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +13,7 @@ interface IAllBalanceNavButton {
 }
 
 export const AllBalanceNavButton: FC<IAllBalanceNavButton> = ({ platform }) => {
-  const { navimage, navicon, slug, name } = platform;
+  const { navBg, logo, slug, name } = platform;
 
   const pathname = usePathname();
   const isActive = pathname === slug;
@@ -26,7 +27,7 @@ export const AllBalanceNavButton: FC<IAllBalanceNavButton> = ({ platform }) => {
           inert={isActive}
         >
           <Image
-            src={navimage}
+            src={navBg}
             fill
             alt={name}
             className={styles.bg}
@@ -35,7 +36,7 @@ export const AllBalanceNavButton: FC<IAllBalanceNavButton> = ({ platform }) => {
           />
           <span className={styles.logo_wrapper}>
             <Image
-              src={navicon}
+              src={logo}
               alt={name}
               width={60}
               height={60}
