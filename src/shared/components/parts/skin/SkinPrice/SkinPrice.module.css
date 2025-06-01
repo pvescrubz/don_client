@@ -1,0 +1,30 @@
+.root {
+  position: relative;
+  padding: 13px;
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.root::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  z-index: -1;
+  opacity: 0.3;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
+  background: #23252a;
+  border-radius: inherit;
+  border: 1px solid rgba(225, 225, 225, 0.4);
+}

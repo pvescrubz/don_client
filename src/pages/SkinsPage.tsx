@@ -10,6 +10,7 @@ interface ISkinksPage {
 }
 
 export const SkinksPage: FC<ISkinksPage> = ({ game, query, isMobile }) => {
+
   return (
     <>
       <Skins game={game} query={query} isMobile={isMobile} />

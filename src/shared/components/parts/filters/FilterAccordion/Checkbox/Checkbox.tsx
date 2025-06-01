@@ -22,6 +22,7 @@ export const Checkbox: FC<ICheckbox> = ({
   const { name, ruName } = item;
 
   const { isActive, toggleMultiFilterValue } = useFilter(filter, true);
+
   return (
     <>
       {name && (
@@ -40,6 +41,7 @@ export const Checkbox: FC<ICheckbox> = ({
               <IconCheck className={styles.check} />
             </span>
           </span>
+          
           <span className={styles.text}>{ruName ? ruName : name}</span>
         </button>
       )}

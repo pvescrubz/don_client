@@ -41,6 +41,7 @@ export interface ISkinBase {
   imageUrl: string;
   image: string;
   slug: string;
+  description: string[];
 }
 
 export interface ISpecificallySKinCs {

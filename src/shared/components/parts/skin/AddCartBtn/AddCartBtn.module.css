@@ -1,0 +1,18 @@
+.root {
+  color: #de1717;
+  font-weight: 700;
+  width: fit-content;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  padding-inline: 24px;
+}
+.svg {
+  margin-top: -1px;
+  margin-right: 6px;
+}
+
+@media screen and (max-width: 1024px) {
+  .root {
+    width: 100%;
+  }
+}
