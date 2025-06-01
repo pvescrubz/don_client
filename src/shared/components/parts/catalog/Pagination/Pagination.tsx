@@ -1,6 +1,6 @@
 "use client";
 
-import { TMeta } from "@/feature/skins/skins.type";
+import { IMeta } from "@/feature/skins/skins.type";
 import { IconArraw } from "@/shared/components/ui/svg/IconFilterArraw";
 import { useFilter } from "@/shared/hooks/useFilter";
 import { useWindowSize } from "@/shared/hooks/useWindowSize";
@@ -10,7 +10,7 @@ import { PaginationButton } from "../PaginationButton/PaginationButton";
 import { PaginationDots } from "../PaginationButton/PaginationDots";
 import styles from "./Pagination.module.css";
 interface IPagination {
-  meta: TMeta;
+  meta: IMeta;
 }
 
 export const Pagination: FC<IPagination> = ({ meta }) => {

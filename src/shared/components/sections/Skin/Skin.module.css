@@ -1,0 +1,17 @@
+.root {
+  position: relative;
+  min-height: calc(100dvh - 80px);
+  margin-bottom: clamp(30px, 2.865dvw, 55px);
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  z-index: -1;
+  opacity: 0.09;
+}
+
+.container {
+  display: flex;
+  place-items: center;
+}

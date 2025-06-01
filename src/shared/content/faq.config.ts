@@ -1,9 +1,5 @@
 import { APP_PAGES } from "../dashboard/app.dashboard";
-
-const getName = (slug: string) => {
-  const arr = slug.split("/");
-  return arr[arr.length - 1];
-};
+import { getLastSlugPart } from "../lib/getLastSlugPart";
 
 export const FAQ_CONFIG = {
   [APP_PAGES.FAQ.slug]: [
@@ -53,7 +49,7 @@ export const FAQ_CONFIG = {
         "Скины в нашем магазине отображают все ключевые параметры: качество (Factory New, Minimal Wear и т.д.). Вы можете фильтровать товары по этим показателям при выборе. Также доступна информация о паттерне, цветовой гамме и степени износа, чтобы вы могли выбрать именно тот вариант, который вам нравится.",
     },
   ],
-  [getName(APP_PAGES.BALANCE_STEAM.slug)]: [
+  [getLastSlugPart(APP_PAGES.BALANCE_STEAM.slug)]: [
     {
       title: "Как пополнить баланс Steam?",
       descr:
@@ -85,7 +81,7 @@ export const FAQ_CONFIG = {
         "Если деньги были списаны, но баланс не изменился — дождитесь 5–10 минут. Иногда задержки вызваны техническими работами со стороны Steam. Если проблема осталась — воспользуйтесь формой обратной связи.",
     },
   ],
-  [getName(APP_PAGES.BALANCE_BLIZZARD.slug)]: [
+  [getLastSlugPart(APP_PAGES.BALANCE_BLIZZARD.slug)]: [
     {
       title: "Как пополнить баланс Blizzard?",
       descr:
@@ -117,7 +113,7 @@ export const FAQ_CONFIG = {
         "Проблемы с входом в аккаунт Blizzard не зависят от нашего сервиса. Проверьте правильность ввода данных и обратитесь в официальную поддержку Blizzard.",
     },
   ],
-  [getName(APP_PAGES.BALANCE_PS.slug)]: [
+  [getLastSlugPart(APP_PAGES.BALANCE_PS.slug)]: [
     {
       title: "Как пополнить баланс PlayStation Network?",
       descr:
@@ -149,7 +145,7 @@ export const FAQ_CONFIG = {
         "Отмена платежа возможна только до начала обработки заказа. Если вы указали неверные данные — свяжитесь с поддержкой через форму обратной связи как можно скорее.",
     },
   ],
-  [getName(APP_PAGES.BALANCE_XBOX.slug)]: [
+  [getLastSlugPart(APP_PAGES.BALANCE_XBOX.slug)]: [
     {
       title: "Как пополнить баланс Xbox Live?",
       descr:
@@ -181,7 +177,7 @@ export const FAQ_CONFIG = {
         "Отмена платежа возможна только до начала обработки заказа. Если вы указали неверные данные — свяжитесь с поддержкой через форму обратной связи как можно скорее.",
     },
   ],
-  [getName(APP_PAGES.BALANCE_EPIC.slug)]: [
+  [getLastSlugPart(APP_PAGES.BALANCE_EPIC.slug)]: [
     {
       title: "Как пополнить баланс Epic Games Store?",
       descr:

@@ -1,6 +1,6 @@
 import {
-  TCatalogSkin,
-  TKillCounter,
+  ICatalogSkin,
+  IKillCounter,
   TSouvenir,
 } from "@/feature/skins/skins.type";
 import { TDiv } from "@/shared/typing/elements.type";
@@ -12,11 +12,11 @@ import { IconCartSmall } from "../svg/IconCartSmall";
 import styles from "./ProductCard.module.css";
 
 interface IProductCard extends TDiv {
-  skin: TCatalogSkin;
+  skin: ICatalogSkin;
 }
 
 interface IStatTagProps {
-  killCounter?: TKillCounter;
+  killCounter?: IKillCounter;
   souvenir?: TSouvenir;
 }
 
@@ -24,11 +24,11 @@ export const Top: FC<IStatTagProps> = ({ killCounter, souvenir }) => {
   if (killCounter?.flag)
     return <p className={styles.top}>{killCounter.ruName}</p>;
   if (souvenir?.flag) return <p className={styles.top}>{souvenir.ruName}</p>;
-  return (killCounter || souvenir) && <p className={styles.top} />;
+  return <p className={styles.top} />;
 };
 
 export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
-  const { name, price, imageUrl, slug, killCounter, souvenir } = skin;
+  const { name, price, imageUrl, slug, killCounter, souvenir, game } = skin;
 
   return (
     <div className={clsx(styles.root, className)} {...rest}>
@@ -50,7 +50,7 @@ export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
         </button>
       </div>
 
-      <Link href={`/skin/${slug}`} className={styles.link} />
+      <Link href={`/skin/${game.name}/${slug}`} className={styles.link} />
     </div>
   );
 };

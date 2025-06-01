@@ -1,12 +1,11 @@
-
 import { apiFetch } from "@/shared/lib/apiFetch";
 import { ENDPOINTS } from "@/shared/lib/endpoints";
 import { TQuery } from "@/shared/typing/query.type";
-import { TCatalogRes, TCatalogSkin } from "./skins.type";
+import { ICatalogSkin, TCatalogRes, TSkin } from "./skins.type";
 
 class SkinsService {
   async getSkins(
-    game: string = "cs",
+    game: string = "cs2",
     query: TQuery,
     isMobile: boolean = false
   ): Promise<TCatalogRes | null> {
@@ -17,7 +16,18 @@ class SkinsService {
         endpoint: ENDPOINTS.skins,
         params: game,
         query: query,
-        cacheTime: 300,
+      });
+      return data;
+    } catch (error) {
+      console.error("Ошибка при получении скинов:", error);
+      return null;
+    }
+  }
+  async getSkinBySlug(game: string, slug: string): Promise<TSkin | null> {
+    try {
+      const data = await apiFetch<TSkin>({
+        endpoint: ENDPOINTS.skin,
+        query: { game, slug },
       });
       return data;
     } catch (error) {
@@ -26,9 +36,9 @@ class SkinsService {
     }
   }
 
-  async getWeeklyProducts(): Promise<TCatalogSkin[] | null> {
+  async getWeeklyProducts(): Promise<ICatalogSkin[] | null> {
     try {
-      const data = await apiFetch<TCatalogSkin[]>({
+      const data = await apiFetch<ICatalogSkin[]>({
         endpoint: ENDPOINTS.weekly,
         cacheTime: 60 * 60,
       });
@@ -38,9 +48,9 @@ class SkinsService {
       return null;
     }
   }
-  async getLastBuy(): Promise<TCatalogSkin[] | null> {
+  async getLastBuy(): Promise<ICatalogSkin[] | null> {
     try {
-      const data = await apiFetch<TCatalogSkin[]>({
+      const data = await apiFetch<ICatalogSkin[]>({
         endpoint: ENDPOINTS.lastBuy,
         cacheTime: 60 * 5,
       });
