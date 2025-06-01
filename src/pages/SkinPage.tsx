@@ -9,7 +9,12 @@ interface ISkinksPage {
 export const SkinPage: FC<ISkinksPage> = ({ game, slug }) => {
   return (
     <>
+
       <Skin game={game} slug={slug} />
+
+      {game} и {itemId}
+
+
     </>
   );
 };
