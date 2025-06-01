@@ -20,19 +20,19 @@ class Dashboard {
 
   SKINS = {
     name: "Купить скины",
-    slug: "/skins/cs",
+    slug: "/skins/cs2",
     forHeader: true,
   } satisfies IDashboardItem;
 
   SKINS_CS2 = {
     name: "Купить скины cs2",
-    slug: "/skins/cs",
+    slug: "/skins/cs2",
     tag: "skins",
   } satisfies IDashboardItem;
 
   SKINS_DOTA2 = {
     name: "Купить скины dota2",
-    slug: "/skins/dota",
+    slug: "/skins/dota2",
     tag: "skins",
   } satisfies IDashboardItem;
 

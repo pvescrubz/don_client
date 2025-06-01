@@ -1,5 +1,5 @@
-
 import { FAQ_CONFIG } from "@/shared/content/faq.config";
+import { APP_PAGES } from "@/shared/dashboard/app.dashboard";
 import { FC } from "react";
 import { Accordion } from "../../parts/Accordion/Accordion";
 import { Container } from "../../ui/containers/Container/Container";
@@ -12,11 +12,12 @@ interface IConfig {
 
 export const Faq: FC<IConfig> = ({ platform }) => {
   const config = FAQ_CONFIG[platform];
+  
   return (
     <>
       <Section>
         <Container>
-          <Title>FAQ</Title>
+          <Title h1={platform === APP_PAGES.FAQ.slug}>FAQ</Title>
           <Accordion config={config} />
         </Container>
       </Section>

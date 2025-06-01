@@ -1,6 +1,6 @@
 "use client";
 
-import { TCatalogSkin } from "@/feature/skins/skins.type";
+import { ICatalogSkin } from "@/feature/skins/skins.type";
 import { FC } from "react";
 import "swiper/css";
 import "swiper/css/mousewheel";
@@ -12,7 +12,7 @@ import "./Slider.css";
 import styles from "./Slider.module.css";
 
 interface ISlider {
-  items: TCatalogSkin[];
+  items: ICatalogSkin[];
 }
 
 const Slider: FC<ISlider> = ({ items }) => {

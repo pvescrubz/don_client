@@ -1,18 +1,18 @@
+import { APP_PAGES } from "../dashboard/app.dashboard";
+import { getLastSlugPart } from "../lib/getLastSlugPart";
 
 type GameContentType = {
   mainTitle: string;
   bgimage: string;
-  blocks: Array<{ title: string; text: string }>;
+  blocks: Array<{ title?: string; text: string }>;
 };
 
-
-export const skinsConfig: Record<string, GameContentType> = {
-  cs: {
+export const SKINS_CONFIG: Record<string, GameContentType> = {
+  [getLastSlugPart(APP_PAGES.SKINS_CS2.slug)]: {
     mainTitle: "КУПИТЬ СКИНЫ CS 2",
     bgimage: "/images/cs2bgskins.webp",
     blocks: [
       {
-        title: "",
         text: "Всем желающим купить скины CS2 стоит обязательно посетить торговую площадку Don Viche. У нас представлены тысячи уникальных товаров на любой вкус и запрос. В магазине ты найдешь только оригинальные скины, которые можно приобрести здесь и сейчас.Скины CS2 по низким ценам, доступные агенты, кейсы и прочий скарб из популярного шутера удобно расположены по категориям. Воспользуйся системой фильтров, чтобы найти необходимый товар.",
       },
       {
@@ -29,12 +29,11 @@ export const skinsConfig: Record<string, GameContentType> = {
       },
     ],
   },
-  dota: {
+  [getLastSlugPart(APP_PAGES.SKINS_DOTA2.slug)]: {
     mainTitle: "КУПИТЬ СКИНЫ DOTA 2",
     bgimage: "/images/dota2bgskins.webp",
     blocks: [
       {
-        title: "",
         text: "Покупка косметики для Dota 2 начинается с правильного выбора площадки. На Don Viche собраны сотни уникальных предметов — от простых эффектов до легендарных коллекционных наборов. Все товары лицензированы и моментально добавляются в инвентарь.",
       },
       {
@@ -51,12 +50,11 @@ export const skinsConfig: Record<string, GameContentType> = {
       },
     ],
   },
-  rust: {
+  [getLastSlugPart(APP_PAGES.SKINS_RUST.slug)]: {
     mainTitle: "КУПИТЬ СКИНЫ RUST",
     bgimage: "/images/rustbgskins.webp",
     blocks: [
       {
-        title: "",
         text: "Хочешь выделиться среди игроков в Rust? Посети Don Viche — тут собраны самые разнообразные скины, комплекты одежды, оружейные облики и другие косметические элементы для игры. Все товары проверенные и безопасные — никакого риска блокировки аккаунта.",
       },
       {

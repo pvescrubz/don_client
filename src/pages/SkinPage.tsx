@@ -1,14 +1,15 @@
+import { Skin } from "@/shared/components/sections/Skin/Skin";
 import { FC } from "react";
 
 interface ISkinksPage {
   game: string;
-  itemId: string;
+  slug: string;
 }
 
-export const SkinPage: FC<ISkinksPage> = ({ game, itemId }) => {
+export const SkinPage: FC<ISkinksPage> = ({ game, slug }) => {
   return (
     <>
-      {game} и {itemId}
+      <Skin game={game} slug={slug} />
     </>
   );
 };

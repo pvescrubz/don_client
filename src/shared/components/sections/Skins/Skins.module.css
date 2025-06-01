@@ -1,3 +1,7 @@
+.root {
+  padding-top: 180px;
+}
+
 .box {
   position: relative;
   border-radius: 10px;
@@ -22,23 +26,32 @@
   grid-template-columns: 200px 1fr;
   padding-top: 16px;
 }
-
-@media screen and (max-width: 768px) {
-  .box {
-
-  padding: 0 10px 10px;
+@media screen and (max-width: 1024px) {
+  .root {
+    padding-top: 138px;
+  }
 }
+@media screen and (max-width: 768px) {
+  .root {
+    padding-top: 94px;
+  }
+  .box {
+    padding: 0 10px 10px;
+  }
   .grid {
     display: contents;
     padding-top: 16px;
   }
 
-
   .box {
-    display: grid;
+    display: flex;
+    flex-direction: column;
   }
 
   .filters_top {
-    grid-row: 3;
+    order: 1;
+  }
+  .catalog {
+    order: 2;
   }
 }

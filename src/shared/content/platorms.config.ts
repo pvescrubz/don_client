@@ -1,12 +1,8 @@
 import { APP_PAGES } from "../dashboard/app.dashboard";
-
-const getName = (slug: string) => {
-  const arr = slug.split("/");
-  return arr[arr.length - 1];
-};
+import { getLastSlugPart } from "../lib/getLastSlugPart";
 
 export const PLATFORM_CONFIG = {
-  [getName(APP_PAGES.BALANCE_STEAM.slug)]: {
+  [getLastSlugPart(APP_PAGES.BALANCE_STEAM.slug)]: {
     name: "Steam",
     slug: APP_PAGES.BALANCE_STEAM.slug,
     navimage: "/images/steambg.png",
@@ -17,7 +13,7 @@ export const PLATFORM_CONFIG = {
     image2: "/images/steam2icon.png",
     description: "Заполните форму для пополнения баланса",
   },
-  [getName(APP_PAGES.BALANCE_EPIC.slug)]: {
+  [getLastSlugPart(APP_PAGES.BALANCE_EPIC.slug)]: {
     slug: APP_PAGES.BALANCE_EPIC.slug,
     name: "Epic Games",
     navimage: "/images/epicbg.png",
@@ -28,7 +24,7 @@ export const PLATFORM_CONFIG = {
     image2: "/images/origin2icon.png",
     description: "Заполните форму для пополнения баланса",
   },
-  [getName(APP_PAGES.BALANCE_PS.slug)]: {
+  [getLastSlugPart(APP_PAGES.BALANCE_PS.slug)]: {
     name: "Play Station",
     slug: APP_PAGES.BALANCE_PS.slug,
     navimage: "/images/playstationbg.png",
@@ -39,7 +35,7 @@ export const PLATFORM_CONFIG = {
     image2: "/images/origin2icon.png",
     description: "Заполните форму для пополнения баланса",
   },
-  [getName(APP_PAGES.BALANCE_XBOX.slug)]: {
+  [getLastSlugPart(APP_PAGES.BALANCE_XBOX.slug)]: {
     name: "Xbox",
     slug: APP_PAGES.BALANCE_XBOX.slug,
     navicon: "/images/xboxicon.png",
@@ -50,7 +46,7 @@ export const PLATFORM_CONFIG = {
     image2: "/images/origin2icon.png",
     description: "Заполните форму для пополнения баланса",
   },
-  [getName(APP_PAGES.BALANCE_BLIZZARD.slug)]: {
+  [getLastSlugPart(APP_PAGES.BALANCE_BLIZZARD.slug)]: {
     name: "Blizzard",
     slug: APP_PAGES.BALANCE_BLIZZARD.slug,
     navimage: "/images/blizzardbg.png",
@@ -63,4 +59,5 @@ export const PLATFORM_CONFIG = {
   },
 } as const;
 
-export type TGamePlatform = (typeof PLATFORM_CONFIG)[keyof typeof PLATFORM_CONFIG];
+export type TGamePlatform =
+  (typeof PLATFORM_CONFIG)[keyof typeof PLATFORM_CONFIG];

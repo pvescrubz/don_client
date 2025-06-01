@@ -42,6 +42,11 @@ export const ENDPOINTS = {
     url: "/api/skins", // + /{game}
     auth: false,
   },
+  skin: {
+    method: "GET",
+    url: "/api/skins/skin", // + query game + slug
+    auth: false,
+  },
   weekly: {
     method: "GET",
     url: "/api/skins/weekly",

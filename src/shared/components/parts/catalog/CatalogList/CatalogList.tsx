@@ -1,10 +1,10 @@
-import { TCatalogSkin } from "@/feature/skins/skins.type";
+import { ICatalogSkin } from "@/feature/skins/skins.type";
 import { ProductCard } from "@/shared/components/ui/ProductCard/ProductCard";
 import { FC } from "react";
 import styles from "./CatalogList.module.css";
 
 interface ICatalogList {
-  skins: TCatalogSkin[];
+  skins: ICatalogSkin[];
 }
 
 export const CatalogList: FC<ICatalogList> = ({ skins }) => {
