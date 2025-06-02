@@ -1,5 +1,7 @@
+import GuaranteePage from "@/pages/GaranteePage";
+
 const Page = () => {
-  return <>guarantee</>;
+  return <GuaranteePage />;
 };
 
 export default Page;
