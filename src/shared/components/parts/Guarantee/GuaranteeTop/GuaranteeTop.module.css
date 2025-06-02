@@ -1,0 +1,38 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.text {
+  font-family: var(--second-family);
+font-weight: 900;
+font-size: 20px;
+line-height: 130%;
+color: rgba(255, 255, 255, 0.6);
+}
+
+.title {
+  font-family: var(--second-family);
+font-weight: 900;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: #fff;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.red {
+  color: #de1717;
+}
+
+.image {
+  object-fit: cover;
+}
