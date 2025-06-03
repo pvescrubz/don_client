@@ -1,4 +1,3 @@
-// src/components/modals/BonusPopup/BonusPopup.tsx
 "use client";
 import { APP_PAGES } from "@/shared/dashboard/app.dashboard";
 import { useModalStore } from "@/shared/stores/popup.store";
@@ -10,12 +9,7 @@ import { ButtonLink } from "../../ui/Button/ButtonLink";
 import { IconClose } from "../../ui/svg/IconClose";
 import styles from "./BonusPopup.module.css";
 
-
-
-export const BonusPopup: FC<TDiv> = ({
-}) => {
-
-  
+export const BonusPopup: FC<TDiv> = () => {
   const [modalStore, setOpenModal] = useModalStore((state) => [
     state.modals.BonusPopup,
     state.setOpenModal,
@@ -35,7 +29,7 @@ export const BonusPopup: FC<TDiv> = ({
     <div className={clsx(styles.root)}>
       <div className={styles.container}>
         <button className={styles.closeButton} onClick={reject}>
-          <IconClose className={styles.close}/>
+          <IconClose className={styles.close} />
         </button>
         <Image
           src="/images/procentpopup.png"
@@ -46,14 +40,14 @@ export const BonusPopup: FC<TDiv> = ({
         />
         <p className={styles.title}>УСПЕЙ ПОЛУЧИТЬ БОНУС</p>
         <p className={styles.text}>
-         Пополни свой лицевой счет от 10 000 ₽ прямо сейчас и получи 10% в виде бонуса на свой счет!
+          Пополни свой лицевой счет от 10 000 ₽ прямо сейчас и получи 10% в виде
+          бонуса на свой счет!
         </p>
         <ButtonLink
           href={APP_PAGES.BALANCE_STEAM.slug}
           size="small"
           variant="primary"
           className={styles.button}
-       
         >
           ПОЛУЧИТЬ
         </ButtonLink>

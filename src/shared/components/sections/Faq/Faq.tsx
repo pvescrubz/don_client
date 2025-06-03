@@ -11,14 +11,14 @@ interface IConfig {
 }
 
 export const Faq: FC<IConfig> = ({ platform }) => {
-  const config = FAQ_CONFIG[platform];
-  
+  const items = FAQ_CONFIG[platform];
+
   return (
     <>
       <Section>
         <Container>
           <Title h1={platform === APP_PAGES.FAQ.slug}>FAQ</Title>
-          <Accordion config={config} />
+          <Accordion items={Object.values(items)} />
         </Container>
       </Section>
     </>

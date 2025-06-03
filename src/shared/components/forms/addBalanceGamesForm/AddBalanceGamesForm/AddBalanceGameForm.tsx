@@ -3,19 +3,22 @@
 import { FormInput } from "@/shared/components/forms/FormInput/FormInput";
 import { AVAILABLE_FIELDS } from "@/shared/components/forms/input.info";
 import { Button } from "@/shared/components/ui/Button/Button";
-import { IForm } from "@/shared/typing/forms.type";
+import { IPlatformConfigItem } from "@/shared/content/platorms.config";
 import clsx from "clsx";
 import Image from "next/image";
 import { FC } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { FormSelect } from "../../FormSelect/FormSelect";
-
 import { FormTitle } from "../FormTitle/FormTitle";
 import { PrivacyNotice } from "../PrivacyNotice/PrivacyNotice";
 import { WarningSteam } from "../WarningSteam/WarningSteam";
 import styles from "./AddBalanceGameForm.module.css";
 
-export const AddBalanceGameForm: FC<IForm> = ({ config }) => {
+interface IAddBalanceGameForm {
+  config: IPlatformConfigItem;
+}
+
+export const AddBalanceGameForm: FC<IAddBalanceGameForm> = ({ config }) => {
   const {
     register,
     handleSubmit,

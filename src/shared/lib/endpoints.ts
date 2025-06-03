@@ -39,7 +39,7 @@ export const ENDPOINTS = {
   },
   skins: {
     method: "GET",
-    url: "/api/skins", // + /{game}
+    url: "/api/skins/all",
     auth: false,
   },
   skin: {

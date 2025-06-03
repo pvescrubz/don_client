@@ -17,8 +17,8 @@ interface ISkin {
   slug: string;
 }
 
-export const Skin: FC<ISkin> = async ({ game, slug }) => {
-  const skin = await skinsService.getSkinBySlug(game, slug);
+export const Skin: FC<ISkin> = async ({ slug }) => {
+  const skin = await skinsService.getSkinBySlug(slug);
   if (!skin) return null;
 
   const {

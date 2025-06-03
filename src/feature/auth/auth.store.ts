@@ -17,7 +17,7 @@ export const useAuthStore = create<TAuthStore>()(
       setLoading: (value: boolean) => set({ loading: value }),
     }),
     {
-      name: "authStore",
+      name: "useAuthStore",
     }
   )
 );

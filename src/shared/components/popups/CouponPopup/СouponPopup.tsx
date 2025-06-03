@@ -1,7 +1,6 @@
-// CouponPopup.tsx
 "use client";
 
-import { useStopScroll } from "@/shared/lib/hooks/useStopScroll";
+import { useStopScroll } from "@/shared/hooks/useStopScroll";
 import { useModalStore } from "@/shared/stores/popup.store";
 import { TDiv } from "@/shared/typing/elements.type";
 import clsx from "clsx";
@@ -11,9 +10,7 @@ import { Button } from "../../ui/Button/Button";
 import styles from "./СouponPopup.module.css";
 
 export const CouponPopup: FC<TDiv> = () => {
-
   const textToCopy = "12SFDSFG2353DFSDF$23"; // Текст купона
-
 
   const [copied, setCopied] = useState(false);
 
@@ -50,13 +47,13 @@ export const CouponPopup: FC<TDiv> = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  },);
+  });
 
-    const handleCopy = async () => {
+  const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(textToCopy);
       setCopied(true);
-      setTimeout(() => setCopied(false), 4000); 
+      setTimeout(() => setCopied(false), 4000);
     } catch (err) {
       console.error("Не удалось скопировать текст: ", err);
     }

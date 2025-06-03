@@ -1,4 +1,3 @@
-// src/shared/stores/popup.store.ts
 import { createWithEqualityFn } from "zustand/traditional";
 
 type ModalState = {
@@ -64,5 +63,5 @@ export const useModalStore = createWithEqualityFn<ModalStore>(
         return { modals: currentModals };
       }),
   }),
-  Object.is 
+  Object.is
 );

@@ -14,8 +14,7 @@ class SkinsService {
     try {
       const data = await apiFetch<TCatalogRes>({
         endpoint: ENDPOINTS.skins,
-        params: game,
-        query: query,
+        query: { ...query, game: game },
       });
       return data;
     } catch (error) {
@@ -23,11 +22,11 @@ class SkinsService {
       return null;
     }
   }
-  async getSkinBySlug(game: string, slug: string): Promise<TSkin | null> {
+  async getSkinBySlug(slug: string): Promise<TSkin | null> {
     try {
       const data = await apiFetch<TSkin>({
         endpoint: ENDPOINTS.skin,
-        query: { game, slug },
+        query: { slug },
       });
       return data;
     } catch (error) {
@@ -40,7 +39,7 @@ class SkinsService {
     try {
       const data = await apiFetch<ICatalogSkin[]>({
         endpoint: ENDPOINTS.weekly,
-        cacheTime: 60 * 60,
+        // cacheTime: 60 * 60,
       });
       return data;
     } catch (error) {
@@ -52,7 +51,7 @@ class SkinsService {
     try {
       const data = await apiFetch<ICatalogSkin[]>({
         endpoint: ENDPOINTS.lastBuy,
-        cacheTime: 60 * 5,
+        // cacheTime: 60 * 5,
       });
       return data;
     } catch (error) {

@@ -1,19 +1,13 @@
-
+import { apiFetch } from "@/shared/lib/apiFetch";
 import { ENDPOINTS } from "@/shared/lib/endpoints";
-import { midFetch } from "@/shared/lib/midFetch";
-import { TUser } from "../user/user.type";
+import { IUser } from "../user/user.type";
 
 class AuthService {
-  async checkAuth(): Promise<TUser> {
+  async checkAuth(): Promise<IUser> {
     try {
-      const resp = await midFetch({ endpoint: ENDPOINTS.checkAccess });
+      const resp = await apiFetch<IUser>({ endpoint: ENDPOINTS.checkAccess });
 
-      if (!resp.ok) {
-        const errData = await resp.json();
-        throw new Error(errData.error || "Unauthorized");
-      }
-
-      return await resp.json();
+      return resp;
     } catch (error) {
       console.error("Auth check failed:", error);
       throw error;
@@ -21,14 +15,9 @@ class AuthService {
   }
   async logout(): Promise<void> {
     try {
-      const resp = await midFetch({ endpoint: ENDPOINTS.logout });
-
-      if (!resp.ok) {
-        const errData = await resp.json();
-        throw new Error(errData.error || "Ошибка при выходе");
-      }
+      await apiFetch({ endpoint: ENDPOINTS.logout });
     } catch (error) {
-      console.error("Auth check failed:", error);
+      console.error("Logout failed:", error);
       throw error;
     }
   }

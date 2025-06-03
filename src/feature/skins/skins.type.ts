@@ -44,15 +44,19 @@ export interface ISkinBase {
   description: string[];
 }
 
-export interface ISpecificallySKinCs {
-  category?: ISpecificallyField;
-  quality?: ISpecificallyField;
+export interface ISpecifically {
+  game?: ISpecificallyField;
   rarity?: ISpecificallyField;
-  phase?: ISpecificallyField;
-  killCounter?: ISpecificallyField;
+  type?: ISpecificallyField;
+
+  category?: ISpecificallyField;
+  model?: ISpecificallyField;
   souvenir?: ISpecificallyField;
-}
-export interface ISpecificallySKinDota {
+  killCounter?: ISpecificallyField;
+  exterior?: ISpecificallyField;
+  phase?: ISpecificallyField;
+
+  quality?: ISpecificallyField;
   hero?: ISpecificallyField;
   slot?: ISpecificallyField;
 }
@@ -64,4 +68,4 @@ export interface ISpecificallyField {
   groupName: string;
 }
 
-export type TSkin = ISkinBase & ISpecificallySKinCs & ISpecificallySKinDota;
+export type TSkin = ISkinBase & ISpecifically;

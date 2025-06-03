@@ -18,7 +18,7 @@ export interface ICaregoryItem {
   id: string;
   name: string;
   ruName: string;
-  type: ITypeData[];
+  model: ITypeData[];
 }
 
 export interface ITypeData {

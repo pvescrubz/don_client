@@ -1,6 +1,19 @@
 import { APP_PAGES } from "../dashboard/app.dashboard";
 import { getLastSlugPart } from "../lib/getLastSlugPart";
 
+export interface IPlatformConfigItem {
+  name: string;
+  slug: string;
+  navBg: string;
+  logo: string;
+  formTitle: string;
+  formImage: string;
+  fieldTitle: string;
+}
+export interface IPlatformConfig {
+  [key: string]: IPlatformConfigItem;
+}
+
 export const PLATFORM_CONFIG = {
   [getLastSlugPart(APP_PAGES.BALANCE_STEAM.slug)]: {
     name: "Steam",
@@ -47,7 +60,4 @@ export const PLATFORM_CONFIG = {
     formImage: "/images/blizzardbgform.webp",
     fieldTitle: "Заполните форму для пополнения баланса",
   },
-} as const;
-
-export type TGamePlatform =
-  (typeof PLATFORM_CONFIG)[keyof typeof PLATFORM_CONFIG];
+} satisfies IPlatformConfig;

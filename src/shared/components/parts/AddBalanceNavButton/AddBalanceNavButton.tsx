@@ -1,18 +1,18 @@
 "use client";
 
-import { TGamePlatform } from "@/shared/content/platorms.config";
+import { IPlatformConfigItem } from "@/shared/content/platorms.config";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC } from "react";
-import styles from "./AllBalanceNavButton.module.css";
+import styles from "./AddBalanceNavButton.module.css";
 
-interface IAllBalanceNavButton {
-  platform: TGamePlatform;
+interface IAddBalanceNavButton {
+  platform: IPlatformConfigItem;
 }
 
-export const AllBalanceNavButton: FC<IAllBalanceNavButton> = ({ platform }) => {
+export const AddBalanceNavButton: FC<IAddBalanceNavButton> = ({ platform }) => {
   const { navBg, logo, slug, name } = platform;
 
   const pathname = usePathname();

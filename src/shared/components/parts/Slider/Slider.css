@@ -7,10 +7,5 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  max-width: 180px;
 }
-
-/* .reviwe__wrapper {
-  display: flex;
-  flex-grow: 1;
-  height: 100%;
-} */
