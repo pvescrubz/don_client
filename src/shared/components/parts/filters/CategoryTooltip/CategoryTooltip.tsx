@@ -28,7 +28,6 @@ export const CategoryTooltip: FC<ICategoryTooltip> = ({ item }) => {
     setPortalContainer(document.body);
   }, []);
 
-
   useEffect(() => {
     if (active && popoverRef.current && windowWidth > 1024) {
       const popoverRect = popoverRef.current.getBoundingClientRect();
@@ -67,11 +66,11 @@ export const CategoryTooltip: FC<ICategoryTooltip> = ({ item }) => {
 
   useStopScroll(active && windowWidth <= 1024, "useCategoryTooltip");
 
-  const { name, ruName, type } = item;
+  const { name, ruName, model } = item;
 
   return (
     <>
-      {item && type.length > 0 && (
+      {item && model.length > 0 && (
         <div className={clsx(styles.root, active && styles.active)}>
           <button
             onClick={handleOpen}
@@ -91,11 +90,11 @@ export const CategoryTooltip: FC<ICategoryTooltip> = ({ item }) => {
             >
               <div ref={popoverRef} className={styles.list} inert={!active}>
                 <div className={clsx(styles.sroll_box, "scrollbar")}>
-                  {type.map((item) => (
+                  {model.map((item) => (
                     <CategoryCheckbox
                       key={item.id}
                       item={item}
-                      filter={"type"}
+                      filter={"model"}
                     />
                   ))}
                 </div>
@@ -120,7 +119,7 @@ export const CategoryTooltip: FC<ICategoryTooltip> = ({ item }) => {
                     </Button>
 
                     <div className={clsx(styles.sroll_box, "scrollbar")}>
-                      {type.map((item) => (
+                      {model.map((item) => (
                         <CategoryCheckbox
                           key={item.id}
                           item={item}

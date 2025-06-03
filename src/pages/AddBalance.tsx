@@ -7,6 +7,8 @@ interface IAddBalancePage {
 }
 
 export const AddBalancePage: FC<IAddBalancePage> = ({ platform }) => {
+  if (!platform) return <div>fallback</div>;
+
   return (
     <>
       <AddBalance platform={platform} />;

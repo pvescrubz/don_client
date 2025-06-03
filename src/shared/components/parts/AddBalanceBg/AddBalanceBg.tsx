@@ -1,20 +1,18 @@
-
 import Image from "next/image";
 import { FC } from "react";
-import styles from "./AllBalancebg.module.css";
+import styles from "./AddBalanceBg.module.css";
 
-interface IAllBalanceBg {
+interface IAddBalanceBg {
   image: string;
 }
 
-export const AllbalanceBg: FC<IAllBalanceBg> = ({ image }) => {
-
+export const AddBalanceBg: FC<IAddBalanceBg> = ({ image }) => {
   return (
     <Image
       src={image}
       width={184}
       height={184}
-      alt={'bg'}
+      alt={"bg"}
       className={styles.root}
     />
   );

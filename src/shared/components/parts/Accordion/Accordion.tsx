@@ -1,18 +1,17 @@
 "use client";
 
+import { IFaqItem } from "@/shared/content/faq.config";
+import { TUl } from "@/shared/typing/elements.type";
 import clsx from "clsx";
 import { FC, useEffect, useState } from "react";
-
-import { TFaq } from "@/shared/content/lib/faq.config";
-import { TUl } from "@/shared/typing/elements.type";
 import { IconArraw } from "../../ui/svg/IconFilterArraw";
 import styles from "./Accordion.module.css";
 
 interface IAccordion extends TUl {
-  config?: TFaq;
+  items?: IFaqItem[];
 }
 
-export const Accordion: FC<IAccordion> = ({ config, className, ...rest }) => {
+export const Accordion: FC<IAccordion> = ({ items, className, ...rest }) => {
   const [openDropdown, setOpenDropdown] = useState<number | null>(0);
 
   const handleOpenDropdown = (index: number) => {
@@ -20,16 +19,16 @@ export const Accordion: FC<IAccordion> = ({ config, className, ...rest }) => {
   };
 
   useEffect(() => {
-    if (config && config.length > 0) {
+    if (items && items.length > 0) {
       setOpenDropdown(0);
     }
-  }, [config]);
+  }, [items]);
 
-  if (!config) return null;
+  if (!items) return null;
 
   return (
     <ul className={clsx(styles.content, className)} {...rest}>
-      {config.map((item, index) => (
+      {items.map((item, index) => (
         <li key={index} className={styles.item}>
           <button
             className={styles.title}
@@ -56,3 +55,4 @@ export const Accordion: FC<IAccordion> = ({ config, className, ...rest }) => {
     </ul>
   );
 };
+

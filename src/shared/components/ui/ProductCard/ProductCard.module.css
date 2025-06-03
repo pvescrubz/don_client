@@ -1,16 +1,23 @@
 .root {
-
   width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
   max-width: 180px;
   backdrop-filter: blur(24px);
-  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
-  background: #23252a;
+
   border-radius: 10px;
   padding-top: 10px;
+}
+.root::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0.3;
+  background: #23252a;
   border: 1px solid rgba(225, 225, 225, 0.4);
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
 }
 
 .top {
@@ -87,7 +94,7 @@
   transition: color 0.4s ease-in-out;
   z-index: 2;
 }
-.button::after {
+.button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -98,7 +105,7 @@
   border-radius: inherit;
 }
 
-.root::after {
+.root::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -121,8 +128,8 @@
   .root:hover .button {
     color: #fff;
   }
-  .root:hover .button::after,
-  .root:hover::after {
+  .root:hover .button::before,
+  .root:hover::before {
     opacity: 1;
   }
 }

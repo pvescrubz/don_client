@@ -10,7 +10,7 @@ import styles from "./LoginButton.module.css";
 
 export const LoginButton: FC = () => {
   const handleClick = async () => {
-    redirect(`http://localhost:8080${ENDPOINTS.steamLogin.url}`);
+    redirect(process.env.NEXT_PUBLIC_BACK_URL + ENDPOINTS.steamLogin.url);
   };
 
   return (

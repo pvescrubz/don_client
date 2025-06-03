@@ -4,9 +4,8 @@ import { useModalStore } from "@/shared/stores/popup.store";
 import clsx from "clsx";
 import Image from "next/image";
 import { FC, useEffect, useRef } from "react";
-import { ButtonLink } from "../../ui/Button/ButtonLink";
+import { LoginButton } from "../../parts/LoginButton/LoginButton";
 import { IconClose } from "../../ui/svg/IconClose";
-import { IconSteam } from "../../ui/svg/IconSteam";
 import styles from "./AuthPopup.module.css";
 
 export const AuthPopup: FC = () => {
@@ -14,6 +13,8 @@ export const AuthPopup: FC = () => {
     state.modals.AuthPopup,
     state.setOpenModal,
   ]);
+
+  useStopScroll(modalStore.open, "AuthPopup");
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -23,18 +24,13 @@ export const AuthPopup: FC = () => {
     }
   };
 
-  const reject = () => {
-    close();
-  };
-
-  // 🔁 Объединяем все эффекты в один useEffect
-useEffect(() => {
+  useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as Node;
       const current = containerRef.current;
 
       if (current && !current.contains(target)) {
-        reject();
+        close();
       }
     };
 
@@ -42,31 +38,32 @@ useEffect(() => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, );
-
-  // 🚫 Блокировка скролла
-  useStopScroll(modalStore.open, "AuthPopup");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <div  className={clsx(styles.root, modalStore.open && styles.visible)}>
+    <div className={clsx(styles.root, modalStore.open && styles.visible)}>
       <div ref={containerRef} className={styles.container}>
         <div className={styles.top}>
           <p className={styles.title}>Необходима авторизация</p>
-          <button className={styles.closeButton} onClick={reject}>
+          <button className={styles.closeButton} onClick={close}>
             <IconClose className={styles.close} />
           </button>
         </div>
 
         <div className={styles.content}>
-          <Image src="/images/alarm.png" alt="alt" width={44} height={44} className={styles.image} />
+          <Image
+            src="/images/alert_button.png"
+            alt="alt"
+            width={44}
+            height={44}
+            className={styles.image}
+          />
           <p className={styles.text}>Войдите, чтобы продолжить</p>
           <p className={styles.text_small}>
             Войдите через свой профиль Steam, чтобы продолжить работу с сайтом
           </p>
-          <ButtonLink href="/" size="small" variant="primary" className={styles.button}>
-            <IconSteam className={styles.icon} />
-            ВОЙТИ ЧЕРЕЗ STEAM
-          </ButtonLink>
+          <LoginButton />
         </div>
       </div>
     </div>

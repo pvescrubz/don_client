@@ -6,9 +6,10 @@ import { Title } from "../../ui/Title/Title";
 
 export const WeeklyProducts: FC = async () => {
   const items = await skinsService.getWeeklyProducts();
+
   return (
     <>
-      {items && (
+      {items && items.length && (
         <Section>
           <Title>Товары недели</Title>
           <Slider items={items} />

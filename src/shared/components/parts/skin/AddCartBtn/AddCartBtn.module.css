@@ -5,6 +5,8 @@
   flex-wrap: nowrap;
   white-space: nowrap;
   padding-inline: 24px;
+  position: relative;
+  z-index: 3;
 }
 .svg {
   margin-top: -1px;

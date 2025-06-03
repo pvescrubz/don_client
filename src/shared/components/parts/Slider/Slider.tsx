@@ -22,27 +22,22 @@ const Slider: FC<ISlider> = ({ items }) => {
         <Swiper
           modules={[Mousewheel, Autoplay]}
           slidesPerView={"auto"}
-          initialSlide={3}
-          speed={6000}
+          speed={3000}
           spaceBetween={10}
-          
           breakpoints={{
             768: { spaceBetween: 20 },
           }}
           loop={true}
-          // loopAddBlankSlides={true}
-          // centeredSlides={true}
-          roundLengths={true}
           grabCursor={true}
           autoplay={{
-            delay: 0.1,
-
+            delay: 0,
+            disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
         >
           {items.map((item) => (
             <SwiperSlide key={item.id} className={"slide"}>
-              <div className={styles.reviwe__wrapper}>
+              <div className={styles.box}>
                 <ProductCard skin={item} className={styles.card} />
               </div>
             </SwiperSlide>

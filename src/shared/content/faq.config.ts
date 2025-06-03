@@ -211,4 +211,10 @@ export const FAQ_CONFIG = {
   ],
 } as const;
 
-export type TFaq = (typeof FAQ_CONFIG)[keyof typeof FAQ_CONFIG];
+export interface IFaqItem {
+  title: string;
+  descr: string;
+}
+export interface IFaq {
+  [key: string]: IFaqItem;
+}

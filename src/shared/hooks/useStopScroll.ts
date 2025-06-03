@@ -72,5 +72,6 @@ export const useStopScroll = (
         document.body.style.paddingRight = "0px";
       }
     };
-  }, [condition, scrollWidth, id, ref]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [condition, scrollWidth]);
 };
