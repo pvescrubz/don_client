@@ -1,12 +1,14 @@
+import { TDiv } from "@/shared/typing/elements.type";
 import clsx from "clsx";
 import Image from "next/image";
-
-import { Container } from "@/shared/components/ui/containers/Container/Container";
-import { Section } from "@/shared/components/ui/containers/Section/Section";
-import { Title } from "@/shared/components/ui/Title/Title";
+import Link from "next/link";
+import { FC } from "react";
+import { Container } from "../../ui/containers/Container/Container";
+import { Section } from "../../ui/containers/Section/Section";
+import { Title } from "../../ui/Title/Title";
 import styles from "./GuaranteeTop.module.css";
 
-export const GuaranteeTop = () => {
+export const GuaranteeTop: FC<TDiv> = () => {
   return (
     <Section className={styles.root}> 
       <Image
@@ -60,6 +62,33 @@ export const GuaranteeTop = () => {
             модераторы помогут разобраться с ситуацией.
           </p>
         </div>
+        <div className={styles.root_bottom}>
+              <div className={styles.container_bottom}>
+        <Image
+          src="/images/alertgurantee.png"
+          alt="alt"
+          width={60}
+          height={60}
+          className={styles.image_bottom}
+        />
+        <h2 className={styles.title_bottom}>Предупреждение безопасности</h2>
+          <p className={styles.text_bottom}>
+            Ваш обмен был отменен в Steam. Если вы этого не делали - ваш аккаунт
+            находится <span className={styles.red}>под угрозой</span>, а ваши
+            скины могут быть украдены. Чтобы предотвратить эту проблему{" "}
+            <span className={styles.red}>не принимайте сейчас обмен</span> и
+            выполните действия, указанные ниже.
+          </p>
+        <div className={styles.item_bottom}>
+          <p className={styles.text_item_bottom}></p>
+         <p className={styles.text_item_bottom}>1. Измените пароль в настройках вашего аккаунта в Steam.</p>
+<p className={styles.text_item_bottom}>2. Отзовите арі ключ, сгенерированный злоумышленниками. Сделать это можно <Link href="" className={styles.link}>здесь.</Link>Генерировать новый ключ не нужно.</p>
+<p className={styles.text_item_bottom}>3. Смените вашу ссылку на обмен. Сделать это можно <Link href="" className={styles.link}>тут.</Link></p>
+<p className={styles.text_item_bottom}>4.В дальнейшем будьте осторожны при авторизации на сторонних сайтах через ваш аккаунт steam, именно они зачастую являются причиной взлома вашего аккаунта.</p>
+<p className={styles.text_item_bottom}>5.Теперь ваш аккаунт в безопасности и вы можете дальше использовать наш сайт.</p>
+        </div>
+        </div>
+      </div>
       </Container>
       </Section>
   );
