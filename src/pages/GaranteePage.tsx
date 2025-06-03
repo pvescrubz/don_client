@@ -1,7 +1,15 @@
-import { Guarantee } from "@/shared/components/sections/Garantee/Garantee";
+
+
+import { GuaranteeTop } from "@/shared/components/sections/GuaranteeTop/GuaranteeTop";
 import { FC } from "react";
 
 export const GuaranteePage: FC = () => {
-  return <Guarantee />;
-};
+  return (
+  <>
+    <GuaranteeTop />
+   
+  </>
+  )
+
+}
 export default GuaranteePage;
