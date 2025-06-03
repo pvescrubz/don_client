@@ -1,3 +1,4 @@
+import { AddBalanceFake } from "@/shared/components/sections/AddBalanceFake/AddBalanceFake";
 import { Bloggers } from "@/shared/components/sections/Blogers/Blogers";
 import { BuySkinsHome } from "@/shared/components/sections/BuySkins/BuySkins";
 import { Faq } from "@/shared/components/sections/Faq/Faq";
@@ -16,6 +17,7 @@ export const HomePage: FC = () => {
         <BuySkinsHome />
         <WeeklyProducts />
         <Statistic />
+        <AddBalanceFake />
         <Bloggers />
       </RedContainer>
 
