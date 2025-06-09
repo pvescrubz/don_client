@@ -1,16 +1,11 @@
 import { FC } from "react";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 import { Button } from "../../ui/Button/Button";
 import { FormInput } from "../FormInput/FormInput";
 import { AVAILABLE_FIELDS } from "../input.info";
 import styles from "./PriceCheckForm.module.css";
 
-interface IPriceCheckForm {
-  onClose: () => void;
-}
-
-export const PriceCheckForm: FC<IPriceCheckForm> = ({ onClose }) => {
+export const PriceCheckForm: FC = () => {
   const {
     register,
     handleSubmit,
@@ -21,10 +16,6 @@ export const PriceCheckForm: FC<IPriceCheckForm> = ({ onClose }) => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
-    if (onClose) {
-      onClose();
-      toast.success("Сообщение отправлено");
-    }
     console.log(data);
   };
 

@@ -9,7 +9,7 @@ export const WeeklyProducts: FC = async () => {
 
   return (
     <>
-      {items && items.length && (
+      {items && items.length > 0 && (
         <Section>
           <Title>Товары недели</Title>
           <Slider items={items} />

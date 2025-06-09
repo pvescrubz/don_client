@@ -35,8 +35,8 @@
 
 .image {
   width: auto;
+  max-height: 100%;
 }
-
 
 @media screen and (max-width: 1200px) {
   .root {

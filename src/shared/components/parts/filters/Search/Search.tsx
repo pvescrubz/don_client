@@ -1,5 +1,5 @@
 "use client";
-import { StyledInput } from "@/shared/components/ui/StyledInput/StyledInput";
+import { StyledInput } from "@/shared/components/forms/ui/StyledInput/StyledInput";
 import { IconSearch } from "@/shared/components/ui/svg/IconSearch";
 import { useFilter } from "@/shared/hooks/useFilter";
 import { useScrollElementStore } from "@/shared/stores/scroll-element.store";

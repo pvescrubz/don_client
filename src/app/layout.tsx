@@ -3,7 +3,7 @@ import { Header } from "@/shared/components/layout/Header/Header";
 import { Page } from "@/shared/components/ui/containers/Page/Page";
 import { fonts } from "@/shared/lib/fonts";
 
-import { AllProviders } from "@/shared/providers/AllProviders";
+import { RootProviders } from "@/shared/providers/RootProviders";
 import "@/shared/styles/globals.css";
 import { Metadata } from "next";
 
@@ -20,13 +20,13 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={fonts}>
-        <AllProviders>
+        <RootProviders>
           <Page>
             <Header />
             <main>{children}</main>
             <Footer />
           </Page>
-        </AllProviders>
+        </RootProviders>
       </body>
     </html>
   );

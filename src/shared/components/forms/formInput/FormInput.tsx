@@ -1,18 +1,25 @@
-'use client'
-import { FC } from "react";
+"use client";
+import { TDiv } from "@/shared/typing/elements.type";
+import { FC, ReactNode } from "react";
 import { FieldValues, UseFormRegister } from "react-hook-form";
-import { StyledInput } from "../../ui/StyledInput/StyledInput";
 import { POST_INPUTS, TFieldKeys } from "../input.info";
+import { StyledInput } from "../ui/StyledInput/StyledInput";
 
-
-
-interface IFromInput {
+interface IFormInput extends TDiv {
   fieldName: TFieldKeys;
   register: UseFormRegister<FieldValues>;
   error: boolean;
+  iconLeft?: ReactNode;
 }
 
-export const FormInput: FC<IFromInput> = ({ fieldName, register, error }) => {
+export const FormInput: FC<IFormInput> = ({
+  fieldName,
+  register,
+  error,
+  className,
+  iconLeft,
+  ...rest
+}) => {
   const {
     name,
     type,
@@ -20,13 +27,15 @@ export const FormInput: FC<IFromInput> = ({ fieldName, register, error }) => {
     placeholder,
     defaultValue,
     iconRigth,
-    iconLeft,
+    iconLeft: iconLeftFromConfig,
     patternRegExp,
     patternMessage,
+    blockLettersEntry,
   } = POST_INPUTS[fieldName];
 
   return (
     <StyledInput
+      className={className}
       InputProps={{
         autoComplete: "off",
         type,
@@ -39,10 +48,19 @@ export const FormInput: FC<IFromInput> = ({ fieldName, register, error }) => {
               ? { value: patternRegExp, message: patternMessage }
               : undefined,
         }),
+
+        ...(blockLettersEntry && {
+          onKeyPress: (event) => {
+            if (!/^\d$/.test(event.key)) {
+              event.preventDefault();
+            }
+          },
+        }),
       }}
-      iconLeft={iconLeft}
-     iconRigth={iconRigth}
+      iconLeft={iconLeft ?? iconLeftFromConfig}
+      iconRigth={iconRigth}
       error={error}
+      {...rest}
     />
   );
 };

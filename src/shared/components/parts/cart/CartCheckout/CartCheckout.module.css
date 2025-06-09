@@ -1,0 +1,81 @@
+.title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 15px;
+}
+
+.border {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.gray {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.count {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  text-align: right;
+  color: #fff;
+}
+.amount_title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: #fff;
+}
+
+.amount {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  text-align: right;
+  color: #fff;
+}
+.btn_group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.notic {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 120%;
+  text-align: center;
+  color: #fff;
+  padding-top: 15px;
+  padding-inline: 14px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .box {
+    flex-direction: column;
+  }
+
+  .btn_group {
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 576px) {
+  .btn_group {
+    flex-direction: column;
+  }
+}

@@ -1,19 +1,9 @@
 "use client";
+import { useEffect, useState } from "react";
 
-import { RefObject, useEffect, useState } from "react";
+const activeModalIds: string[] = [];
 
-interface IActiveModal {
-  id: string;
-  ref?: RefObject<HTMLElement | null> | null;
-}
-
-const activeModalIds: IActiveModal[] = [];
-
-export const useStopScroll = (
-  condition: boolean,
-  id: string,
-  ref?: RefObject<HTMLElement | null>
-) => {
+export const useStopScroll = (condition: boolean, id: string) => {
   const [scrollWidth, setScrollWidth] = useState(0);
 
   useEffect(() => {
@@ -35,8 +25,7 @@ export const useStopScroll = (
       return scrollWidth;
     };
 
-    const width = getScrollWidth();
-    setScrollWidth(width);
+    setScrollWidth(getScrollWidth());
   }, [condition]);
 
   useEffect(() => {
@@ -46,13 +35,15 @@ export const useStopScroll = (
     if (!hasScroll) return;
 
     if (condition) {
-      activeModalIds.push({ id, ref: ref || null });
+      if (!activeModalIds.includes(id)) {
+        activeModalIds.push(id);
+      }
       if (activeModalIds.length === 1) {
         document.body.classList.add("stop__scroll");
         document.body.style.paddingRight = `${scrollWidth}px`;
       }
     } else {
-      const index = activeModalIds.findIndex((modal) => modal.id === id);
+      const index = activeModalIds.indexOf(id);
       if (index !== -1) {
         activeModalIds.splice(index, 1);
       }
@@ -63,7 +54,7 @@ export const useStopScroll = (
     }
 
     return () => {
-      const index = activeModalIds.findIndex((modal) => modal.id === id);
+      const index = activeModalIds.indexOf(id);
       if (index !== -1) {
         activeModalIds.splice(index, 1);
       }
@@ -72,6 +63,5 @@ export const useStopScroll = (
         document.body.style.paddingRight = "0px";
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [condition, scrollWidth]);
+  }, [condition, scrollWidth, id]);
 };

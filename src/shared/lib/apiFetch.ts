@@ -4,8 +4,14 @@ export async function apiFetch<T>(options: IRequestOptions): Promise<T> {
   const response = await midFetch(options);
 
   if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`API Error: ${response.status} - ${errorText}`);
+    const error = await response.json();
+
+    const message =
+      typeof error === "string"
+        ? error
+        : error?.error || error?.message || "Произошла ошибка";
+
+    throw new Error(message);
   }
 
   return await response.json();

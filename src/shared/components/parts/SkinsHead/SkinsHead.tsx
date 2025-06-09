@@ -24,6 +24,7 @@ export const SkinsHead: FC<ISkinsHead> = ({ game }) => {
             alt={game}
             className={styles.bgimage}
             quality={100}
+            priority
           />
         </div>
       )}

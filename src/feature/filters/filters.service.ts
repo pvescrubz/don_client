@@ -1,6 +1,6 @@
 import { IFilters } from "@/feature/filters/filters.type";
+import { ENDPOINTS } from "@/shared/api/endpoints";
 import { apiFetch } from "@/shared/lib/apiFetch";
-import { ENDPOINTS } from "@/shared/lib/endpoints";
 
 
 class FiltersService {

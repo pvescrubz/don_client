@@ -22,7 +22,7 @@ export const PLATFORM_CONFIG = {
     logo: "/images/logo-steam.png",
     formTitle: "Пополнение баланса Steam",
     formImage: "/images/steambgform.webp",
-    fieldTitle: "Заполните форму для пополнения баланса",
+    fieldTitle: "Логин Steam",
   },
   [getLastSlugPart(APP_PAGES.BALANCE_EPIC.slug)]: {
     slug: APP_PAGES.BALANCE_EPIC.slug,
@@ -31,7 +31,7 @@ export const PLATFORM_CONFIG = {
     logo: "/images/logo-epic.png",
     formTitle: "Пополнение баланса Epic Games",
     formImage: "/images/epicgamesbgform.webp",
-    fieldTitle: "Заполните форму для пополнения баланса",
+    fieldTitle: "Регион и логин Epic Games",
   },
   [getLastSlugPart(APP_PAGES.BALANCE_PS.slug)]: {
     name: "Play Station",
@@ -40,7 +40,7 @@ export const PLATFORM_CONFIG = {
     logo: "/images/logo-ps.png",
     formTitle: "Пополнение баланса Play Station",
     formImage: "/images/playstationbgform.webp",
-    fieldTitle: "Заполните форму для пополнения баланса",
+    fieldTitle: "Регион и логин PlayStation",
   },
   [getLastSlugPart(APP_PAGES.BALANCE_XBOX.slug)]: {
     name: "Xbox",
@@ -49,7 +49,7 @@ export const PLATFORM_CONFIG = {
     navBg: "/images/xboxbg.png",
     formTitle: "Пополнение баланса Xbox",
     formImage: "/images/xboxbgform.webp",
-    fieldTitle: "Заполните форму для пополнения баланса",
+    fieldTitle: "Регион и логин Xbox",
   },
   [getLastSlugPart(APP_PAGES.BALANCE_BLIZZARD.slug)]: {
     name: "Blizzard",
@@ -58,6 +58,6 @@ export const PLATFORM_CONFIG = {
     logo: "/images/logo-blizzard.png",
     formTitle: "Пополнение баланса Blizzard",
     formImage: "/images/blizzardbgform.webp",
-    fieldTitle: "Заполните форму для пополнения баланса",
+    fieldTitle: " Регион и логин Blizzard",
   },
 } satisfies IPlatformConfig;

@@ -1,5 +1,5 @@
+import { ENDPOINTS } from "@/shared/api/endpoints";
 import { apiFetch } from "@/shared/lib/apiFetch";
-import { ENDPOINTS } from "@/shared/lib/endpoints";
 import { IUser } from "../user/user.type";
 
 class AuthService {

@@ -8,7 +8,7 @@ export const LastBuy: FC = async () => {
   const items = await skinsService.getLastBuy();
   return (
     <>
-      {items && items.length && (
+      {items && items.length > 0 && (
         <Section>
           <Title>Последние покупки</Title>
           <Slider items={items} />

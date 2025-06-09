@@ -1,6 +1,6 @@
+import { ENDPOINTS, TEndpoints } from "../api/endpoints";
 import { TQuery } from "../typing/query.type";
 import { buildQueryString } from "./buildQueryString";
-import { ENDPOINTS, TEndpoints } from "./endpoints";
 
 export interface IRequestOptions {
   endpoint: TEndpoints;

@@ -1,5 +1,7 @@
+import CartPage from "@/pages/CartPage";
+
 const Page = () => {
-  return <>КОРЗИНА</>;
+  return <CartPage />;
 };
 
 export default Page;

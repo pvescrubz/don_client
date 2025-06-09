@@ -1,24 +1,19 @@
-import {
-  ICatalogSkin,
-  IKillCounter,
-  TSouvenir,
-} from "@/feature/skins/skins.type";
+import { ICatalogSkin, ISpecificallyField } from "@/feature/skins/skins.type";
 import { TDiv } from "@/shared/typing/elements.type";
 import { formatedPrice } from "@/shared/utils/formatedPrice";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
-import { IconCartSmall } from "../svg/IconCartSmall";
 import styles from "./ProductCard.module.css";
-
-interface IProductCard extends TDiv {
-  skin: ICatalogSkin;
-}
+import { ProductDynamicCartBtn } from "./ProductDynamicCartBtn";
 
 interface IStatTagProps {
-  killCounter?: IKillCounter;
-  souvenir?: TSouvenir;
+  killCounter?: ISpecificallyField;
+  souvenir?: ISpecificallyField;
+}
+interface IProductCard extends TDiv {
+  skin: ICatalogSkin;
 }
 
 export const Top: FC<IStatTagProps> = ({ killCounter, souvenir }) => {
@@ -29,14 +24,14 @@ export const Top: FC<IStatTagProps> = ({ killCounter, souvenir }) => {
 };
 
 export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
-  const { name, price, imageUrl, slug, killCounter, souvenir, game } = skin;
+  const { name, price, id, image, slug, killCounter, souvenir, game } = skin;
 
   return (
     <div className={clsx(styles.root, className)} {...rest}>
       <Top killCounter={killCounter} souvenir={souvenir} />
       <div className={styles.box}>
         <Image
-          src={imageUrl}
+          src={`/images/skins/${image}`}
           alt={"name"}
           width={300}
           height={225}
@@ -46,9 +41,7 @@ export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
           <p className={styles.name}>{name}</p>
           <p className={styles.price}>{formatedPrice(price)} ₽</p>
         </div>
-        <button className={styles.button}>
-          <IconCartSmall />В корзину
-        </button>
+        <ProductDynamicCartBtn className={styles.button} skinId={id} />
       </div>
 
       <Link href={`/skin/${game.name}/${slug}`} className={styles.link} />
