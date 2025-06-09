@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { FC } from "react";
 
 import { APP_PAGES } from "@/shared/dashboard/app.dashboard";
-import { LogoLink } from "../../parts/LogoLink/LogoLink";
+import { LogoLink } from "../../parts/header/LogoLink/LogoLink";
 import { FooterLink } from "../../ui/FooterLink/FooterLink";
 import styles from "./Footer.module.css";
 

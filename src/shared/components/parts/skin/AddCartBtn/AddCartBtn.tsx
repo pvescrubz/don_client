@@ -1,28 +1,27 @@
 "use client";
 
-import { useAuthStore } from "@/feature/auth/auth.store";
 import { Button } from "@/shared/components/ui/Button/Button";
 import { IconCartSmall } from "@/shared/components/ui/svg/IconCartSmall";
-import { useModalStore } from "@/shared/stores/popup.store";
+import { IconDelete } from "@/shared/components/ui/svg/IconDelete";
+import { useProtectedAction } from "@/shared/hooks/useProtectedAction";
+import { useToggleCart } from "@/shared/hooks/useToggleCart";
 import { TButton } from "@/shared/typing/elements.type";
 import clsx from "clsx";
 import { FC } from "react";
 import styles from "./AddCartBtn.module.css";
 
 interface IAddCartBtn extends TButton {
-  id: string;
+  skinId: string;
 }
 
-export const AddCartBtn: FC<IAddCartBtn> = ({ id, className, ...rest }) => {
-  const { setOpenModal } = useModalStore();
-  const { isAuth } = useAuthStore();
-  const handleClick = () => {
-    if (!isAuth) {
-      setOpenModal("AuthPopup", true);
-      return;
-    }
+export const AddCartBtn: FC<IAddCartBtn> = ({ skinId, className, ...rest }) => {
+  const { inCart, toggle, isLoading } = useToggleCart(skinId);
+  const { withAuthCheck } = useProtectedAction();
 
-    console.log(id);
+  const handleClick = () => {
+    withAuthCheck(() => {
+      toggle();
+    });
   };
 
   return (
@@ -32,8 +31,18 @@ export const AddCartBtn: FC<IAddCartBtn> = ({ id, className, ...rest }) => {
       variant="secondary"
       onClick={handleClick}
       {...rest}
+      disabled={isLoading}
     >
-      <IconCartSmall className={styles.svg} />В коризу
+      {!inCart && (
+        <>
+          <IconCartSmall className={styles.svg} /> В корзину
+        </>
+      )}
+      {inCart && (
+        <>
+          <IconDelete className={styles.svg} /> Из корзины
+        </>
+      )}
     </Button>
   );
 };

@@ -3,18 +3,20 @@ import { FC } from "react";
 import styles from "./SkinСharacteristics.module.css";
 
 interface ISkinСharacteristics {
-  info: ISpecificallyField[];
+  characteristics: ISpecificallyField[];
 }
 
-export const SkinСharacteristics: FC<ISkinСharacteristics> = ({ info }) => {
+export const SkinСharacteristics: FC<ISkinСharacteristics> = ({
+  characteristics,
+}) => {
   return (
     <>
-      {info && (
+      {characteristics && (
         <div className={styles.root}>
           <p className={styles.title}>Характеристики скина</p>
 
           <ul className={styles.list}>
-            {info.filter(Boolean).map((item) => (
+            {characteristics.filter(Boolean).map((item) => (
               <li key={item.id} className={styles.item}>
                 <span>{item.groupName}</span>
                 <span>{!item.ruName ? item.name : item.ruName}</span>

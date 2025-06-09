@@ -1,6 +1,6 @@
-import { HowToAddBalance } from "@/shared/components/parts/HowAddBalance/HowAddBalance";
 import { AddBalance } from "@/shared/components/sections/AddBalance/AddBalance";
 import { Faq } from "@/shared/components/sections/Faq/Faq";
+import { HowToAddBalance } from "@/shared/components/sections/HowAddBalance/HowAddBalance";
 import { FC } from "react";
 interface IAddBalancePage {
   platform: string;

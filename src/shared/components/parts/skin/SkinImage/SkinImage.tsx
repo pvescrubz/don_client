@@ -10,7 +10,7 @@ export const SkinImage: FC<ISkinImage> = ({ imageUrl }) => {
   return (
     <div className={styles.root}>
       <Image
-        src={imageUrl}
+        src={`/images/skins/${imageUrl}`}
         alt="alt"
         width={318}
         height={238}

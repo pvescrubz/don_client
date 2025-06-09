@@ -1,0 +1,36 @@
+.root {
+  position: relative;
+}
+.title {
+  text-align: left;
+}
+
+.box {
+  display: flex;
+  gap: 20px;
+}
+
+.checkout {
+  position: sticky;
+  top: calc(80px + 20px);
+  height: min-content;
+  max-width: 380px;
+}
+
+.redirect {
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .box {
+    flex-direction: column;
+  }
+
+  .checkout {
+    position: unset;
+    top: unset;
+    height: min-content;
+    max-width: unset;
+  }
+}

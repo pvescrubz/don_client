@@ -1,0 +1,10 @@
+.root {
+  position: relative;
+  display: flex;
+  z-index: 4;
+  gap: 14px;
+}
+
+.input {
+  flex-grow: 1;
+}

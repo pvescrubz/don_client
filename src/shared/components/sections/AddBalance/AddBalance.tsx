@@ -1,8 +1,8 @@
 import { PLATFORM_CONFIG } from "@/shared/content/platorms.config";
 import { FC } from "react";
-import { AddBalanceGameForm } from "../../forms/addBalanceGamesForm/AddBalanceGamesForm/AddBalanceGameForm";
-import { AddBalanceBg } from "../../parts/AddBalanceBg/AddBalanceBg";
-import { AddBalanceNav } from "../../parts/AddBalanceNav/AddBalanceNav";
+import { AddBalanceForm } from "../../forms/addBalanceForm/AddBalanceForm/AddBalanceForm";
+import { AddBalanceBg } from "../../parts/addBalance/AddBalanceBg/AddBalanceBg";
+import { AddBalanceNav } from "../../parts/addBalance/AddBalanceNav/AddBalanceNav";
 import { Container } from "../../ui/containers/Container/Container";
 import { Section } from "../../ui/containers/Section/Section";
 import { Title } from "../../ui/Title/Title";
@@ -21,7 +21,7 @@ export const AddBalance: FC<IAddBalance> = ({ platform }) => {
           {config.logo && <AddBalanceBg image={config.logo} />}
           <Title>Пополнить баланс</Title>
           <AddBalanceNav />
-          {config && <AddBalanceGameForm config={config} />}
+          {config && <AddBalanceForm config={config} />}
         </Container>
       </Section>
     </>

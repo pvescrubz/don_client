@@ -5,11 +5,7 @@ import { FormInput } from "../FormInput/FormInput";
 import { AVAILABLE_FIELDS } from "../input.info";
 import styles from "./SubscrForm.module.css";
 
-export type TSubscrFormProps = {
-  onClose?: () => void;
-};
-export const SubscrForm: FC<TSubscrFormProps> = ({ onClose }) => {
-  
+export const SubscrForm: FC = () => {
   const {
     register,
     handleSubmit,
@@ -20,24 +16,19 @@ export const SubscrForm: FC<TSubscrFormProps> = ({ onClose }) => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
-
-    if (onClose) {
-     onClose();
-    }
     console.log(data);
-   
   };
 
   return (
-  <form className={styles.root} onSubmit={handleSubmit(onSubmit)}>
-    <FormInput
-      fieldName={AVAILABLE_FIELDS.EMAIL}
-      register={register}
-      error={!!errors[AVAILABLE_FIELDS.EMAIL]}
-    />
-    <Button size="small" variant="primary" className={styles.button}>
-      Получить
-    </Button>
-  </form>
-  )
+    <form className={styles.root} onSubmit={handleSubmit(onSubmit)}>
+      <FormInput
+        fieldName={AVAILABLE_FIELDS.EMAIL}
+        register={register}
+        error={!!errors[AVAILABLE_FIELDS.EMAIL]}
+      />
+      <Button  variant="primary" className={styles.button}>
+        Получить
+      </Button>
+    </form>
+  );
 };

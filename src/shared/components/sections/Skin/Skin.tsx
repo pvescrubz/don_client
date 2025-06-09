@@ -25,13 +25,16 @@ export const Skin: FC<ISkin> = async ({ slug }) => {
     id,
     name,
     price,
-    imageUrl,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     image,
     description,
     slug: dbSlug,
     ...rest
   } = skin;
+
+  const characteristics = Object.values(rest).filter(
+    (value) => typeof value === "object"
+  );
 
   return (
     <Section className={styles.root} key={dbSlug}>
@@ -40,22 +43,22 @@ export const Skin: FC<ISkin> = async ({ slug }) => {
 
         <div className={styles.info}>
           <div className={styles.item}>
-            <SkinImage imageUrl={imageUrl} />
+            <SkinImage imageUrl={image} />
             <div className={styles.flex}>
               <SkinPrice price={price} />
-              <AddCartBtn id={id} className={styles.btn} />
+              <AddCartBtn skinId={id} className={styles.btn} />
             </div>
           </div>
           <div className={styles.item}>
             <SkinBasicInfo
               name={name}
-              quality={skin.quality?.ruName || skin.quality?.name}
+              quality={skin.exterior?.ruName || skin.exterior?.name}
               rarity={skin.rarity?.ruName || skin.rarity?.name}
             />
-            <SkinСharacteristics info={Object.values(rest)} />
+            <SkinСharacteristics characteristics={characteristics} />
           </div>
         </div>
-        <SkinDescr descr={description} />
+        {description && <SkinDescr descr={description} />}
       </Container>
 
       <Image

@@ -17,5 +17,7 @@ export const PrivateGuard = ({ children }: { children: ReactNode }) => {
 
   if (loading || loading === null) return <FullPageSpinner isLoading />;
 
-  if (isAuth && !loading && loading !== null) return <>{children}</>;
+  if (isAuth && !loading && loading !== null) {
+    return <>{children}</>;
+  }
 };

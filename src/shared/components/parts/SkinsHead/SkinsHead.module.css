@@ -21,9 +21,10 @@
     bottom: unset;
     right: unset;
     max-width: 100%;
+    height: unset;
     object-fit: cover;
   }
-  .title {
+  h1.title {
     margin-bottom: 0;
   }
   .root {

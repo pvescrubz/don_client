@@ -1,26 +1,20 @@
-export interface ICatalogSkin {
+export interface ISkinBase {
   id: string;
   name: string;
   price: string;
   imageUrl: string;
   image: string;
   slug: string;
-  killCounter?: IKillCounter;
-  souvenir?: TSouvenir;
+  description?: string[];
+}
+
+export interface ICatalogSkin extends ISkinBase {
+  killCounter?: ISpecificallyField;
+  souvenir?: ISpecificallyField;
   game: {
     name: string;
   };
 }
-
-export interface IKillCounter {
-  id: string;
-  name: string;
-  ruName: string;
-  groupName: string;
-  flag: boolean;
-}
-
-export type TSouvenir = IKillCounter;
 
 export interface IMeta {
   currentPage: number;
@@ -29,19 +23,9 @@ export interface IMeta {
   itemsPerPage: number;
 }
 
-export type TCatalogRes = {
+export interface ICatalogRes {
   data: ICatalogSkin[];
   meta: IMeta;
-};
-
-export interface ISkinBase {
-  id: string;
-  name: string;
-  price: string;
-  imageUrl: string;
-  image: string;
-  slug: string;
-  description: string[];
 }
 
 export interface ISpecifically {
@@ -66,6 +50,7 @@ export interface ISpecificallyField {
   name: string;
   ruName?: string;
   groupName: string;
+  flag?: boolean;
 }
 
 export type TSkin = ISkinBase & ISpecifically;

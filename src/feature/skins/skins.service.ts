@@ -1,18 +1,18 @@
+import { ENDPOINTS } from "@/shared/api/endpoints";
 import { apiFetch } from "@/shared/lib/apiFetch";
-import { ENDPOINTS } from "@/shared/lib/endpoints";
 import { TQuery } from "@/shared/typing/query.type";
-import { ICatalogSkin, TCatalogRes, TSkin } from "./skins.type";
+import { ICatalogRes, ICatalogSkin, TSkin } from "./skins.type";
 
 class SkinsService {
   async getSkins(
     game: string = "cs2",
     query: TQuery,
     isMobile: boolean = false
-  ): Promise<TCatalogRes | null> {
+  ): Promise<ICatalogRes | null> {
     if (isMobile) query.perPage = "20";
 
     try {
-      const data = await apiFetch<TCatalogRes>({
+      const data = await apiFetch<ICatalogRes>({
         endpoint: ENDPOINTS.skins,
         query: { ...query, game: game },
       });
@@ -40,6 +40,7 @@ class SkinsService {
       const data = await apiFetch<ICatalogSkin[]>({
         endpoint: ENDPOINTS.weekly,
         // cacheTime: 60 * 60,
+        cacheTime: 1,
       });
       return data;
     } catch (error) {
