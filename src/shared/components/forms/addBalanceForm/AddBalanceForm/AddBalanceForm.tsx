@@ -7,9 +7,8 @@ import { IPlatformConfigItem } from "@/shared/content/platorms.config";
 import { useFormWatchValues } from "@/shared/hooks/useFormWatchValues";
 import { FormatedPrice } from "@/shared/lib/FormatedPrice";
 import {
-  CURRENCY,
   CURRENCY_ICON,
-  TCurrencyCode,
+  TCurrencyCode
 } from "@/shared/typing/currency.type";
 import { onError } from "@/shared/utils/error-form";
 import clsx from "clsx";
@@ -45,8 +44,6 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
     AVAILABLE_FIELDS.CURRENCY,
   ]);
 
-  const currencyObj = CURRENCY;
-  console.log(currencyObj);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
