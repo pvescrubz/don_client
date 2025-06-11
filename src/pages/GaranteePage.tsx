@@ -7,7 +7,6 @@ export const GuaranteePage: FC = () => {
   return (
   <>
     <GuaranteeTop />
-   
   </>
   )
 

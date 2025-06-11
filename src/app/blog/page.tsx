@@ -1,5 +1,7 @@
+import BlogListPage from "@/pages/BlogPostsPage";
+
 const Page = () => {
-  return <>blog</>;
+  return <BlogListPage />;
 };
 
 export default Page;

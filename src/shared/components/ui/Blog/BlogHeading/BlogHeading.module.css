@@ -1,0 +1,10 @@
+.heading {
+  color: white;
+  font-family: var(--second-family);
+font-weight: 900;
+font-size: clamp(25px, 4.9vw, 45px);
+line-height: 100%;
+text-align: center;
+color: #fff;
+margin: 20px 0;
+}
