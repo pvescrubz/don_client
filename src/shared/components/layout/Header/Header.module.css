@@ -26,4 +26,8 @@
     gap: 10px;
   }
 }
-
+@media screen and (max-width: 576px) {
+  .root .container {
+    gap: 8px;
+  }
+}

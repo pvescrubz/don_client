@@ -79,6 +79,11 @@ export const ENDPOINTS = {
     url: "/api/cart/clear",
     auth: true,
   },
+  changeCurrency: {
+    method: "POST",
+    url: "/api/user/change-currency",
+    auth: true,
+  },
 } as const satisfies Record<string, TEndpointsPt>;
 
 export type TEndpoints = (typeof ENDPOINTS)[keyof typeof ENDPOINTS];

@@ -54,6 +54,7 @@ class СartService {
       throw error;
     }
   }
+
 }
 
 export const cartService = new СartService();

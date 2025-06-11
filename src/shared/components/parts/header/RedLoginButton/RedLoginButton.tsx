@@ -6,9 +6,9 @@ import { FC } from "react";
 import { ENDPOINTS } from "@/shared/api/endpoints";
 import { Button } from "../../../ui/Button/Button";
 import { IconSteam } from "../../../ui/svg/IconSteam";
-import styles from "./LoginButton.module.css";
+import styles from "./RedLoginButton.module.css";
 
-export const LoginButton: FC = () => {
+export const RedLoginButton: FC = () => {
   const handleClick = async () => {
     redirect(process.env.NEXT_PUBLIC_BACK_URL + ENDPOINTS.steamLogin.url);
   };
@@ -16,12 +16,11 @@ export const LoginButton: FC = () => {
   return (
     <Button
       className={styles.root}
-      variant="secondary"
-      size="small"
+
       icon={<IconSteam className={styles.svg} />}
       onClick={handleClick}
     >
-      <span className={styles.span}>ВОЙТИ</span>
+      <span className={styles.span}>ВОЙТИ ЧЕРЕЗ STEAM</span>
     </Button>
   );
 };

@@ -1,5 +1,5 @@
 import { ICartSkin } from "@/feature/cart/cart.type";
-import { formatedPrice } from "@/shared/utils/formatedPrice";
+import { FormatedPrice } from "@/shared/lib/FormatedPrice";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +12,20 @@ interface ICartListItem {
 }
 
 export const CartListItem: FC<ICartListItem> = ({ skin }) => {
-  const { image, name, price, id, rarity, exterior, game, slug } = skin;
+  const {
+    image,
+    name,
+    priceUSD,
+    priceRUB,
+    priceEUR,
+    priceKZT,
+    id,
+    rarity,
+    exterior,
+    game,
+    slug,
+  } = skin;
+  const prices = { USD: priceUSD, RUB: priceRUB, EUR: priceEUR, KZT: priceKZT };
 
   return (
     <li className={styles.root}>
@@ -42,7 +55,7 @@ export const CartListItem: FC<ICartListItem> = ({ skin }) => {
               </p>
             )}
           </div>
-          <p className={styles.price}>{formatedPrice(price)} ₽</p>
+          <p className={styles.price}><FormatedPrice prices={prices}/></p>
         </div>
       </div>
 

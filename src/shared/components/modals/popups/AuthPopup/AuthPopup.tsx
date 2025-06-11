@@ -4,7 +4,8 @@ import { useModalStore } from "@/shared/stores/modal.store";
 import { IModal } from "@/shared/typing/modal.type";
 import Image from "next/image";
 import { FC } from "react";
-import { LoginButton } from "../../../parts/header/LoginButton/LoginButton";
+
+import { RedLoginButton } from "@/shared/components/parts/header/RedLoginButton/RedLoginButton";
 import { Dialog } from "../../../ui/Dialog/Dialog";
 import styles from "./AuthPopup.module.css";
 
@@ -30,7 +31,7 @@ export const AuthPopup: FC<IModal> = ({ id }) => {
           Войдите через свой профиль Steam, чтобы продолжить работу с сайтом
         </p>
 
-        <LoginButton />
+        <RedLoginButton />
       </div>
     </Dialog>
   );

@@ -1,6 +1,6 @@
 import { ICatalogSkin, ISpecificallyField } from "@/feature/skins/skins.type";
+import { FormatedPrice } from "@/shared/lib/FormatedPrice";
 import { TDiv } from "@/shared/typing/elements.type";
-import { formatedPrice } from "@/shared/utils/formatedPrice";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,7 +24,21 @@ export const Top: FC<IStatTagProps> = ({ killCounter, souvenir }) => {
 };
 
 export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
-  const { name, price, id, image, slug, killCounter, souvenir, game } = skin;
+  const {
+    name,
+    priceUSD,
+    priceRUB,
+    priceEUR,
+    priceKZT,
+    id,
+    image,
+    slug,
+    killCounter,
+    souvenir,
+    game,
+  } = skin;
+
+  const prices = { USD: priceUSD, RUB: priceRUB, EUR: priceEUR, KZT: priceKZT };
 
   return (
     <div className={clsx(styles.root, className)} {...rest}>
@@ -39,7 +53,9 @@ export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
         />
         <div className={styles.descr}>
           <p className={styles.name}>{name}</p>
-          <p className={styles.price}>{formatedPrice(price)} ₽</p>
+          <p className={styles.price}>
+            <FormatedPrice prices={prices} />
+          </p>
         </div>
         <ProductDynamicCartBtn className={styles.button} skinId={id} />
       </div>

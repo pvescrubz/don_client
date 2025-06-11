@@ -24,13 +24,17 @@ export const Skin: FC<ISkin> = async ({ slug }) => {
   const {
     id,
     name,
-    price,
-
+    priceUSD,
+    priceRUB,
+    priceEUR,
+    priceKZT,
     image,
     description,
     slug: dbSlug,
     ...rest
   } = skin;
+
+  const prices = { USD: priceUSD, RUB: priceRUB, EUR: priceEUR, KZT: priceKZT };
 
   const characteristics = Object.values(rest).filter(
     (value) => typeof value === "object"
@@ -45,7 +49,7 @@ export const Skin: FC<ISkin> = async ({ slug }) => {
           <div className={styles.item}>
             <SkinImage imageUrl={image} />
             <div className={styles.flex}>
-              <SkinPrice price={price} />
+              <SkinPrice prices={prices} />
               <AddCartBtn skinId={id} className={styles.btn} />
             </div>
           </div>
