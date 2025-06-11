@@ -50,7 +50,7 @@ class Currency {
   }
 }
 
-export const CURRENCY = new Currency();
+export const CURRENCY= new Currency();
 
 export const CURRENCY_ICON: Record<TCurrencyCode, ReactNode> = {
   RUB: <IconRuble />,
