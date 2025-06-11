@@ -1,0 +1,18 @@
+.list {
+ backdrop-filter: blur(24px);
+box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
+background: #23252a;
+padding: 10px 10px;
+display: flex;
+flex-direction: column;
+gap: 5px;
+margin: 20px 0 20px 0;
+}
+
+.listItem {
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+line-height: 130%;
+color: rgb(255, 255, 255,0.8);
+}
