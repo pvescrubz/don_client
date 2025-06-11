@@ -17,6 +17,7 @@ export const BlogImage: FC<Props> = ({ data }) => {
       <img
         src={data.content}
         alt=""
+        className={styles.image}
       />
     </div>
   );
