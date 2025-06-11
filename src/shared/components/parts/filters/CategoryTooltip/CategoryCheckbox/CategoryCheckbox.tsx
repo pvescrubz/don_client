@@ -21,7 +21,7 @@ export const CategoryCheckbox: FC<ICategoryCheckbox> = ({
   ...rest
 }) => {
   const { name, previewSkin } = item;
-  const { imageUrl } = previewSkin;
+  const { image } = previewSkin;
   const { isActive, toggleMultiFilterValue } = useFilter(filter, true);
 
   return (
@@ -38,7 +38,7 @@ export const CategoryCheckbox: FC<ICategoryCheckbox> = ({
           {...rest}
         >
           <span className={styles.text_box}>
-            <Image src={imageUrl} alt={"npg"} width={45} height={34} />
+            <Image src={`/images/skins/${image}`} alt={"npg"} width={45} height={34} />
             <span className={styles.text}>{name}</span>
           </span>
           <span className={styles.box}>

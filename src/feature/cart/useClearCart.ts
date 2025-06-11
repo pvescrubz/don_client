@@ -14,7 +14,7 @@ export const useClearCart = () => {
     mutationKey: ["cart"],
     mutationFn: () => cartService.clearCart(),
     onSuccess: (newCartData) => {
-      toast.success("Корзина очищена!!");
+      toast.success("Корзина очищена!");
       clearCart();
       queryClient.setQueryData(["cart"], newCartData);
     },

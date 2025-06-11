@@ -2,7 +2,10 @@ import { ISkinBase, ISpecificallyField } from "../skins/skins.type";
 
 export interface ICartRes {
   id: string;
-  totalAmount: string;
+  totalRUB: string;
+  totalEUR: string;
+  totalUSD: string;
+  totalKZT: string;
   itemsCount: number;
   skins: ICartSkin[];
 }

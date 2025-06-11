@@ -7,7 +7,7 @@ import styles from "./LogoLink.module.css";
 
 export const LogoLink: FC<TAnchor> = ({ className, ...rest }) => {
   return (
-    <Link href={"/"} className={clsx(styles.logo, className)} {...rest}>
+    <Link href={"/"} className={clsx(styles.root, className)} {...rest}>
       <IconLogo />
     </Link>
   );

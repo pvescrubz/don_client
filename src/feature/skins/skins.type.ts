@@ -1,7 +1,10 @@
 export interface ISkinBase {
   id: string;
   name: string;
-  price: string;
+  priceRUB: string;
+  priceEUR: string;
+  priceUSD: string;
+  priceKZT: string;
   imageUrl: string;
   image: string;
   slug: string;

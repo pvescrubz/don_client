@@ -5,13 +5,9 @@ import { RegionSelect } from "@/shared/components/forms/RegionSelect/RegionSelec
 import { Button } from "@/shared/components/ui/Button/Button";
 import { IPlatformConfigItem } from "@/shared/content/platorms.config";
 import { useFormWatchValues } from "@/shared/hooks/useFormWatchValues";
-import {
-  CURRENCY_ICON,
-  CURRENCY_SYMBOL,
-  TCurrencyCode,
-} from "@/shared/typing/currency.type";
+import { FormatedPrice } from "@/shared/lib/FormatedPrice";
+import { CURRENCY, TCurrencyCode } from "@/shared/typing/currency.type";
 import { onError } from "@/shared/utils/error-form";
-import { formatedPrice } from "@/shared/utils/formatedPrice";
 import clsx from "clsx";
 import Image from "next/image";
 import { FC } from "react";
@@ -84,7 +80,7 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
               register={register}
               error={!!errors[AVAILABLE_FIELDS.AMOUNT]}
               className={styles.sum_input}
-              iconLeft={CURRENCY_ICON[currency as TCurrencyCode]}
+              iconLeft={CURRENCY[currency as TCurrencyCode].icon}
             />
             <CurrencySelect
               fieldName={AVAILABLE_FIELDS.CURRENCY}
@@ -138,9 +134,18 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
           <p className={styles.text}>
             Сумма:{" "}
             <span className={styles.field_title}>
-              {amount
-                ? ` ${formatedPrice(amount)} ${CURRENCY_SYMBOL[currency as TCurrencyCode]}`
-                : "-"}
+              {amount && (
+                <FormatedPrice
+                  prices={{
+                    USD: amount,
+                    RUB: amount,
+                    EUR: amount,
+                    KZT: amount,
+                  }}
+                  currency={currency as TCurrencyCode}
+                />
+              )}
+              {!amount && "-"}
             </span>
           </p>
         </div>

@@ -1,0 +1,11 @@
+.root {
+  position: relative;
+
+  z-index: 5;
+  gap: 14px;
+}
+
+.input {
+  position: absolute;
+  top: 0;
+}

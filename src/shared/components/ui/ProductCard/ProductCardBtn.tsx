@@ -1,5 +1,4 @@
 "use client";
-
 import { useProtectedAction } from "@/shared/hooks/useProtectedAction";
 import { useToggleCart } from "@/shared/hooks/useToggleCart";
 import { TButton } from "@/shared/typing/elements.type";
