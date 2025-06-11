@@ -28,3 +28,12 @@
   justify-content: center;
   padding-inline: 4px;
 }
+
+
+@media screen and (max-width: 1024px) {
+  .root {
+
+  padding-inline: 12px;
+}
+
+}

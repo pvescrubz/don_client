@@ -6,7 +6,11 @@ import { Button } from "@/shared/components/ui/Button/Button";
 import { IPlatformConfigItem } from "@/shared/content/platorms.config";
 import { useFormWatchValues } from "@/shared/hooks/useFormWatchValues";
 import { FormatedPrice } from "@/shared/lib/FormatedPrice";
-import { CURRENCY, TCurrencyCode } from "@/shared/typing/currency.type";
+import {
+  CURRENCY,
+  CURRENCY_ICON,
+  TCurrencyCode,
+} from "@/shared/typing/currency.type";
 import { onError } from "@/shared/utils/error-form";
 import clsx from "clsx";
 import Image from "next/image";
@@ -40,6 +44,9 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
     AVAILABLE_FIELDS.PROMO,
     AVAILABLE_FIELDS.CURRENCY,
   ]);
+
+  const currencyObj = CURRENCY;
+  console.log(currencyObj);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
@@ -80,7 +87,7 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
               register={register}
               error={!!errors[AVAILABLE_FIELDS.AMOUNT]}
               className={styles.sum_input}
-              iconLeft={CURRENCY[currency as TCurrencyCode].icon}
+              iconLeft={CURRENCY_ICON[currency as TCurrencyCode]}
             />
             <CurrencySelect
               fieldName={AVAILABLE_FIELDS.CURRENCY}
