@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react";
 
 export const useIsClient = () => {
-  const [clientSide, setClientSide] = useState(false);
+  const [isClientSide, setIsClientSide] = useState(false);
   useEffect(() => {
-    setClientSide(true);
+    setIsClientSide(true);
   }, []);
 
-  return { clientSide };
+  return { isClientSide };
 };

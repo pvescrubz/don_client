@@ -1,9 +1,10 @@
+import { useCurrencyStore } from "@/shared/stores/currency.store";
 import { CURRENCY, ICurrency } from "@/shared/typing/currency.type";
 import { TDiv } from "@/shared/typing/elements.type";
 import clsx from "clsx";
 import { useEffect, type FC } from "react";
 import { Controller, type Control } from "react-hook-form";
-import { POST_INPUTS, TFieldKeys } from "../input.info";
+import { INPUTS, TFieldKeys } from "../input.info";
 import { Select } from "../ui/Select/Select";
 import { StyledInput } from "../ui/StyledInput/StyledInput";
 import styles from "./CurrencySelect.module.css";
@@ -23,9 +24,14 @@ export const CurrencySelect: FC<IRegionSelect> = ({
   error,
   ...rest
 }) => {
-  const { name, type, required, placeholder } = POST_INPUTS[fieldName];
+  const { name, type, required, placeholder } = INPUTS[fieldName];
+
+  const { currencyRates } = useCurrencyStore();
 
   const currency = CURRENCY.toArray();
+  const availableCurrencies = currency.filter(
+    (currency) => currency.value in currencyRates
+  );
 
   useEffect(() => {
     setValue(name, currency[0].value);
@@ -63,7 +69,7 @@ export const CurrencySelect: FC<IRegionSelect> = ({
             />
 
             <Select
-              items={currency}
+              items={availableCurrencies}
               selected={selectedCurrency}
               onChange={handleSelect}
             />

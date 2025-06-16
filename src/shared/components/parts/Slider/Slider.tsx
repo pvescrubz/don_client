@@ -17,11 +17,11 @@ interface ISlider {
 }
 
 const Slider: FC<ISlider> = ({ items }) => {
-  const { clientSide } = useIsClient();
+  const { isClientSide } = useIsClient();
 
   return (
     <>
-      {clientSide && items && (
+      {isClientSide && items && (
         <Swiper
           modules={[Mousewheel, Autoplay]}
           slidesPerView={"auto"}

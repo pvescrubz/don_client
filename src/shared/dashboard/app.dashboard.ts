@@ -6,17 +6,7 @@ interface IDashboardItem {
 }
 
 class Dashboard {
-  CART = {
-    name: "Корзина",
-    slug: "/cart",
-    tag: "auth",
-  } satisfies IDashboardItem;
 
-  ACCOUNT = {
-    name: "Личный кабинет",
-    slug: "/i",
-    tag: "auth",
-  } satisfies IDashboardItem;
 
   SKINS = {
     name: "Купить скины",
@@ -104,6 +94,8 @@ class Dashboard {
     tag: "useful",
     forHeader: true,
   } satisfies IDashboardItem;
+
+
 
   getAll(): IDashboardItem[] {
     return Object.values(this);

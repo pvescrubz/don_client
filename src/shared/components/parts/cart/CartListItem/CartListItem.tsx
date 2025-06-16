@@ -12,20 +12,7 @@ interface ICartListItem {
 }
 
 export const CartListItem: FC<ICartListItem> = ({ skin }) => {
-  const {
-    image,
-    name,
-    priceUSD,
-    priceRUB,
-    priceEUR,
-    priceKZT,
-    id,
-    rarity,
-    exterior,
-    game,
-    slug,
-  } = skin;
-  const prices = { USD: priceUSD, RUB: priceRUB, EUR: priceEUR, KZT: priceKZT };
+  const { image, name, price, id, rarity, exterior, game, slug } = skin;
 
   return (
     <li className={styles.root}>
@@ -55,7 +42,9 @@ export const CartListItem: FC<ICartListItem> = ({ skin }) => {
               </p>
             )}
           </div>
-          <p className={styles.price}><FormatedPrice prices={prices}/></p>
+          <p className={styles.price}>
+            <FormatedPrice price={price} />
+          </p>
         </div>
       </div>
 

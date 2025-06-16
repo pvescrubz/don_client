@@ -1,15 +1,15 @@
-import { FormatedPrice, IPrices } from "@/shared/lib/FormatedPrice";
+import { FormatedPrice } from "@/shared/lib/FormatedPrice";
 import { FC } from "react";
 import styles from "./SkinPrice.module.css";
 
 interface ISkinPrice {
-  prices: IPrices;
+  price: string | number;
 }
 
-export const SkinPrice: FC<ISkinPrice> = ({ prices }) => {
+export const SkinPrice: FC<ISkinPrice> = ({ price }) => {
   return (
     <p className={styles.root}>
-      <FormatedPrice prices={prices} />
+      <FormatedPrice price={price} />
     </p>
   );
 };

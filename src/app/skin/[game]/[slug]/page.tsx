@@ -1,4 +1,5 @@
-import SkinPage from "@/pages/SkinPage";
+import { SkinScreen } from "@/screens/Skin.screen";
+import { notFound } from "next/navigation";
 
 const Page = async ({
   params,
@@ -6,8 +7,9 @@ const Page = async ({
   params: Promise<{ game: string; slug: string }>;
 }) => {
   const { game, slug } = await params;
+  if (!game || !slug) notFound();
 
-  return <SkinPage game={game} slug={slug} />;
+  return <SkinScreen game={game} slug={slug} />;
 };
 
 export default Page;

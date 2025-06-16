@@ -1,6 +1,6 @@
 'use client'
 
-import { useCartStore } from "@/shared/stores/cart.store";
+import { useCartStore } from "@/feature/cart/cart.store";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useRef } from "react";
 import { cartService } from "./cart.service";

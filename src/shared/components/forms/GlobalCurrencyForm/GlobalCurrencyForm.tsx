@@ -34,13 +34,15 @@ export const GlobalCurrencyForm: FC = () => {
   };
 
   return (
-    <form className={styles.root} onSubmit={handleSubmit(onSubmit, onError)}>
-      <GlobalCurrencySelect
-        fieldName={AVAILABLE_FIELDS.CURRENCY}
-        error={!!errors[AVAILABLE_FIELDS.CURRENCY]}
-        control={control}
-        setValue={setValue}
-      />
-    </form>
+    <>
+      <form className={styles.root} onSubmit={handleSubmit(onSubmit, onError)}>
+        <GlobalCurrencySelect
+          fieldName={AVAILABLE_FIELDS.CURRENCY}
+          error={!!errors[AVAILABLE_FIELDS.CURRENCY]}
+          control={control}
+          setValue={setValue}
+        />
+      </form>
+    </>
   );
 };

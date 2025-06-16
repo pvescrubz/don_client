@@ -4,19 +4,19 @@ import { redirect } from "next/navigation";
 import { FC } from "react";
 
 import { ENDPOINTS } from "@/shared/api/endpoints";
+import { CONFIG } from "@/shared/model/config";
 import { Button } from "../../../ui/Button/Button";
 import { IconSteam } from "../../../ui/svg/IconSteam";
 import styles from "./RedLoginButton.module.css";
 
 export const RedLoginButton: FC = () => {
   const handleClick = async () => {
-    redirect(process.env.NEXT_PUBLIC_BACK_URL + ENDPOINTS.steamLogin.url);
+    redirect(CONFIG.API_BASE_URL + ENDPOINTS.steamLogin.url);
   };
 
   return (
     <Button
       className={styles.root}
-
       icon={<IconSteam className={styles.svg} />}
       onClick={handleClick}
     >

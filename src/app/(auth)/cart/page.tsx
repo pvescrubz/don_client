@@ -1,8 +1,7 @@
-import CartPage from "@/pages/CartPage";
-
+import { CartScreen } from "@/screens/Cart.screen";
 
 const Page = () => {
-  return <CartPage />;
+  return <CartScreen />;
 };
 
 export default Page;
