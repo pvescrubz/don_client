@@ -1,4 +1,4 @@
-import ReferalScreen from "@/screens/Referal.screen";
+import { ReferalScreen } from "@/screens/Referal.screen";
 
 const Page = () => {
   return <ReferalScreen />;

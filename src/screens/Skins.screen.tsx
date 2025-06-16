@@ -9,7 +9,7 @@ interface ISkinksScreen {
   isMobile: boolean;
 }
 
-const SkinksScreen: FC<ISkinksScreen> = ({ game, query, isMobile }) => {
+export const SkinsScreen: FC<ISkinksScreen> = ({ game, query, isMobile }) => {
   return (
     <>
       <Skins game={game} query={query} isMobile={isMobile} />
@@ -17,5 +17,3 @@ const SkinksScreen: FC<ISkinksScreen> = ({ game, query, isMobile }) => {
     </>
   );
 };
-
-export default SkinksScreen;

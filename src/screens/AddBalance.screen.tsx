@@ -7,7 +7,7 @@ interface IAddBalanceScreen {
   platform: string;
 }
 
- const AddBalanceScreen: FC<IAddBalanceScreen> = ({ platform }) => {
+export const AddBalanceScreen: FC<IAddBalanceScreen> = ({ platform }) => {
   if (!platform) return <div>fallback</div>;
 
   return (
@@ -18,5 +18,3 @@ interface IAddBalanceScreen {
     </>
   );
 };
-
-export default AddBalanceScreen;

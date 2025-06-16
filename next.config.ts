@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "assets.lis-skins.com",
+        pathname: "/blogfiles/**",
+      },
     ],
   },
 };

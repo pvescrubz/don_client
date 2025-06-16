@@ -1,4 +1,4 @@
-import GuaranteeScreen from "@/screens/Garantee.screen";
+import { GuaranteeScreen } from "@/screens/Garantee.screen";
 
 const Page = () => {
   return <GuaranteeScreen />;

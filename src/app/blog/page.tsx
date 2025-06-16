@@ -1,5 +1,7 @@
+import { BlogScreen } from "@/screens/BlogPosts.screen";
+
 const Page = () => {
-  return <>blog</>;
+  return <BlogScreen />;
 };
 
 export default Page;

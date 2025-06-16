@@ -7,7 +7,7 @@ interface ISkinksScreen {
   slug: string;
 }
 
-const SkinScreen: FC<ISkinksScreen> = ({ game, slug }) => {
+export const SkinScreen: FC<ISkinksScreen> = ({ game, slug }) => {
   return (
     <>
       <Skin game={game} slug={slug} />
@@ -15,5 +15,3 @@ const SkinScreen: FC<ISkinksScreen> = ({ game, slug }) => {
     </>
   );
 };
-
-export default SkinScreen;

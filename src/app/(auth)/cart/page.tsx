@@ -1,4 +1,4 @@
-import CartScreen from "@/screens/Cart.screen";
+import { CartScreen } from "@/screens/Cart.screen";
 
 const Page = () => {
   return <CartScreen />;

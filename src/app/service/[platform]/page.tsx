@@ -1,4 +1,4 @@
-import AddBalanceScreen from "@/screens/AddBalance.screen";
+import { AddBalanceScreen } from "@/screens/AddBalance.screen";
 
 const Page = async ({ params }: { params: Promise<{ platform: string }> }) => {
   const { platform } = await params;

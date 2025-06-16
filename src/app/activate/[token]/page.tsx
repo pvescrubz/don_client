@@ -1,4 +1,4 @@
-import ActivateScreen from "@/screens/ActivatePage.screen";
+import { ActivateScreen } from "@/screens/ActivatePage.screen";
 
 const Page = async ({ params }: { params: Promise<{ token: string }> }) => {
   const { token } = await params;
