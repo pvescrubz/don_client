@@ -9,7 +9,7 @@ export const useChangeCurrency = () => {
   const { setUser } = useUserStore();
 
   const { mutate, isPending } = useMutation({
-    mutationKey: ["cart"],
+    mutationKey: ["selectedCurrency"],
     mutationFn: () => userService.changeCurrency(),
     onSuccess: (data) => {
       setUser(data);

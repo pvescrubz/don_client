@@ -1,7 +1,7 @@
-import GuaranteePage from "@/pages/GaranteePage";
+import GuaranteeScreen from "@/screens/Garantee.screen";
 
 const Page = () => {
-  return <GuaranteePage />;
+  return <GuaranteeScreen />;
 };
 
 export default Page;

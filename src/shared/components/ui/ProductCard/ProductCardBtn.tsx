@@ -1,6 +1,6 @@
 "use client";
+import { useToggleCart } from "@/feature/cart/useToggleCart";
 import { useProtectedAction } from "@/shared/hooks/useProtectedAction";
-import { useToggleCart } from "@/shared/hooks/useToggleCart";
 import { TButton } from "@/shared/typing/elements.type";
 import { FC } from "react";
 import { IconCartSmall } from "../svg/IconCartSmall";

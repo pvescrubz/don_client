@@ -1,7 +1,7 @@
-import FAQPage from "../../pages/FaqPage";
+import FAQScreen from "../../screens/Faq.screen";
 
 const Page = () => {
-  return <FAQPage />;
+  return <FAQScreen />;
 };
 
 export default Page;

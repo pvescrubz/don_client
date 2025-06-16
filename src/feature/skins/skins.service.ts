@@ -18,7 +18,7 @@ class SkinsService {
       });
       return data;
     } catch (error) {
-      console.error("Ошибка при получении скинов:", error);
+      console.error("Ошибка при получении скинов для каталога:", error);
       return null;
     }
   }
@@ -30,7 +30,7 @@ class SkinsService {
       });
       return data;
     } catch (error) {
-      console.error("Ошибка при получении скинов:", error);
+      console.error("Ошибка при получении скина по slug:", error);
       return null;
     }
   }
@@ -44,7 +44,7 @@ class SkinsService {
       });
       return data;
     } catch (error) {
-      console.error("Ошибка при получении скинов:", error);
+      console.error("Ошибка при получении товаров недели:", error);
       return null;
     }
   }
@@ -56,7 +56,7 @@ class SkinsService {
       });
       return data;
     } catch (error) {
-      console.error("Ошибка при получении скинов:", error);
+      console.error("Ошибка при получении последний покупок:", error);
       return null;
     }
   }

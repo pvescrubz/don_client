@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
@@ -13,9 +13,11 @@ export const useLogout = () => {
 
   const { mutate, isPending } = useMutation({
     mutationKey: ["logout"],
-    mutationFn: () => authService.logout(),
+    mutationFn: async () => {
+      await authService.logout();
+    },
     onSuccess: () => {
-      toast.success("Вы успешно вышли из системы!");
+      toast.success("Вы вышли из системы!");
       setUser(null);
       setIsAuth(false);
       // queryClient.clear();

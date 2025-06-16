@@ -1,5 +1,5 @@
 import { CURRENCY } from "../typing/currency.type";
-import { getCookie } from "./coockies";
+import { getCookie } from "./cookies";
 
 
 

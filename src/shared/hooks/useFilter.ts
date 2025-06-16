@@ -36,12 +36,12 @@ export const useFilter = (
       params.delete(queryName);
     }
 
-    const queryString = params.toString();
     if (queryName !== "page") {
       params.set("page", "1");
     }
+
     if (firstRender) return;
-    router.push(`${pathname}?${queryString}`, { scroll: false });
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedValue]);

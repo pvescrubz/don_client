@@ -1,5 +1,6 @@
+import { PayMethods } from "@/shared/components/forms/PayMethods/PayMethods";
 import { Button } from "@/shared/components/ui/Button/Button";
-import { FormatedPrice, IPrices } from "@/shared/lib/FormatedPrice";
+import { FormatedPrice } from "@/shared/lib/FormatedPrice";
 import { TDiv } from "@/shared/typing/elements.type";
 import clsx from "clsx";
 import { FC } from "react";
@@ -8,15 +9,14 @@ import { CartClearAllBtn } from "./CartClearAllBtn";
 
 interface ICartCheckout extends TDiv {
   itemsCount: number;
-  totalPrices: IPrices;
+  totalPrice: number | string;
 }
 export const CartCheckout: FC<ICartCheckout> = ({
   itemsCount,
-  totalPrices,
+  totalPrice,
   className,
   ...rest
 }) => {
-
   return (
     <div className={clsx(styles.root, className)} {...rest}>
       <p className={styles.title}>Итого</p>
@@ -25,11 +25,15 @@ export const CartCheckout: FC<ICartCheckout> = ({
         <p className={styles.count}>{itemsCount}</p>
       </div>
       <div className={styles.box}>
+        <PayMethods price={totalPrice} />
+      </div>
+      <div className={styles.box}>
         <p className={styles.amount_title}>Всего</p>
         <p className={styles.amount}>
-          <FormatedPrice prices={totalPrices} />
+          <FormatedPrice price={totalPrice} />
         </p>
       </div>
+
       <div className={styles.btn_group}>
         <Button size="small">Оплатить</Button>
         <CartClearAllBtn />
