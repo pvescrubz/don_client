@@ -14,7 +14,7 @@ export const SliderPosts: React.FC<ISliderProps> = ({
   height,
   cardWidth,
   gap,
-  autoScrollSpeed = 190, // Значение по умолчанию: 50 пикселей в секунду
+  autoScrollSpeed = 190,
 }) => {
   const sliderRef = useRef<HTMLDivElement | null>(null);
 
