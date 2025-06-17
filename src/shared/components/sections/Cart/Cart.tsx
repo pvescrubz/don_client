@@ -26,9 +26,9 @@ export const Cart: FC = () => {
       </Section>
     );
 
-  const { skins, itemsCount, totalUSD, totalRUB, totalEUR, totalKZT } = cart;
+  const { skins, itemsCount, total } = cart;
 
-  const prices = { USD: totalUSD, RUB: totalRUB, EUR: totalEUR, KZT: totalKZT };
+
 
   return (
     <>
@@ -43,7 +43,7 @@ export const Cart: FC = () => {
             <CartCheckout
               itemsCount={itemsCount}
               className={styles.checkout}
-              totalPrices={prices}
+              totalPrice={total}
             />
           </div>
         </Container>

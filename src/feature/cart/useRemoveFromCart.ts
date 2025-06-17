@@ -2,7 +2,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
-import { useCartStore } from "@/shared/stores/cart.store";
+import { useCartStore } from "@/feature/cart/cart.store";
 import { cartService } from "./cart.service";
 
 export const useRemoveFormCart = (skinId: string) => {

@@ -15,6 +15,7 @@ export const AVAILABLE_FIELDS = {
   PROMO: "promo",
   REGION: "region",
   LINK: "link",
+  TRADE_URL: "steamTradeUrl",
 } as const;
 
 export type TFieldKeys =
@@ -34,7 +35,7 @@ export interface IPostInput {
   iconRigth?: ReactNode;
 }
 
-export const POST_INPUTS: Record<TFieldKeys, IPostInput> = {
+export const INPUTS: Record<TFieldKeys, IPostInput> = {
   [AVAILABLE_FIELDS.LOGIN]: {
     iconLeft: <IconLogin />,
     iconRigth: <IconInfo />,
@@ -54,7 +55,7 @@ export const POST_INPUTS: Record<TFieldKeys, IPostInput> = {
     placeholder: "Укажите промокод",
     patternRegExp: /a^/,
     patternMessage:
-      "Проомакод должен содержать только буквы и быть не менее 3 символов",
+      "Некорретный промокод",
   },
   [AVAILABLE_FIELDS.REGION]: {
     name: AVAILABLE_FIELDS.REGION,
@@ -99,5 +100,16 @@ export const POST_INPUTS: Record<TFieldKeys, IPostInput> = {
     label: false,
     placeholder: "",
     required: "Выберите валюту",
+  },
+
+  [AVAILABLE_FIELDS.TRADE_URL]: {
+    name: AVAILABLE_FIELDS.TRADE_URL,
+    type: "text",
+    label: true,
+    placeholder: "Trade URL",
+    required: "Укажите Trade URL",
+    patternRegExp:
+      /^(https?:\/\/)?(www\.)?steamcommunity\.com\/tradeoffer\/new\/\?partner=\d+&token=[a-zA-Z0-9_-]+$/i,
+    patternMessage: "Некорректный Trade URL",
   },
 };

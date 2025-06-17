@@ -6,10 +6,7 @@ import { Button } from "@/shared/components/ui/Button/Button";
 import { IPlatformConfigItem } from "@/shared/content/platorms.config";
 import { useFormWatchValues } from "@/shared/hooks/useFormWatchValues";
 import { FormatedPrice } from "@/shared/lib/FormatedPrice";
-import {
-  CURRENCY_ICON,
-  TCurrencyCode
-} from "@/shared/typing/currency.type";
+import { CURRENCY_ICON, TCurrencyCode } from "@/shared/typing/currency.type";
 import { onError } from "@/shared/utils/error-form";
 import clsx from "clsx";
 import Image from "next/image";
@@ -17,6 +14,7 @@ import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { CurrencySelect } from "../../CurrencySelect/CurrencySelect";
 import { FormInput } from "../../FormInput/FormInput";
+import { PayMethods } from "../../PayMethods/PayMethods";
 import { FormTitle } from "../FormTitle/FormTitle";
 import { PrivacyNotice } from "../PrivacyNotice/PrivacyNotice";
 import { WarningSteam } from "../WarningSteam/WarningSteam";
@@ -43,7 +41,6 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
     AVAILABLE_FIELDS.PROMO,
     AVAILABLE_FIELDS.CURRENCY,
   ]);
-
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
@@ -116,16 +113,7 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
           <p className={styles.field_title}>{formTitle}</p>
         </div>
 
-        <div className={styles.box}>
-          <p className={styles.field_title}>Выберите способ оплаты:</p>
-          <Image
-            src="/images/sbp.webp"
-            alt="alt"
-            width={120}
-            height={60}
-            className={styles.payment_image}
-          />
-        </div>
+        <PayMethods price={amount || 0} currency={currency as TCurrencyCode} />
         <div className={styles.text_container}>
           <p className={styles.text}>
             Промокод:{" "}
@@ -140,13 +128,9 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
             <span className={styles.field_title}>
               {amount && (
                 <FormatedPrice
-                  prices={{
-                    USD: amount,
-                    RUB: amount,
-                    EUR: amount,
-                    KZT: amount,
-                  }}
+                  price={amount}
                   currency={currency as TCurrencyCode}
+                  needConvert={false}
                 />
               )}
               {!amount && "-"}

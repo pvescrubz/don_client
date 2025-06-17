@@ -1,9 +1,11 @@
-import BlogPostPage from "@/pages/BlogPostPage";
+import { BlogPostScreen } from "@/screens/BlogPost.screen";
+import { notFound } from "next/navigation";
 
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
+  if (!slug) return notFound();
 
-  return <BlogPostPage slug={slug} />;
+  return <BlogPostScreen slug={slug} />;
 };
 
 export default Page;

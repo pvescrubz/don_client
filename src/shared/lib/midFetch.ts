@@ -1,4 +1,5 @@
 import { ENDPOINTS, TEndpoints } from "../api/endpoints";
+import { CONFIG } from "../model/config";
 import { TQuery } from "../typing/query.type";
 import { buildQueryString } from "./buildQueryString";
 
@@ -17,7 +18,7 @@ export async function midFetch(options: IRequestOptions): Promise<Response> {
 
   const isGetOrDelete = method === "GET";
 
-  let requestUrl = process.env.NEXT_PUBLIC_BACK_URL + url;
+  let requestUrl = CONFIG.API_BASE_URL + url;
 
   if (params) requestUrl += `/${params}`;
 

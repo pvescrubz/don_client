@@ -1,10 +1,10 @@
 "use client";
 
+import { useToggleCart } from "@/feature/cart/useToggleCart";
 import { Button } from "@/shared/components/ui/Button/Button";
 import { IconCartSmall } from "@/shared/components/ui/svg/IconCartSmall";
 import { IconDelete } from "@/shared/components/ui/svg/IconDelete";
 import { useProtectedAction } from "@/shared/hooks/useProtectedAction";
-import { useToggleCart } from "@/shared/hooks/useToggleCart";
 import { TButton } from "@/shared/typing/elements.type";
 import clsx from "clsx";
 import { FC } from "react";

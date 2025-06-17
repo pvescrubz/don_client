@@ -30,7 +30,7 @@ export const Catalog: FC<ICatalog> = async ({
   return (
     <div className={clsx(styles.root, className)} {...rest}>
       <CatalogList skins={data} />
-      <Pagination meta={meta} />
+      {meta && <Pagination meta={meta} />}
     </div>
   );
 };

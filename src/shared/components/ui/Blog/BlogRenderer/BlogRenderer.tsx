@@ -12,9 +12,8 @@ interface Props {
 }
 
 export const BlogBlockRenderer: FC<Props> = ({ block }) => {
- if (block.type === "paragraph") {
-  
-    return <BlogParagraph data={block}  />;
+  if (block.type === "paragraph") {
+    return <BlogParagraph data={block} />;
   }
   if (block.type === "heading") {
     return <BlogHeading data={block} />;
@@ -35,6 +34,4 @@ export const BlogBlockRenderer: FC<Props> = ({ block }) => {
   if (block.type === "nested-list") {
     return <BlogNestedList data={block} />;
   }
-
-
 };

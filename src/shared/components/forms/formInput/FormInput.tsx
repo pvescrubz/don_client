@@ -2,7 +2,7 @@
 import { TDiv } from "@/shared/typing/elements.type";
 import { FC, ReactNode } from "react";
 import { FieldValues, UseFormRegister } from "react-hook-form";
-import { POST_INPUTS, TFieldKeys } from "../input.info";
+import { INPUTS, TFieldKeys } from "../input.info";
 import { StyledInput } from "../ui/StyledInput/StyledInput";
 
 interface IFormInput extends TDiv {
@@ -31,7 +31,7 @@ export const FormInput: FC<IFormInput> = ({
     patternRegExp,
     patternMessage,
     blockLettersEntry,
-  } = POST_INPUTS[fieldName];
+  } = INPUTS[fieldName];
 
   return (
     <StyledInput

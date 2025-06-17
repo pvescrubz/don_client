@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import styles from "./ProductCard.module.css";
-import { ProductDynamicCartBtn } from "./ProductDynamicCartBtn";
+import ProductCardBtn from "./ProductCardBtn";
 
 interface IStatTagProps {
   killCounter?: ISpecificallyField;
@@ -24,21 +24,7 @@ export const Top: FC<IStatTagProps> = ({ killCounter, souvenir }) => {
 };
 
 export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
-  const {
-    name,
-    priceUSD,
-    priceRUB,
-    priceEUR,
-    priceKZT,
-    id,
-    image,
-    slug,
-    killCounter,
-    souvenir,
-    game,
-  } = skin;
-
-  const prices = { USD: priceUSD, RUB: priceRUB, EUR: priceEUR, KZT: priceKZT };
+  const { name, price, id, image, slug, killCounter, souvenir, game } = skin;
 
   return (
     <div className={clsx(styles.root, className)} {...rest}>
@@ -54,10 +40,10 @@ export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
         <div className={styles.descr}>
           <p className={styles.name}>{name}</p>
           <p className={styles.price}>
-            <FormatedPrice prices={prices} />
+            <FormatedPrice price={price} />
           </p>
         </div>
-        <ProductDynamicCartBtn className={styles.button} skinId={id} />
+        <ProductCardBtn className={styles.button} skinId={id} />
       </div>
 
       <Link href={`/skin/${game.name}/${slug}`} className={styles.link} />

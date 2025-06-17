@@ -1,7 +1,7 @@
-import BlogListPage from "@/pages/BlogPostsPage";
+import { BlogScreen } from "@/screens/BlogPosts.screen";
 
 const Page = () => {
-  return <BlogListPage />;
+  return <BlogScreen />;
 };
 
 export default Page;

@@ -7,82 +7,113 @@ type TEndpointsPt = {
 };
 
 export const ENDPOINTS = {
+  //auth
   steamLogin: {
     method: "GET",
-    url: "/api/auth/steam-login",
+    url: "/auth/steam-login",
     auth: false,
   },
   steamCallback: {
     method: "GET",
-    url: "/api/auth/steam-callback",
+    url: "/auth/steam-callback",
     auth: false,
   },
   logout: {
     method: "POST",
-    url: "/api/auth/logout",
+    url: "/auth/logout",
     auth: false,
   },
   checkAccess: {
     method: "POST",
-    url: "/api/auth/check-access",
+    url: "/auth/check-access",
     auth: true,
   },
   checkRefresh: {
     method: "POST",
-    url: "/api/auth/check-refresh",
+    url: "/auth/check-refresh",
     auth: true,
   },
+
+  // skins
   filters: {
     method: "GET",
-    url: "/api/filters",
+    url: "/filters",
     auth: false,
   },
 
   skins: {
     method: "GET",
-    url: "/api/skins",
+    url: "/skins",
     auth: false,
   },
   skin: {
     method: "GET",
-    url: "/api/skins/skin", // + query game + slug
+    url: "/skins/skin", // + query game + slug
     auth: false,
   },
   weekly: {
     method: "GET",
-    url: "/api/skins/best-this-week",
+    url: "/skins/best-this-week",
     auth: false,
   },
   lastBuy: {
     method: "GET",
-    url: "/api/skins/last-buy",
+    url: "/skins/last-buy",
     auth: false,
   },
 
+  //cart
   cart: {
     method: "GET",
-    url: "/api/cart",
+    url: "/cart",
     auth: true,
   },
   addToCart: {
     method: "POST",
-    url: "/api/cart/add",
+    url: "/cart/add",
     auth: true,
   },
   removeToCart: {
     method: "DELETE",
-    url: "/api/cart/remove",
+    url: "/cart/remove",
     auth: true,
   },
   clearCart: {
     method: "DELETE",
-    url: "/api/cart/clear",
+    url: "/cart/clear",
     auth: true,
   },
+
+  // user
   changeCurrency: {
     method: "POST",
-    url: "/api/user/change-currency",
+    url: "/user/change-currency",
     auth: true,
+  },
+
+  update: {
+    method: "POST",
+    url: "/user/update",
+    auth: true,
+  },
+
+  sendActivate: {
+    method: "POST",
+    url: "/user/send-activate-email",
+    auth: true,
+  },
+  
+  activate: {
+    method: "POST",
+    url: "/user/activate",
+    auth: false,
+  },
+
+  
+  currencyRate: {
+    method: "GET",
+    url: "/currency",
+    auth: false,
   },
 } as const satisfies Record<string, TEndpointsPt>;
 

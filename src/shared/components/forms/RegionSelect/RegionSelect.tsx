@@ -3,7 +3,7 @@ import { IRegion, REGIONS } from "@/shared/typing/regions.type";
 import clsx from "clsx";
 import { useEffect, type FC } from "react";
 import { Controller, type Control } from "react-hook-form";
-import { POST_INPUTS, TFieldKeys } from "../input.info";
+import { INPUTS, TFieldKeys } from "../input.info";
 import { Select } from "../ui/Select/Select";
 import { StyledInput } from "../ui/StyledInput/StyledInput";
 import styles from "./RegionSelect.module.css";
@@ -23,7 +23,7 @@ export const RegionSelect: FC<IRegionSelect> = ({
   error,
   ...rest
 }) => {
-  const { name, type, required, placeholder } = POST_INPUTS[fieldName];
+  const { name, type, required, placeholder } = INPUTS[fieldName];
 
   useEffect(() => {
     setValue(name, REGIONS[0].value);

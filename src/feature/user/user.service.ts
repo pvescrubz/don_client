@@ -1,6 +1,6 @@
 import { ENDPOINTS } from "@/shared/api/endpoints";
 import { apiFetch } from "@/shared/lib/apiFetch";
-import { IUser } from "./user.type";
+import { IUpdateData, IUser } from "./user.type";
 
 class UserService {
   async changeCurrency(): Promise<IUser> {
@@ -12,6 +12,48 @@ class UserService {
       return res;
     } catch (error) {
       console.error("Ошибка при очистке корзины:", error);
+      throw error;
+    }
+  }
+
+  async update(data: IUpdateData): Promise<IUser> {
+    try {
+      const res = await apiFetch<IUser>({
+        endpoint: ENDPOINTS.update,
+        body: data,
+      });
+
+      return res;
+    } catch (error) {
+      console.error("Ошибка при очистке корзины:", error);
+      throw error;
+    }
+  }
+
+  async sendActivateEmail(): Promise<{ success: boolean }> {
+    try {
+      const res = await apiFetch<{ success: boolean }>({
+        endpoint: ENDPOINTS.sendActivate,
+      });
+
+      return res;
+    } catch (error) {
+      console.error("Ошибка при отправке пиьсма с активацией:", error);
+      throw error;
+    }
+  }
+  async activate(token: string): Promise<{ success: boolean }> {
+    try {
+      const res = await apiFetch<{ success: boolean }>({
+        endpoint: ENDPOINTS.activate,
+        body: { token },
+      });
+
+      return res;
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error("Ошибка при активации аккаунта:", error.message);
+      }
       throw error;
     }
   }
