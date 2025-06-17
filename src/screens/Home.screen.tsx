@@ -23,16 +23,10 @@ export const HomeScreen: FC = () => {
         <WeeklyProducts />
         <Statistic />
         <AddBalanceFake />
-<<<<<<< HEAD:src/pages/HomePage.tsx
-        <Bloggers />
-       
-      </RedContainer>
- <BlogSlider posts={posts} />
-=======
       </RedContainer>
       <Reviews />
       <Bloggers />
->>>>>>> 7c434d5d03b50034ae5d25597be7674be27b6ee6:src/screens/Home.screen.tsx
+
       <Faq platform={APP_PAGES.FAQ.slug} />
       <BlogSlider posts={posts} />
     </>
