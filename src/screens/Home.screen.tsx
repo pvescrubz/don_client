@@ -4,6 +4,7 @@ import { Bloggers } from "@/shared/components/sections/Blogers/Blogers";
 import { BuySkinsHome } from "@/shared/components/sections/BuySkins/BuySkins";
 import { Faq } from "@/shared/components/sections/Faq/Faq";
 import { Hero } from "@/shared/components/sections/Hero/Hero";
+import { Reviews } from "@/shared/components/sections/Reviews/Reviews";
 import { Statistic } from "@/shared/components/sections/Statistics/Statistics";
 import { WeeklyProducts } from "@/shared/components/sections/WeeklyProducts/WeeklyProducts";
 import { RedContainer } from "@/shared/components/ui/containers/RedContainer/RedContainer";
@@ -22,11 +23,11 @@ export const HomeScreen: FC = () => {
         <WeeklyProducts />
         <Statistic />
         <AddBalanceFake />
-        <Bloggers />
-        <BlogSlider posts={posts} />
       </RedContainer>
-
+      <Reviews />
+      <Bloggers />
       <Faq platform={APP_PAGES.FAQ.slug} />
+      <BlogSlider posts={posts} />
     </>
   );
 };
