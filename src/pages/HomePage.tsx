@@ -22,9 +22,9 @@ export const HomePage: FC = () => {
         <Statistic />
         <AddBalanceFake />
         <Bloggers />
-        <BlogSlider posts={posts} />
+       
       </RedContainer>
-
+ <BlogSlider posts={posts} />
       <Faq platform={APP_PAGES.FAQ.slug} />
     </>
   );

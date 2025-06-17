@@ -1,5 +1,3 @@
-// components/BlogBlockRenderer.tsx
-
 import { TContentBlock } from "@/shared/typing/blog.type";
 import { FC } from "react";
 import { BlogHeading } from "../BlogHeading/BlogHeading";
