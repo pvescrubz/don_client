@@ -1,6 +1,6 @@
 "use client";
 
-import { bloggers } from "@/shared/lib/bloggers";
+import { bloggers } from "@/shared/content/bloggers.config";
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useEffect, useState } from "react";

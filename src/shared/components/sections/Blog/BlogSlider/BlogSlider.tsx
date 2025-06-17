@@ -15,7 +15,7 @@ export const BlogSlider = ({ posts }: BlogPostsProps) => {
   return (
     <Section className={styles.root}>
       <Title>Блог</Title>
-      <SliderPosts height="350px" cardWidth={350} gap={20} autoScrollSpeed={1111580}>
+      <SliderPosts height="350px" cardWidth={350} gap={20} autoScrollSpeed={1000}>
         {posts.map((post) => (
           <Link
             key={post.name}
