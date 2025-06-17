@@ -12,7 +12,7 @@ class CurrencyService {
       return data;
     } catch (error) {
       console.error("Ошибка при получении рейтов валют:", error);
-      return null;
+      throw error;
     }
   }
 }

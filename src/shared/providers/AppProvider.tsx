@@ -1,7 +1,7 @@
 "use client";
 
 import { useTokenValidation } from "@/feature/auth/useTokenValidation";
-import { useCurrencyRates } from "@/feature/currency/useChangeCurrency";
+import { useCurrencyRates } from "@/feature/currency/useCurrencyRates";
 import { PropsWithChildren, Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import { ModalContainer } from "../components/modals/ModalContainer";

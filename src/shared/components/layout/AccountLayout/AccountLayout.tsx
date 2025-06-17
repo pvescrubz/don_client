@@ -21,8 +21,6 @@ export const AccountLayout: FC<PropsWithChildren> = ({ children }) => {
           </Title>
 
           <UserInfo />
-
-          <UserInfo />
         </div>
       </Box>
       <Container>

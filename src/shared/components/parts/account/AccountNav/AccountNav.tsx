@@ -1,6 +1,6 @@
-import { ButtonLink } from "@/shared/components/ui/Button/ButtonLink";
 import { PRIVATE_PAGES } from "@/shared/dashboard/private.dashboard";
 import { FC } from "react";
+import { AccountNavButton } from "../AccountNavButton/AccountNavButton";
 import styles from "./AccountNav.module.css";
 
 export const AccountNav: FC = () => {
@@ -11,16 +11,13 @@ export const AccountNav: FC = () => {
       {navItems && (
         <nav className={styles.root}>
           {navItems.map((item) => (
-            <ButtonLink
-              href={item.slug}
+            <AccountNavButton
               key={item.slug}
-              variant="secondary"
-              size="small"
+              href={item.slug}
               className={styles.link}
-              scroll={false}
             >
-              {item.name}
-            </ButtonLink>
+              {item.name}{" "}
+            </AccountNavButton>
           ))}
         </nav>
       )}

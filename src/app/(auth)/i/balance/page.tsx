@@ -1,5 +1,7 @@
+import { AccountBalanceScreen } from "@/screens/AccountBalance.screen";
+
 const Page = () => {
-  return <>БАЛАНС</>;
+  return <AccountBalanceScreen />;
 };
 
 export default Page;

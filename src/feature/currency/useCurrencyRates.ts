@@ -6,19 +6,23 @@ import { useEffect } from "react";
 import { currencyService } from "./currency.service";
 
 export const useCurrencyRates = () => {
-  const { setCurrencyRates } = useCurrencyStore();
+  const { setCurrencyRates, setCurrency } = useCurrencyStore();
 
   const res = useQuery({
     queryKey: ["currencyRates"],
     queryFn: currencyService.getRates,
     staleTime: 1000 * 60 * 15,
+
   });
 
-  const { isSuccess, isLoading, data } = res;
+  const { isSuccess, isError, isLoading, data } = res;
 
   useEffect(() => {
     if (isSuccess && !isLoading && data) {
       setCurrencyRates(data);
     }
-  }, [isSuccess, isLoading, data, setCurrencyRates]);
+    if (isError && !isLoading) {
+      setCurrency("RUB");
+    }
+  }, [isSuccess, isLoading, data, setCurrencyRates, isError, setCurrency]);
 };
