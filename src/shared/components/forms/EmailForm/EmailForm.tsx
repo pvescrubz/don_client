@@ -75,7 +75,7 @@ export const EmailForm: FC<TForm> = ({ className, ...rest }) => {
         >
           {!email && "Сохранить"}
           {email && !isActivated() && "Активировать"}
-          {email && isActivated() && "Сохранить"}
+          {email && isActivated() && "Изменить"}
         </Button>
       </div>
       {!isActivated() && (

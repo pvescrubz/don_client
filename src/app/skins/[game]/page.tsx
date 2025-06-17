@@ -11,7 +11,8 @@ const Page = async ({
   searchParams: Promise<TQuery>;
 }) => {
   const { game } = await params;
-  if (game) return notFound();
+
+  if (!game) return notFound();
 
   const queryParams = await searchParams;
   const isMobile = await isMobileDevice();

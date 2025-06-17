@@ -1,27 +1,37 @@
-'use client'
+"use client";
 
 import { useCartStore } from "@/feature/cart/cart.store";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { cartService } from "./cart.service";
 
 export const useGetCart = () => {
-  const { addToCart } = useCartStore();
-  const didSyncRef = useRef(false);
+  const { cartIds, addToCart, removeFromCart } = useCartStore();
 
   const { data: cart, isLoading } = useQuery({
     queryKey: ["cart"],
     queryFn: () => cartService.getCart(),
-    staleTime: 1000 * 60 * 5,
+    refetchInterval: 15 * 60 * 1000,
+    staleTime: 0,
   });
 
   useEffect(() => {
-    if (!didSyncRef.current && cart?.skins?.length && !isLoading) {
-      cart.skins.forEach((item) => addToCart(item.id));
-      didSyncRef.current = true;
+    if (cart?.skins?.length !== undefined && !isLoading) {
+      const serverIds = cart.skins.map((item) => item.id);
+
+      const toRemove = cartIds.filter((id) => !serverIds.includes(id));
+      const toAdd = serverIds.filter((id) => !cartIds.includes(id));
+
+      if (toRemove.length > 0) {
+        toRemove.forEach((id) => removeFromCart(id));
+      }
+
+      if (toAdd.length > 0) {
+        toAdd.forEach((id) => addToCart(id));
+      }
     }
-  }, [addToCart, cart, isLoading]);
-  
+  }, [addToCart, cart, cartIds, isLoading, removeFromCart]);
+
   return {
     cart,
     isLoading,

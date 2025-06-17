@@ -10,9 +10,14 @@ import styles from "./PayMethods.module.css";
 interface IPayMethods {
   price: number | string;
   currency?: TCurrencyCode;
+  accBalanceHidden?: boolean;
 }
 
-export const PayMethods: FC<IPayMethods> = ({ price, currency }) => {
+export const PayMethods: FC<IPayMethods> = ({
+  price,
+  currency,
+  accBalanceHidden = false,
+}) => {
   const { currency: globalCurrency } = useCurrencyStore();
   const activeCurrency = currency || globalCurrency;
 
@@ -51,27 +56,29 @@ export const PayMethods: FC<IPayMethods> = ({ price, currency }) => {
           </span>
         </label>
 
-        <label className={styles.label} inert={!balanceAvailable}>
-          <input
-            className={styles.input}
-            type="radio"
-            name="paymentMethod"
-            value="donbalnce"
-            disabled={!balanceAvailable}
-          />
-          <span className={styles.border}>
-            <Image
-              className={styles.image}
-              src="/images/donbalance.png"
-              alt="donbalnce"
-              width={120}
-              height={60}
+        {!accBalanceHidden && (
+          <label className={styles.label} inert={!balanceAvailable}>
+            <input
+              className={styles.input}
+              type="radio"
+              name="paymentMethod"
+              value="donbalnce"
+              disabled={!balanceAvailable}
             />
-          </span>
-          <div
-            className={clsx(styles.shimmer, !balanceAvailable && styles.show)}
-          />
-        </label>
+            <span className={styles.border}>
+              <Image
+                className={styles.image}
+                src="/images/donbalance.png"
+                alt="donbalnce"
+                width={120}
+                height={60}
+              />
+            </span>
+            <div
+              className={clsx(styles.shimmer, !balanceAvailable && styles.show)}
+            />
+          </label>
+        )}
 
         <label className={styles.label} inert={true}>
           <input

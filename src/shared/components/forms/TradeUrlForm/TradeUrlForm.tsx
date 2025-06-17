@@ -75,7 +75,8 @@ export const TradeUrlForm: FC<TForm> = ({ className, ...rest }) => {
           className={styles.button}
           disabled={updateIsPending}
         >
-          Сохранить
+          {!user?.steamTradeUrl && "Сохранить"}
+          {user?.steamTradeUrl && "Изменить"}
         </Button>
       </div>
     </form>
