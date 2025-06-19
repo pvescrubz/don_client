@@ -42,15 +42,15 @@ export const Bloggers: FC<IBloggersProps> = ({ bloggers: propBloggers }) => {
     <Section>
       <Container>
         <Title>БЛОГЕРЫ РЕКОМЕНДУЮТ</Title>
-        <div className={styles.bloggers_slider}>
+        <div className={styles.root}>
           {visibleBloggers.map((blogger, index) => (
             <Link
               key={index}
               href={blogger.href}
               rel="nofollow noreferrer"
-              className={styles.blogger_card}
+              className={styles.card}
             >
-              <div className={styles.blogger_info}>
+              <div className={styles.info}>
                 <Image
                   src={blogger.image}
                   alt={blogger.name}
@@ -58,21 +58,19 @@ export const Bloggers: FC<IBloggersProps> = ({ bloggers: propBloggers }) => {
                   height={100}
                   className={styles.img}
                 />
-                <div className={styles.blogger_name}>{blogger.name}</div>
-                <div className={styles.blogger_followers}>
-                  {blogger.followers}
-                </div>
+                <div className={styles.name}>{blogger.name}</div>
+                <div className={styles.followers}>{blogger.followers}</div>
               </div>
             </Link>
           ))}
         </div>
         {visibleCount < displayBloggers.length && (
-          <div className={styles.show_more_container}>
+          <div className={styles.button_box}>
             <Button
               size="large"
               variant="primary"
               onClick={handleShowMore}
-              className={styles.show_more_button}
+              className={styles.button}
             >
               Показать еще
             </Button>

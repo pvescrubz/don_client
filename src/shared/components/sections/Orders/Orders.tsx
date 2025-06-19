@@ -43,6 +43,7 @@ export const Orders: FC = () => {
                   <tr>
                     <th>Дата</th>
                     <th>Тип операции</th>
+                    <th>id Операции</th>
                     <th>Статус</th>
                     <th>Сумма</th>
                     <th>Метод</th>
@@ -57,6 +58,9 @@ export const Orders: FC = () => {
                       </td>
                       <td className={styles.td} title="Тип операции">
                         {translateOperation(order.operation)}
+                      </td>
+                      <td className={styles.td} title="id Операции">
+                        {order.transactionId}
                       </td>
                       <td className={styles.td} title="Статус">
                         <span

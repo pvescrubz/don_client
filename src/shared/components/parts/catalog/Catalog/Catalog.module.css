@@ -8,6 +8,15 @@
   padding-left: 20px;
 }
 
+.text_fallback {
+  font-family: var(--font-family);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+  text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   .root {
     padding-left: 0;

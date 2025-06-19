@@ -1,23 +1,12 @@
-.bloggers_slider {
+.root {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
   padding: 20px 0;
+  
 }
 
-@media (max-width: 1024px) {
-  .bloggers_slider {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .bloggers_slider {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-.blogger_card {
+.card {
   display: block;
   text-decoration: none;
   color: inherit;
@@ -41,11 +30,11 @@
   }
 }
 
-.blogger_card:hover {
+.card:hover {
   transform: translateY(-5px);
 }
 
-.blogger_info {
+.info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,7 +47,7 @@
   object-fit: cover;
 }
 
-.blogger_name {
+.name {
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
@@ -67,7 +56,7 @@
   color: #fff;
 }
 
-.blogger_followers {
+.followers {
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 14px;
@@ -76,12 +65,27 @@
   color: #de1717;
 }
 
-.show_more_container {
+.button_box {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
 
-.show_more_button {
+.button {
   max-width: 360px;
+}
+@media (max-width: 1024px) {
+  .root {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .card {
+    padding: 14px;
+  }
 }
