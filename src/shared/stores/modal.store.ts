@@ -11,6 +11,7 @@ interface ModalInstance {
   component: ModalComponent;
   props?: ModalProps;
   open: boolean;
+  isClosing?: boolean;
 }
 
 interface IModalStore {
@@ -18,12 +19,14 @@ interface IModalStore {
   registerModal: (id: TModalId, component: ModalComponent) => void;
   openModal: (id: TModalId, props?: ModalProps) => void;
   closeModal: (id: TModalId) => void;
+  finalizeCloseModal: (id: TModalId) => void;
   closeAllModals: () => void;
 }
 
 export const useModalStore = create<IModalStore>()(
   devtools((set) => ({
     modals: {},
+
     registerModal: (id, component) =>
       set((state) => ({
         modals: {
@@ -31,6 +34,7 @@ export const useModalStore = create<IModalStore>()(
           [id]: { id, component, open: false },
         },
       })),
+
     openModal: (id, props) =>
       set((state) => {
         const modal = state.modals[id];
@@ -42,11 +46,13 @@ export const useModalStore = create<IModalStore>()(
             [id]: {
               ...modal,
               open: true,
+              isClosing: false,
               props,
             },
           },
         };
       }),
+
     closeModal: (id) =>
       set((state) => {
         const modal = state.modals[id];
@@ -57,18 +63,36 @@ export const useModalStore = create<IModalStore>()(
             ...state.modals,
             [id]: {
               ...modal,
+              isClosing: true,
+            },
+          },
+        };
+      }),
+
+    finalizeCloseModal: (id) =>
+      set((state) => {
+        const modal = state.modals[id];
+        if (!modal) return state;
+
+        return {
+          modals: {
+            ...state.modals,
+            [id]: {
+              ...modal,
               open: false,
+              isClosing: false,
               props: undefined,
             },
           },
         };
       }),
+
     closeAllModals: () =>
       set((state) => {
         const closed = Object.fromEntries(
           Object.entries(state.modals).map(([id, modal]) => [
             id,
-            { ...modal, open: false, props: undefined },
+            { ...modal, open: false, isClosing: false, props: undefined },
           ])
         );
 

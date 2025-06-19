@@ -13,7 +13,7 @@ export const useTokenValidation = () => {
   const { setCurrency } = useCurrencyStore();
 
   const resp = useQuery({
-    queryKey: ["validateToken"],
+    queryKey: ["user"],
     queryFn: authService.checkAuth,
     refetchInterval: 15 * 60 * 1000,
     staleTime: 0,

@@ -18,6 +18,7 @@ interface IDialog extends HTMLAttributes<HTMLDialogElement> {
   id: TModalId;
   contentClassName?: string;
   closeOutside?: boolean;
+  isClosing?: boolean;
 }
 
 export const Dialog: FC<IDialog> = ({
@@ -26,12 +27,13 @@ export const Dialog: FC<IDialog> = ({
   id,
   className,
   contentClassName,
+  isClosing,
   closeOutside = false,
   ...rest
 }) => {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
   const [show, setShow] = useState(false);
-  const { closeModal } = useModalStore();
+  const { finalizeCloseModal } = useModalStore();
 
   useStopScroll(show, id);
 
@@ -41,20 +43,23 @@ export const Dialog: FC<IDialog> = ({
 
       setTimeout(() => {
         dialogRef.current?.close();
-        closeModal(id);
+        finalizeCloseModal(id);
       }, 400);
     }
-  }, [dialogRef, setShow, closeModal, id]);
+  }, [finalizeCloseModal, id]);
 
   useEffect(() => {
     if (open && dialogRef.current) {
       setShow(true);
       dialogRef.current.showModal();
     }
-    if (!open && dialogRef.current) {
+  }, [open]);
+
+  useEffect(() => {
+    if (isClosing) {
       close();
     }
-  }, [close, open]);
+  }, [close, isClosing]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {

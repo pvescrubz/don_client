@@ -16,6 +16,7 @@ export const AVAILABLE_FIELDS = {
   REGION: "region",
   LINK: "link",
   TRADE_URL: "steamTradeUrl",
+  OPERATION: "operation",
 } as const;
 
 export type TFieldKeys =
@@ -54,8 +55,7 @@ export const INPUTS: Record<TFieldKeys, IPostInput> = {
     label: true,
     placeholder: "Укажите промокод",
     patternRegExp: /a^/,
-    patternMessage:
-      "Некорретный промокод",
+    patternMessage: "Некорретный промокод",
   },
   [AVAILABLE_FIELDS.REGION]: {
     name: AVAILABLE_FIELDS.REGION,
@@ -100,6 +100,12 @@ export const INPUTS: Record<TFieldKeys, IPostInput> = {
     label: false,
     placeholder: "",
     required: "Выберите валюту",
+  },
+  [AVAILABLE_FIELDS.OPERATION]: {
+    name: AVAILABLE_FIELDS.OPERATION,
+    type: "hidden",
+    label: false,
+    placeholder: "",
   },
 
   [AVAILABLE_FIELDS.TRADE_URL]: {

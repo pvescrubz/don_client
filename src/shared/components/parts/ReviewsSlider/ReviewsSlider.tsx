@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useIsClient } from "@/shared/hooks/useIsClient";
 import { FC } from "react";
 import "swiper/css";
 import "swiper/css/mousewheel";
@@ -22,26 +21,25 @@ interface ISlider {
 }
 
 const ReviewSlider: FC<ISlider> = ({ items }) => {
-  const { isClientSide } = useIsClient();
-
   return (
     <>
-      {isClientSide && items && (
+      {items && (
         <Swiper
           modules={[Mousewheel, Autoplay]}
           slidesPerView="auto"
           speed={5000}
           spaceBetween={20}
           loop={true}
+
           grabCursor={true}
         >
           {items.map((item, index) => (
             <SwiperSlide key={index} className={"slide-rev"}>
               <div className={styles.reviewBox}>
                 <div className={styles.reviewHeader}>
-                  <img 
-                    src={item.avatar} 
-                    alt={item.name} 
+                  <img
+                    src={item.avatar}
+                    alt={item.name}
                     className={styles.avatar}
                   />
                   <p className={styles.name}>{item.name}</p>
