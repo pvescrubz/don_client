@@ -122,6 +122,25 @@ export const PayMethods: FC<IPayMethods> = ({
           </span>
           <div className={clsx(styles.shimmer, styles.show)} />
         </label>
+        <label className={styles.label} inert={true}>
+          <input
+            className={styles.input}
+            type="radio"
+            name="paymentMethod"
+            value="yoomoney"
+            disabled
+          />
+          <span className={styles.border}>
+            <Image
+              className={styles.image}
+              src="/images/yoomoney.png"
+              alt="yoomoney"
+              width={120}
+              height={60}
+            />
+          </span>
+          <div className={clsx(styles.shimmer, styles.show)} />
+        </label>
 
         <label className={styles.label} inert={true}>
           <input
@@ -136,6 +155,44 @@ export const PayMethods: FC<IPayMethods> = ({
               className={styles.image}
               src="/images/bitcoin.png"
               alt="bitcoin"
+              width={120}
+              height={60}
+            />
+          </span>
+          <div className={clsx(styles.shimmer, styles.show)} />
+        </label>
+        <label className={styles.label} inert={true}>
+          <input
+            className={styles.input}
+            type="radio"
+            name="paymentMethod"
+            value="tether"
+            disabled
+          />
+          <span className={styles.border}>
+            <Image
+              className={styles.image}
+              src="/images/tether.png"
+              alt="tether"
+              width={120}
+              height={60}
+            />
+          </span>
+          <div className={clsx(styles.shimmer, styles.show)} />
+        </label>
+        <label className={styles.label} inert={true}>
+          <input
+            className={styles.input}
+            type="radio"
+            name="paymentMethod"
+            value="webmoney"
+            disabled
+          />
+          <span className={styles.border}>
+            <Image
+              className={styles.image}
+              src="/images/webmoney.png"
+              alt="webmoney"
               width={120}
               height={60}
             />

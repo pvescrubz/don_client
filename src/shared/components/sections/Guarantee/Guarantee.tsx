@@ -12,15 +12,8 @@ import styles from "./Guarantee.module.css";
 export const Guarantee: FC<TDiv> = () => {
   return (
     <Section className={styles.root}>
-      <Image
-        src="/images/garantee.png"
-        alt="alt"
-        fill
-        priority={true}
-        className={styles.image}
-      />
       <Container>
-        <Title>ГАРАНТИИ</Title>
+        <Title h1>ГАРАНТИИ</Title>
         <div className={styles.container}>
           <p className={styles.text}>Привет!</p>
           <p className={styles.text}>
@@ -79,7 +72,7 @@ export const Guarantee: FC<TDiv> = () => {
               скинов. Чтобы избежать подобных ситуаций, мы рекомендуем соблюдать
               следующие меры безопасности:
             </p>
-            
+
             <ol className={styles.list}>
               <li className={styles.item}>
                 Измените пароль в настройках вашего аккаунта Steam на более
