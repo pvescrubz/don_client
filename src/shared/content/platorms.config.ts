@@ -48,13 +48,13 @@ export const PLATFORM_CONFIG = {
     operation: OPERATION.RECHARGE_PS_BALANCE,
   },
   [getLastSlugPart(APP_PAGES.BALANCE_XBOX.slug)]: {
-    name: "Xbox",
+    name: "XBox",
     slug: APP_PAGES.BALANCE_XBOX.slug,
     logo: "/images/logo-xbox.png",
     navBg: "/images/xboxbg.png",
-    formTitle: "Пополнение баланса Xbox",
+    formTitle: "Пополнение баланса XBox",
     formImage: "/images/xboxbgform.webp",
-    fieldTitle: "Регион и логин Xbox",
+    fieldTitle: "Регион и логин XBox",
     operation: OPERATION.RECHARGE_XBOX_BALANCE,
   },
   [getLastSlugPart(APP_PAGES.BALANCE_BLIZZARD.slug)]: {
