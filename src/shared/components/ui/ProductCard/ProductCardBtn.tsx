@@ -15,7 +15,7 @@ export const ProductCardBtn: FC<IProductCardBtn> = ({
   className,
   ...rest
 }) => {
-  const { inCart, toggle, isLoading } = useToggleCart(skinId);
+  const { inCart, toggle } = useToggleCart(skinId);
   const { withAuthCheck } = useProtectedAction();
 
   const handleClick = () => {
@@ -26,12 +26,7 @@ export const ProductCardBtn: FC<IProductCardBtn> = ({
   };
 
   return (
-    <button
-      className={className}
-      onClick={handleClick}
-      disabled={isLoading}
-      {...rest}
-    >
+    <button className={className} onClick={handleClick} {...rest}>
       {!inCart && (
         <>
           <IconCartSmall /> В корзину
