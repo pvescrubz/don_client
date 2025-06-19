@@ -8,6 +8,7 @@ import { SkinImage } from "../../parts/skin/SkinImage/SkinImage";
 import { SkinPrice } from "../../parts/skin/SkinPrice/SkinPrice";
 import { SkinTitle } from "../../parts/skin/SkinTitle/SkinTitle";
 import { SkinСharacteristics } from "../../parts/skin/SkinСharacteristics/SkinСharacteristics";
+import Breadcrumbs from "../../ui/BreadCrums/BreadCrums";
 import { Container } from "../../ui/containers/Container/Container";
 import { Section } from "../../ui/containers/Section/Section";
 import styles from "./Skin.module.css";
@@ -37,11 +38,13 @@ export const Skin: FC<ISkin> = async ({ slug }) => {
     (value) => typeof value === "object"
   );
 
+  const customNames = { [slug]: name };
   return (
+    
     <Section className={styles.root} key={dbSlug}>
+        <Breadcrumbs customNames={customNames} />
       <Container className={styles.container}>
         <SkinTitle title={name} />
-
         <div className={styles.info}>
           <div className={styles.item}>
             <SkinImage imageUrl={image} />

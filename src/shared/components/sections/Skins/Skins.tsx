@@ -6,6 +6,7 @@ import { Categories } from "../../parts/filters/Categories/Categories";
 import { Filters } from "../../parts/filters/Filters/Filters";
 import { FiltersTopGroup } from "../../parts/filters/FiltersTopGroup/FiltersTopGroup";
 import { SkinsHead } from "../../parts/SkinsHead/SkinsHead";
+import Breadcrumbs from "../../ui/BreadCrums/BreadCrums";
 import { Container } from "../../ui/containers/Container/Container";
 import styles from "./Skins.module.css";
 
@@ -21,6 +22,7 @@ const Skins: FC<ISkinksPage> = async ({ game, query, isMobile }) => {
 
   return (
     <section className={styles.root}>
+      <Breadcrumbs />
       <Container>
         <SkinsHead game={game} />
         <div className={styles.box}>

@@ -1,5 +1,3 @@
-"use client";
-
 import { REVIEWS_CONFIG } from "@/shared/content/reviews.config";
 import ReviewSlider from "../../parts/ReviewsSlider/ReviewsSlider";
 import { Section } from "../../ui/containers/Section/Section";

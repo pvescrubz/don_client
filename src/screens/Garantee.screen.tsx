@@ -1,6 +1,15 @@
 import { GuaranteeTop } from "@/shared/components/sections/GuaranteeTop/GuaranteeTop";
-import { FC } from "react";
+import Breadcrumbs from "@/shared/components/ui/BreadCrums/BreadCrums";
 
-export const GuaranteeScreen: FC = () => {
-  return <GuaranteeTop />;
+export const GuaranteeScreen = () => {
+  return (
+    <>
+    <Breadcrumbs />
+      <GuaranteeTop />
+    </>
+  )
+  
+ 
+  
+ 
 };

@@ -33,11 +33,6 @@ const ReviewSlider: FC<ISlider> = ({ items }) => {
           speed={5000}
           spaceBetween={20}
           loop={true}
-           autoplay={{
-            delay: 500,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
           grabCursor={true}
         >
           {items.map((item, index) => (
