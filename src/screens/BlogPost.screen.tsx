@@ -7,6 +7,7 @@ interface IBlogPostPage {
 export const BlogPostScreen: FC<IBlogPostPage> = ({ slug }) => {
   return (
     <>
+    
       <BlogPost slug={slug} />;
     </>
   );
