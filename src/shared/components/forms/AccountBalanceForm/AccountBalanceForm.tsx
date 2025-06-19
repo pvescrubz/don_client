@@ -1,5 +1,8 @@
 "use client";
 
+import { ICheckoutData } from "@/feature/checkout/checkout.type";
+import { useCheckout } from "@/feature/checkout/useCheckout";
+import { OPERATION } from "@/feature/orders/orders.type";
 import { useUserStore } from "@/feature/user/user.store";
 import { AVAILABLE_FIELDS } from "@/shared/components/forms/input.info";
 import { Button } from "@/shared/components/ui/Button/Button";
@@ -8,7 +11,7 @@ import { FormatedPrice } from "@/shared/lib/FormatedPrice";
 import { CURRENCY_ICON, TCurrencyCode } from "@/shared/typing/currency.type";
 import { onError } from "@/shared/utils/error-form";
 import { FC, useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import { PrivacyNotice } from "../addBalanceForm/PrivacyNotice/PrivacyNotice";
 import { CurrencySelect } from "../CurrencySelect/CurrencySelect";
 import { FormInput } from "../FormInput/FormInput";
@@ -39,13 +42,20 @@ export const AccountBalanceForm: FC = () => {
     AVAILABLE_FIELDS.CURRENCY,
   ]);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const { checkout, checkoutIsPending } = useCheckout();
+
+  const onSubmit = (data: FieldValues) => {
+    checkout(data as ICheckoutData);
   };
 
   return (
     <form className={styles.root} onSubmit={handleSubmit(onSubmit, onError)}>
+      <FormInput
+        fieldName={AVAILABLE_FIELDS.OPERATION}
+        register={register}
+        error={!!errors[AVAILABLE_FIELDS.OPERATION]}
+        defaultValue={OPERATION.RECHARGE_ACCUNT_BALANCE}
+      />
       <div className={styles.left}>
         <div className={styles.box}>
           <p className={styles.field_title}>Введите сумму</p>
@@ -90,6 +100,7 @@ export const AccountBalanceForm: FC = () => {
           price={amount || 0}
           currency={currency as TCurrencyCode}
           accBalanceHidden
+          register={register}
         />
         <div className={styles.text_container}>
           <p className={styles.text}>
@@ -123,6 +134,7 @@ export const AccountBalanceForm: FC = () => {
             size="large"
             variant="primary"
             className={styles.button}
+            disabled={checkoutIsPending}
           >
             ПОПОЛНИТЬ
           </Button>

@@ -1,22 +1,28 @@
+import { PAYMENT_METHOD } from "@/feature/orders/orders.type";
 import { useUserStore } from "@/feature/user/user.store";
 import { useConvertPrice } from "@/shared/hooks/useConvertPrice";
 import { useCurrencyStore } from "@/shared/stores/currency.store";
 import { TCurrencyCode } from "@/shared/typing/currency.type";
 import clsx from "clsx";
 import Image from "next/image";
-import { FC, useMemo } from "react";
+import { FC, useEffect, useState } from "react";
+import { FieldValues, UseFormRegister } from "react-hook-form";
 import styles from "./PayMethods.module.css";
 
 interface IPayMethods {
   price: number | string;
   currency?: TCurrencyCode;
   accBalanceHidden?: boolean;
+  register: UseFormRegister<FieldValues>;
+  needConvertToRub?: boolean;
 }
 
 export const PayMethods: FC<IPayMethods> = ({
   price,
   currency,
+  register,
   accBalanceHidden = false,
+  needConvertToRub = true,
 }) => {
   const { currency: globalCurrency } = useCurrencyStore();
   const activeCurrency = currency || globalCurrency;
@@ -25,12 +31,29 @@ export const PayMethods: FC<IPayMethods> = ({
   const { user } = useUserStore();
   const balance = user?.balance;
 
-  const balanceAvailable = useMemo(() => {
-    if (!balance || !activeCurrency || !price) return false;
+  const [balanceAvailable, setBalanceAvailable] = useState(false);
 
-    const converted = convert(price, activeCurrency, "RUB");
-    return +balance >= converted && +balance > 0 && !isNaN(converted);
-  }, [price, activeCurrency, balance, convert]);
+  useEffect(() => {
+    if (!balance || !activeCurrency || !price || accBalanceHidden) {
+      setBalanceAvailable(false);
+      return;
+    }
+    if (needConvertToRub) {
+      const converted = convert(price, activeCurrency, "RUB");
+      setBalanceAvailable(
+        +balance >= converted && +balance > 0 && !isNaN(converted)
+      );
+    } else {
+      setBalanceAvailable(+balance >= +price);
+    }
+  }, [
+    price,
+    activeCurrency,
+    balance,
+    convert,
+    needConvertToRub,
+    accBalanceHidden,
+  ]);
 
   return (
     <div className={styles.root}>
@@ -40,8 +63,8 @@ export const PayMethods: FC<IPayMethods> = ({
         <label className={styles.label}>
           <input
             type="radio"
-            name="paymentMethod"
-            value="sbp"
+            {...register("paymentMethod")}
+            value={PAYMENT_METHOD.SBP}
             className={styles.input}
             defaultChecked
           />
@@ -61,8 +84,8 @@ export const PayMethods: FC<IPayMethods> = ({
             <input
               className={styles.input}
               type="radio"
-              name="paymentMethod"
-              value="donbalnce"
+              {...register("paymentMethod")}
+              value={PAYMENT_METHOD.ACCUNT_BALANCE}
               disabled={!balanceAvailable}
             />
             <span className={styles.border}>

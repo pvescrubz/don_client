@@ -1,5 +1,7 @@
+import { OrdersScreen } from "@/screens/Orders.screen";
+
 const Page = () => {
-  return <>ЗАКАЫЗЫ</>;
+  return <OrdersScreen/>;
 };
 
 export default Page;

@@ -3,7 +3,7 @@
 import { useGetCart } from "@/feature/cart/useGetCart";
 import { APP_PAGES } from "@/shared/dashboard/app.dashboard";
 import { FC } from "react";
-import { CartCheckout } from "../../parts/cart/CartCheckout/CartCheckout";
+import { CartCheckoutForm } from "../../forms/CartCheckoutForm/CartCheckoutForm";
 import { CartList } from "../../parts/cart/CartList/CartList";
 import { ButtonLink } from "../../ui/Button/ButtonLink";
 import { Container } from "../../ui/containers/Container/Container";
@@ -28,8 +28,6 @@ export const Cart: FC = () => {
 
   const { skins, itemsCount, total } = cart;
 
-
-
   return (
     <>
       <Section className={styles.root}>
@@ -40,7 +38,7 @@ export const Cart: FC = () => {
           <div className={styles.box}>
             {skins.length && <CartList skins={skins} />}
 
-            <CartCheckout
+            <CartCheckoutForm
               itemsCount={itemsCount}
               className={styles.checkout}
               totalPrice={total}

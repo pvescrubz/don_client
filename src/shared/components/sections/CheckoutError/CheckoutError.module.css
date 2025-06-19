@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.text {
+  font-family: var(--font-family);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 130%;
+  margin-bottom: 20px;
+}
+
+.button {
+  max-width: 280px;
+}

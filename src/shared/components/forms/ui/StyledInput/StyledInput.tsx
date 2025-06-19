@@ -10,6 +10,7 @@ export interface IStyledInput extends TDiv {
   iconRigth?: ReactNode;
   centred?: boolean;
   small?: boolean;
+  hidden?: boolean;
 }
 
 export const StyledInput: FC<IStyledInput> = ({
@@ -20,6 +21,7 @@ export const StyledInput: FC<IStyledInput> = ({
   iconLeft,
   iconRigth,
   small,
+  hidden,
   ...rest
 }) => {
   const uniqueId = useId();
@@ -27,7 +29,7 @@ export const StyledInput: FC<IStyledInput> = ({
   const { className: inputClassName, ...inputProps } = InputProps;
 
   return (
-    <div className={clsx(styles.root, className)} {...rest}>
+    <div className={clsx(styles.root, className, hidden && styles.hidden)} {...rest}>
       {iconLeft && (
         <span className={clsx(styles.icon, styles.icon_left)}>{iconLeft}</span>
       )}

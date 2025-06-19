@@ -1,3 +1,4 @@
+import { OPERATION } from "../../feature/orders/orders.type";
 import { APP_PAGES } from "../dashboard/app.dashboard";
 import { getLastSlugPart } from "../lib/getLastSlugPart";
 
@@ -9,6 +10,7 @@ export interface IPlatformConfigItem {
   formTitle: string;
   formImage: string;
   fieldTitle: string;
+  operation: string;
 }
 export interface IPlatformConfig {
   [key: string]: IPlatformConfigItem;
@@ -23,6 +25,7 @@ export const PLATFORM_CONFIG = {
     formTitle: "Пополнение баланса Steam",
     formImage: "/images/steambgform.webp",
     fieldTitle: "Логин Steam",
+    operation: OPERATION.RECHARGE_STEAM_BALANCE,
   },
   [getLastSlugPart(APP_PAGES.BALANCE_EPIC.slug)]: {
     slug: APP_PAGES.BALANCE_EPIC.slug,
@@ -32,6 +35,7 @@ export const PLATFORM_CONFIG = {
     formTitle: "Пополнение баланса Epic Games",
     formImage: "/images/epicgamesbgform.webp",
     fieldTitle: "Регион и логин Epic Games",
+    operation: OPERATION.RECHARGE_EPIC_BALANCE,
   },
   [getLastSlugPart(APP_PAGES.BALANCE_PS.slug)]: {
     name: "Play Station",
@@ -41,6 +45,7 @@ export const PLATFORM_CONFIG = {
     formTitle: "Пополнение баланса Play Station",
     formImage: "/images/playstationbgform.webp",
     fieldTitle: "Регион и логин PlayStation",
+    operation: OPERATION.RECHARGE_PS_BALANCE,
   },
   [getLastSlugPart(APP_PAGES.BALANCE_XBOX.slug)]: {
     name: "Xbox",
@@ -50,6 +55,7 @@ export const PLATFORM_CONFIG = {
     formTitle: "Пополнение баланса Xbox",
     formImage: "/images/xboxbgform.webp",
     fieldTitle: "Регион и логин Xbox",
+    operation: OPERATION.RECHARGE_XBOX_BALANCE,
   },
   [getLastSlugPart(APP_PAGES.BALANCE_BLIZZARD.slug)]: {
     name: "Blizzard",
@@ -59,5 +65,6 @@ export const PLATFORM_CONFIG = {
     formTitle: "Пополнение баланса Blizzard",
     formImage: "/images/blizzardbgform.webp",
     fieldTitle: " Регион и логин Blizzard",
+    operation: OPERATION.RECHARGE_BLIZZARD_BALANCE,
   },
 } satisfies IPlatformConfig;

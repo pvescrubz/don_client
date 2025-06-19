@@ -1,7 +1,6 @@
 "use client";
 
 import { ICatalogSkin } from "@/feature/skins/skins.type";
-import { useIsClient } from "@/shared/hooks/useIsClient";
 import { FC } from "react";
 import "swiper/css";
 import "swiper/css/mousewheel";
@@ -17,11 +16,9 @@ interface ISlider {
 }
 
 const Slider: FC<ISlider> = ({ items }) => {
-  const { isClientSide } = useIsClient();
-
   return (
     <>
-      {isClientSide && items && (
+      {items && (
         <Swiper
           modules={[Mousewheel, Autoplay]}
           slidesPerView={"auto"}

@@ -102,18 +102,29 @@ export const ENDPOINTS = {
     url: "/user/send-activate-email",
     auth: true,
   },
-  
+
   activate: {
     method: "POST",
     url: "/user/activate",
     auth: false,
   },
 
-  
   currencyRate: {
     method: "GET",
     url: "/currency",
     auth: false,
+  },
+
+  orders: {
+    method: "GET",
+    url: "/orders",
+    auth: true,
+  },
+
+  checkout: {
+    method: "POST",
+    url: "/checkout",
+    auth: true,
   },
 } as const satisfies Record<string, TEndpointsPt>;
 

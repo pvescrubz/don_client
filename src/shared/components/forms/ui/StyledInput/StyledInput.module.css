@@ -6,6 +6,12 @@
   --svg-width: 24px;
   position: relative;
   border-radius: 10px;
+  width: 100%;
+}
+
+
+.root.hidden {
+  display: contents;
 }
 
 .icon {

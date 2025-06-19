@@ -6,6 +6,7 @@ import { useSendActivateEmail } from "@/feature/user/useSendActivateEmail";
 import { useUpdateUser } from "@/feature/user/useUpdateUser";
 import { AVAILABLE_FIELDS } from "@/shared/components/forms/input.info";
 import { Button } from "@/shared/components/ui/Button/Button";
+import { useFormWatchValues } from "@/shared/hooks/useFormWatchValues";
 import { TForm } from "@/shared/typing/elements.type";
 import { onError } from "@/shared/utils/error-form";
 import clsx from "clsx";
@@ -26,31 +27,41 @@ export const EmailForm: FC<TForm> = ({ className, ...rest }) => {
     register,
     handleSubmit,
     formState: { errors },
+    control,
     setValue,
   } = useForm({
     mode: "onChange",
   });
+  const { email: watchEmail } = useFormWatchValues(control, [
+    AVAILABLE_FIELDS.EMAIL,
+  ]);
+  const email = user?.email;
+
+  const emailChanged = watchEmail !== email;
+  const isActivatedNow = isActivated();
 
   useEffect(() => {
-    setValue(AVAILABLE_FIELDS.EMAIL, user?.email);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (email) {
+      setValue(AVAILABLE_FIELDS.EMAIL, email);
+    }
+  }, [setValue, email]);
 
   const onSubmit = (data: IUpdateData) => {
-    if (!user?.email) {
+    if (!emailChanged && !email) {
       update(data);
     }
-    if (user?.email && !isActivated()) {
+    if (!emailChanged && email && !isActivated()) {
       send();
     }
-    if (user?.email && isActivated()) {
+    if (!emailChanged && email && isActivated()) {
+      update(data);
+    }
+    if (emailChanged) {
       update(data);
     }
   };
 
   if (!user) return null;
-
-  const { email } = user;
 
   return (
     <form
@@ -65,7 +76,7 @@ export const EmailForm: FC<TForm> = ({ className, ...rest }) => {
           fieldName={AVAILABLE_FIELDS.EMAIL}
           register={register}
           error={!!errors[AVAILABLE_FIELDS.EMAIL]}
-          iconLeft={!isActivated() ? <IconNotActive /> : <IconActive />}
+          iconLeft={!isActivatedNow ? <IconNotActive /> : <IconActive />}
         />
         <Button
           type="submit"
@@ -73,17 +84,18 @@ export const EmailForm: FC<TForm> = ({ className, ...rest }) => {
           className={styles.button}
           disabled={updateIsPending || sendIsPending}
         >
-          {!email && "Сохранить"}
-          {email && !isActivated() && "Активировать"}
-          {email && isActivated() && "Изменить"}
+          {!emailChanged && !email && "Сохранить"}
+          {!emailChanged && email && !isActivatedNow && "Активировать"}
+          {!emailChanged && email && isActivatedNow && "Изменить"}
+          {emailChanged && "Изменить"}
         </Button>
       </div>
-      {!isActivated() && (
+      {!isActivatedNow && (
         <p className={styles.notic}>
           <span className={styles.red}>
             <b>
               {!email && "Добавьте и активируйте"}
-              {email && !isActivated() && "Активировать"}
+              {email && !isActivatedNow && "Активировать"}
             </b>
           </span>{" "}
           email, чтобы совершать покупки и получать уведомления об операциях

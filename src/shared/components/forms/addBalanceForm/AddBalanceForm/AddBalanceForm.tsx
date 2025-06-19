@@ -1,5 +1,8 @@
 "use client";
 
+import { ICheckoutData } from "@/feature/checkout/checkout.type";
+import { useCheckout } from "@/feature/checkout/useCheckout";
+import { useUserStore } from "@/feature/user/user.store";
 import { AVAILABLE_FIELDS } from "@/shared/components/forms/input.info";
 import { RegionSelect } from "@/shared/components/forms/RegionSelect/RegionSelect";
 import { Button } from "@/shared/components/ui/Button/Button";
@@ -10,8 +13,8 @@ import { CURRENCY_ICON, TCurrencyCode } from "@/shared/typing/currency.type";
 import { onError } from "@/shared/utils/error-form";
 import clsx from "clsx";
 import Image from "next/image";
-import { FC } from "react";
-import { useForm } from "react-hook-form";
+import { FC, useEffect } from "react";
+import { FieldValues, useForm } from "react-hook-form";
 import { CurrencySelect } from "../../CurrencySelect/CurrencySelect";
 import { FormInput } from "../../FormInput/FormInput";
 import { PayMethods } from "../../PayMethods/PayMethods";
@@ -35,6 +38,13 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
     mode: "onChange",
   });
 
+  const { user } = useUserStore();
+  useEffect(() => {
+    if (user?.email) {
+      setValue(AVAILABLE_FIELDS.EMAIL, user?.email);
+    }
+  }, [setValue, user?.email]);
+
   const { login, amount, promo, currency } = useFormWatchValues(control, [
     AVAILABLE_FIELDS.LOGIN,
     AVAILABLE_FIELDS.AMOUNT,
@@ -42,20 +52,27 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
     AVAILABLE_FIELDS.CURRENCY,
   ]);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit = (data: any) => {
-    console.log(data);
+  
+  const { checkout, checkoutIsPending } = useCheckout();
+
+  const onSubmit = (data: FieldValues) => {
+    checkout(data as ICheckoutData);
   };
 
   if (!config) return null;
 
-  const { name, formTitle, formImage, logo, fieldTitle } = config;
+  const { name, formTitle, formImage, logo, fieldTitle, operation } = config;
 
   return (
     <form className={styles.root} onSubmit={handleSubmit(onSubmit, onError)}>
       <div className={clsx(styles.left, styles.content)}>
         <FormTitle bg={formImage} title={formTitle} logo={logo} />
-
+        <FormInput
+          fieldName={AVAILABLE_FIELDS.OPERATION}
+          register={register}
+          error={!!errors[AVAILABLE_FIELDS.OPERATION]}
+          defaultValue={operation}
+        />
         <div className={styles.box}>
           <p className={styles.field_title}>{fieldTitle}</p>
           {name !== "Steam" && (
@@ -113,7 +130,11 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
           <p className={styles.field_title}>{formTitle}</p>
         </div>
 
-        <PayMethods price={amount || 0} currency={currency as TCurrencyCode} />
+        <PayMethods
+          price={amount || 0}
+          currency={currency as TCurrencyCode}
+          register={register}
+        />
         <div className={styles.text_container}>
           <p className={styles.text}>
             Промокод:{" "}
@@ -148,6 +169,7 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
             size="large"
             variant="primary"
             className={styles.button}
+            disabled={checkoutIsPending}
           >
             ПОПОЛНИТЬ
           </Button>
