@@ -36,6 +36,7 @@
 .image {
   opacity: 0.05;
   object-fit: cover;
+  z-index: -1;
 }
 
 .notic {

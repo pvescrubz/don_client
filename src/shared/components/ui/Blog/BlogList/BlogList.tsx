@@ -11,7 +11,7 @@ export const BlogList: FC<Props> = ({ data }) => {
   return (
     <ul className={styles.list}>
       {data.items.map((li, i) => (
-        <li key={i} className={styles.listItem}>
+        <li key={i} className={styles.item}>
           {li.content}
         </li>
       ))}

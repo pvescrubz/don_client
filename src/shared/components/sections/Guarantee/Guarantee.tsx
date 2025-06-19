@@ -12,30 +12,23 @@ import styles from "./Guarantee.module.css";
 export const Guarantee: FC<TDiv> = () => {
   return (
     <Section className={styles.root}>
-      <Image
-        src="/images/garantee.png"
-        alt="alt"
-        fill
-        priority={true}
-        className={styles.image}
-      />
       <Container>
-        <Title>ГАРАНТИИ</Title>
+        <Title h1>ГАРАНТИИ</Title>
         <div className={styles.container}>
           <p className={styles.text}>Привет!</p>
           <p className={styles.text}>
             Ты попал на Don Viche — платформу, где за считанные минуты ты можешь
             приобрести скины для CS2, Dota 2 и Rust. У нас представлены только
             подлинные предметы, которые мгновенно отправляются в твой инвентарь.
-            Давай расскажем, почему нам можно доверять. Более 3 миллионов
+            Давай расскажем, почему нам можно доверять. Более 1.5 миллионов
             человек уже купили скины у нас по самым выгодным ценам в сети.
           </p>
 
           <p className={styles.text}>Вот что мы предлагаем:</p>
           <p className={styles.title}>Что говорят наши клиенты?</p>
           <p className={styles.text}>
-            Мы собрали более 10 000 отзывов от реальных покупателей, начиная с
-            2017 года. К каждому отзыву прикреплена оценка и точная дата. Если
+            Мы собрали более 5 000 отзывов от реальных покупателей, начиная с
+            2020 года. Если
             хочешь, можешь зайти в профиль Steam автора отзыва, связаться с ним
             и лично обсудить его опыт работы с нами. Мы полностью уверены в
             достоверности каждого отзыва!
@@ -79,7 +72,7 @@ export const Guarantee: FC<TDiv> = () => {
               скинов. Чтобы избежать подобных ситуаций, мы рекомендуем соблюдать
               следующие меры безопасности:
             </p>
-            
+
             <ol className={styles.list}>
               <li className={styles.item}>
                 Измените пароль в настройках вашего аккаунта Steam на более
@@ -102,7 +95,7 @@ export const Guarantee: FC<TDiv> = () => {
                 Сделать это можно{" "}
                 <Link
                   href={PRIVATE_PAGES.ACCOUNT_BALANCE.slug}
-                  className={styles.link}
+                  className={styles.red}
                 >
                   здесь
                 </Link>
