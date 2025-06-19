@@ -1,0 +1,30 @@
+.title {
+  font-family: var(--second-family);
+font-weight: 400;
+font-size: clamp(60px, 3dvh, 200px);
+line-height: 120%;
+color: #fff;
+}
+
+.text {
+  font-family: var(--second-family);
+font-weight: 400;
+font-size: clamp(20px, 2dvh, 40px);
+line-height: 120%;
+color: #fff;
+}
+
+.root {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  height: 100dvh;
+}
+
+.image {
+  object-fit: cover;
+
+}

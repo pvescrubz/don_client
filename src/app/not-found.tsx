@@ -1,7 +1,8 @@
+import { NotFoundScreen } from "@/screens/NotFound.screen";
 
 
- const NotFound = () => {
-  return <h1>heuyc</h1>;
+ const Page = () => {
+  return <NotFoundScreen />;
 };
 
-export default NotFound;
+export default Page;
