@@ -1,5 +1,6 @@
 import { HomeScreen } from "@/screens/Home.screen";
 
+
 const Page = () => {
   return <HomeScreen />;
 };

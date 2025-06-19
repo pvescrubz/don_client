@@ -1,5 +1,3 @@
-// components/BlogNavigation.tsx
-
 import Link from "next/link";
 import { FC } from "react";
 import styles from "./BlogNavigation.module.css";

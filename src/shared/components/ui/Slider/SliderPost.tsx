@@ -1,12 +1,12 @@
-'use client';
-import { useEffect, useRef } from 'react';
+"use client";
+import { ReactNode, useEffect, useRef } from "react";
 
 interface ISliderProps {
-  children: React.ReactNode; // Тип для дочерних элементов
-  height: string; // Высота слайдера
-  cardWidth: number; // Ширина одной карточки
-  gap: number; // Расстояние между карточками
-  autoScrollSpeed?: number; // Скорость автопрокрутки (в пикселях в секунду)
+  children: ReactNode;
+  height: string;
+  cardWidth: number;
+  gap: number;
+  autoScrollSpeed?: number;
 }
 
 export const SliderPosts: React.FC<ISliderProps> = ({
@@ -24,36 +24,32 @@ export const SliderPosts: React.FC<ISliderProps> = ({
     if (!slider) return;
 
     let scrollInterval: NodeJS.Timeout | null = null;
-    let isScrollingForward = true; // Флаг направления прокрутки
+    let isScrollingForward = true;
 
     const startAutoScroll = () => {
       scrollInterval = setInterval(() => {
         if (slider) {
           if (isScrollingForward) {
-            // Прокручиваем вперед
             slider.scrollBy({
-              left: 1, // Прокручиваем на 1 пиксель за раз
-              behavior: 'smooth',
+              left: 1,
+              behavior: "smooth",
             });
 
-            // Если достигнут конец, меняем направление
             if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
               isScrollingForward = false;
             }
           } else {
-            // Прокручиваем назад
             slider.scrollBy({
-              left: -1, // Прокручиваем на 1 пиксель назад
-              behavior: 'smooth',
+              left: -1,
+              behavior: "smooth",
             });
 
-            // Если достигнуто начало, меняем направление
             if (slider.scrollLeft <= 0) {
               isScrollingForward = true;
             }
           }
         }
-      }, 1000 / autoScrollSpeed); // Рассчитываем интервал на основе скорости
+      }, 1000 / autoScrollSpeed);
     };
 
     startAutoScroll();
@@ -67,12 +63,12 @@ export const SliderPosts: React.FC<ISliderProps> = ({
     <div
       ref={sliderRef}
       style={{
-        display: 'flex',
-        overflowX: 'hidden', // Скрываем полосу прокрутки
-        scrollBehavior: 'smooth',
+        display: "flex",
+        overflowX: "hidden",
+        scrollBehavior: "smooth",
         height: height,
-        gap: `${gap}px`, // Расстояние между карточками
-        padding: `0 ${gap}px`, // Добавляем отступы по краям
+        gap: `${gap}px`,
+        padding: `0 ${gap}px`,
       }}
       className="custom-slider"
     >
@@ -81,9 +77,9 @@ export const SliderPosts: React.FC<ISliderProps> = ({
           <div
             key={index}
             style={{
-              minWidth: `${cardWidth}px`, // Фиксированная ширина карточки
-              height: '100%',
-              flexShrink: 0, // Предотвращаем сжатие карточек
+              minWidth: `${cardWidth}px`,
+              height: "100%",
+              flexShrink: 0,
             }}
           >
             {child}

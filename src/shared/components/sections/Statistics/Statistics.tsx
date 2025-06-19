@@ -66,7 +66,6 @@ export const Statistic: FC<TDiv> = () => {
 
   const dayOfYear = getDayOfYear();
 
-  // ==== Сохраняем статистику в localStorage по дням ====
   const [cachedStats, setCachedStats] = useState<{
     totalAllTime: number;
     totalMonth: number;
