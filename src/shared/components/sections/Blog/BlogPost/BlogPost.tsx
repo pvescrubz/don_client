@@ -1,4 +1,3 @@
-// components/BlogPost.tsx
 import { BlogBlockRenderer } from "@/shared/components/ui/Blog/BlogRenderer/BlogRenderer";
 import { Breadcrumbs } from "@/shared/components/ui/BreadCrums/BreadCrums";
 import { Container } from "@/shared/components/ui/containers/Container/Container";

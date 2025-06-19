@@ -31,8 +31,7 @@ export const TradeUrlForm: FC<TForm> = ({ className, ...rest }) => {
 
   useEffect(() => {
     setValue(AVAILABLE_FIELDS.TRADE_URL, user?.steamTradeUrl);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [setValue, user]);
 
   const onSubmit = (data: IUpdateData) => {
     update(data);

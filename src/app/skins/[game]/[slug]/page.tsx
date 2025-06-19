@@ -1,6 +1,9 @@
 import { SkinScreen } from "@/screens/Skin.screen";
 import { notFound } from "next/navigation";
 
+
+
+
 const Page = async ({
   params,
 }: {
