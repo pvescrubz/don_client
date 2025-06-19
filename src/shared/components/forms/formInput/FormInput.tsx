@@ -10,6 +10,7 @@ interface IFormInput extends TDiv {
   register: UseFormRegister<FieldValues>;
   error: boolean;
   iconLeft?: ReactNode;
+  defaultValue?: string;
 }
 
 export const FormInput: FC<IFormInput> = ({
@@ -18,6 +19,7 @@ export const FormInput: FC<IFormInput> = ({
   error,
   className,
   iconLeft,
+  defaultValue,
   ...rest
 }) => {
   const {
@@ -25,22 +27,22 @@ export const FormInput: FC<IFormInput> = ({
     type,
     required,
     placeholder,
-    defaultValue,
+    defaultValue: defaultValueFromConfig,
     iconRigth,
     iconLeft: iconLeftFromConfig,
     patternRegExp,
     patternMessage,
     blockLettersEntry,
   } = INPUTS[fieldName];
-
   return (
     <StyledInput
       className={className}
+      hidden={type === "hidden"}
       InputProps={{
         autoComplete: "off",
         type,
         placeholder,
-        defaultValue,
+        defaultValue: defaultValue ? defaultValue : defaultValueFromConfig,
         ...register(name, {
           required,
           pattern:

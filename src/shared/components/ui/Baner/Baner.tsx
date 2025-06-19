@@ -19,14 +19,14 @@ export const Baner: FC<IBaner> = ({
   ...rest
 }) => {
   const [show, setShow] = useState(false);
-  const { closeModal } = useModalStore();
+  const { finalizeCloseModal } = useModalStore();
 
   const close = useCallback(() => {
     setShow(false);
     setTimeout(() => {
-      closeModal(id);
+      finalizeCloseModal(id);
     }, 400);
-  }, [closeModal, id]);
+  }, [finalizeCloseModal, id]);
 
   useEffect(() => {
     if (open) {

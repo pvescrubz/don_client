@@ -58,12 +58,12 @@
 }
 
 .span {
+  position: relative;
   width: fit-content;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  position: relative;
   transition: transform 0.4s ease-in-out;
 }
 .span::after {

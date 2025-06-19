@@ -3,7 +3,7 @@ import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { TCurrencyCode } from "../typing/currency.type";
 import { setCookie } from "../utils/cookies";
-import { getInitialCurrency } from "../utils/getInitialCurrency";
+import { getInitialCurrency } from "../utils/get-initial-currency";
 
 interface ICurrencyStore {
   currency: TCurrencyCode;
@@ -18,7 +18,7 @@ export const useCurrencyStore = create<ICurrencyStore>()(
       currency: getInitialCurrency(),
       setCurrency: (value) =>
         set(() => {
-          setCookie("currency", value, {
+          setCookie("app_currency", value, {
             days: 7,
             path: "/",
           });

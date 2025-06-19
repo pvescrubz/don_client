@@ -11,7 +11,7 @@ class UserService {
 
       return res;
     } catch (error) {
-      console.error("Ошибка при очистке корзины:", error);
+      console.error("Ошибка при изменении валюты:", error);
       throw error;
     }
   }
