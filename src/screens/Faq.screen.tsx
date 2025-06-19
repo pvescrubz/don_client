@@ -1,7 +1,19 @@
 import { Faq } from "@/shared/components/sections/Faq/Faq";
+import Breadcrumbs from "@/shared/components/ui/BreadCrums/BreadCrums";
 import { APP_PAGES } from "@/shared/dashboard/app.dashboard";
-import { FC } from "react";
 
-export const FAQScreen: FC = () => {
-  return <Faq platform={APP_PAGES.FAQ.slug} />;
+export const FAQScreen = () => {
+  return  (
+    <>
+    <Breadcrumbs />
+    <Faq platform={APP_PAGES.FAQ.slug} />
+    </>
+
+  )
+  
+    
+      
+    
+  
+  
 };

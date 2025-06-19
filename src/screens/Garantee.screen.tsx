@@ -1,6 +1,16 @@
-import { Guarantee } from "@/shared/components/sections/Guarantee/Guarantee";
-import { FC } from "react";
 
-export const GuaranteeScreen: FC = () => {
-  return <Guarantee />;
-};
+import { GuaranteeTop } from "@/shared/components/sections/GuaranteeTop/GuaranteeTop";
+import Breadcrumbs from "@/shared/components/ui/BreadCrums/BreadCrums";
+
+export const GuaranteeScreen = () => {
+  return (
+    <>
+    <Breadcrumbs />
+      <GuaranteeTop />
+    </>
+  )
+  
+ 
+  
+ 
+

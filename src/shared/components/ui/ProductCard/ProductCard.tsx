@@ -47,6 +47,9 @@ export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
         <ProductCardBtn className={styles.button} skinId={id} />
       </div>
 
+
+      <Link href={`/skins/${game.name}/${slug}`} className={styles.link} />
+
     </div>
   );
 };

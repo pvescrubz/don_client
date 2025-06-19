@@ -4,6 +4,7 @@
   margin-bottom: clamp(30px, 2.865dvw, 55px);
   display: flex;
   place-items: center;
+  flex-direction: column;
 }
 
 .image {

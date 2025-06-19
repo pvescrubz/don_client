@@ -1,6 +1,7 @@
 import { AddBalance } from "@/shared/components/sections/AddBalance/AddBalance";
 import { Faq } from "@/shared/components/sections/Faq/Faq";
 import { HowToAddBalance } from "@/shared/components/sections/HowAddBalance/HowAddBalance";
+import Breadcrumbs from "@/shared/components/ui/BreadCrums/BreadCrums";
 import { FC } from "react";
 
 interface IAddBalanceScreen {
@@ -12,6 +13,7 @@ export const AddBalanceScreen: FC<IAddBalanceScreen> = ({ platform }) => {
 
   return (
     <>
+      <Breadcrumbs />
       <AddBalance platform={platform} />;
       <HowToAddBalance platform={platform} />
       <Faq platform={platform} />

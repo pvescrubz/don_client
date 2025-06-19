@@ -8,6 +8,7 @@ import styles from "./HeroBasic.module.css";
 export const HeroBasic: FC<TDiv> = () => {
   return (
     <>
+    
       <div className={styles.root}>
         <picture className={styles.fire}>
           <source
