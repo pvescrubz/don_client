@@ -58,3 +58,7 @@ export interface TNestedList {
   type: "nested-list";
   items: { content: string }[];
 }
+
+export interface BlogPostsProps {
+  posts: IBlogArticle[];
+}
