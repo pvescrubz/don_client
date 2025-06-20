@@ -126,6 +126,12 @@ export const ENDPOINTS = {
     url: "/checkout",
     auth: true,
   },
+
+  statistics: {
+    method: "GET",
+    url: "/statistics",
+    auth: true,
+  },
 } as const satisfies Record<string, TEndpointsPt>;
 
 export type TEndpoints = (typeof ENDPOINTS)[keyof typeof ENDPOINTS];

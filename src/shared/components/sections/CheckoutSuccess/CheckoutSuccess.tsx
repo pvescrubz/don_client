@@ -8,23 +8,25 @@ import styles from "./CheckoutSuccess.module.css";
 
 export const CheckoutSuccess: FC = () => {
   return (
-    <Section>
-      <Container>
-        <div className={styles.root}>
-          <Title>✅Ваш платеж принят!</Title>
-          <p className={styles.text}>
-            Перейдя по ссылке ниже, Вы сможете отслеживать статус вашей
-            операции!
-          </p>
-          <ButtonLink
-            href={PRIVATE_PAGES.ORDERS.slug}
-            size="small"
-            className={styles.button}
-          >
-            Отслеживать
-          </ButtonLink>
-        </div>
-      </Container>
-    </Section>
+    <>
+      <Section className={styles.root}>
+        <Container className={styles.container}>
+          <div className={styles.box}>
+            <Title>✅Ваш платеж принят!</Title>
+            <p className={styles.text}>
+              Перейдя по ссылке ниже, Вы сможете отслеживать статус вашей
+              операции!
+            </p>
+            <ButtonLink
+              href={PRIVATE_PAGES.ORDERS.slug}
+              size="small"
+              className={styles.button}
+            >
+              Отслеживать
+            </ButtonLink>
+          </div>
+        </Container>
+      </Section>
+    </>
   );
 };

@@ -8,6 +8,7 @@ export interface IUser {
   selectedCurrency: TCurrencyCode;
   steamTradeUrl?: string;
   steamAvatar?: string;
+  isSubscribedToNews: boolean
   balance: string;
   ref: string;
   _count: {

@@ -21,6 +21,10 @@ interface IModalStore {
   closeModal: (id: TModalId) => void;
   finalizeCloseModal: (id: TModalId) => void;
   closeAllModals: () => void;
+  anyDialogOpen: boolean;
+  setAnyDialogOpen: (value: boolean) => void;
+  anyBanerOpen: boolean;
+  setAnyBanerOpen: (value: boolean) => void;
 }
 
 export const useModalStore = create<IModalStore>()(
@@ -98,5 +102,9 @@ export const useModalStore = create<IModalStore>()(
 
         return { modals: closed };
       }),
+    anyDialogOpen: false,
+    setAnyDialogOpen: (value) => set({ anyDialogOpen: value }),
+    anyBanerOpen: false,
+    setAnyBanerOpen: (value) => set({ anyBanerOpen: value }),
   }))
 );

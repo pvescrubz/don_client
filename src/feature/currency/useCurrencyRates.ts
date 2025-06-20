@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { currencyService } from "./currency.service";
 
+
 export const useCurrencyRates = () => {
   const { setCurrencyRates, setCurrency } = useCurrencyStore();
 

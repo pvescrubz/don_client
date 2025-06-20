@@ -6,9 +6,9 @@ import styles from "./CheckoutError.module.css";
 
 export const CheckoutError: FC = () => {
   return (
-    <Section>
-      <Container>
-        <div className={styles.root}>
+    <Section className={styles.root}>
+      <Container className={styles.container}>
+        <div className={styles.box}>
           <Title>❌Вознила ошибка при оплате!</Title>
           <p className={styles.text}>
             Свяжитесь с нашей <b>службой поддержки!</b> Мы решим проблему в

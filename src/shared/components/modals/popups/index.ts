@@ -1,3 +1,4 @@
 export * from './AuthPopup/AuthPopup';
-export * from './CouponPopup/СouponPopup';
+export * from './CouponPopup/ReferalPopup';
 export * from './PriceGuaranteePopup/PriceGuaranteePopup';
+

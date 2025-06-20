@@ -1,7 +1,7 @@
 export const MODAL = {
   P_AUTH: "auth",
   P_PRICE_GUARANTEE: "priceGuarantee",
-  P_COUPON: "coupon",
+  P_REFERAL: "referal",
   P_EMAIL_OR_TRADEURL: "emailOrTradeUrl",
   B_SUBSCR: "subscr",
   B_BONUS: "bonus",

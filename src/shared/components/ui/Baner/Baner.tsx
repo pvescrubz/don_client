@@ -19,24 +19,28 @@ export const Baner: FC<IBaner> = ({
   ...rest
 }) => {
   const [show, setShow] = useState(false);
-  const { finalizeCloseModal } = useModalStore();
+  const { finalizeCloseModal, setAnyBanerOpen } = useModalStore();
 
   const close = useCallback(() => {
     setShow(false);
+    setAnyBanerOpen(false);
     setTimeout(() => {
       finalizeCloseModal(id);
     }, 400);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [finalizeCloseModal, id]);
 
   useEffect(() => {
     if (open) {
+      setAnyBanerOpen(true);
       setTimeout(() => {
         setShow(true);
-      }, 10);
+      });
     }
     if (!open) {
       close();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [close, open]);
 
   return (

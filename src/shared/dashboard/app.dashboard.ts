@@ -15,19 +15,19 @@ class Dashboard {
   } satisfies IDashboardItem;
 
   SKINS_CS2 = {
-    name: "Купить скины cs2",
+    name: "Купить скины CS2",
     slug: "/skins/cs2",
     tag: "skins",
   } satisfies IDashboardItem;
 
   SKINS_DOTA2 = {
-    name: "Купить скины dota2",
+    name: "Купить скины Dota2",
     slug: "/skins/dota2",
     tag: "skins",
   } satisfies IDashboardItem;
 
   SKINS_RUST = {
-    name: "Купить скины rust",
+    name: "Купить скины Rust",
     slug: "/skins/rust",
     tag: "skins",
   } satisfies IDashboardItem;

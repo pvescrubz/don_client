@@ -6,9 +6,9 @@ import Image from "next/image";
 import { FC } from "react";
 import { Button } from "../../../ui/Button/Button";
 import { Dialog } from "../../../ui/Dialog/Dialog";
-import styles from "./СouponPopup.module.css";
+import styles from "./ReferalPopup.module.css";
 
-export const CouponPopup: FC<IModal> = ({ id }) => {
+export const ReferalPopup: FC<IModal> = ({ id }) => {
   const { modals } = useModalStore();
   const modal = modals[id];
 
