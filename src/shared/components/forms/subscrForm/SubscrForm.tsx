@@ -1,3 +1,4 @@
+import { onError } from "@/shared/utils/error-form";
 import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "../../ui/Button/Button";
@@ -20,14 +21,14 @@ export const SubscrForm: FC = () => {
   };
 
   return (
-    <form className={styles.root} onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.root} onSubmit={handleSubmit(onSubmit, onError)}>
       <FormInput
         fieldName={AVAILABLE_FIELDS.EMAIL}
         register={register}
         error={!!errors[AVAILABLE_FIELDS.EMAIL]}
       />
-      <Button  variant="primary" className={styles.button}>
-        Получить
+      <Button variant="primary" className={styles.button}>
+        подписаться
       </Button>
     </form>
   );

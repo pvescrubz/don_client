@@ -1,17 +1,20 @@
 "use client";
 
+import { useShowBaners } from "@/shared/hooks/useShowBaners";
 import { useModalStore } from "@/shared/stores/modal.store";
 import { IModal, MODAL, TModalId } from "@/shared/typing/modal.type";
 import { FC, useEffect } from "react";
 import { BonusBaner, SubscriptionBaner } from "./baners";
-import { AuthPopup, CouponPopup, PriceGuaranteePopup } from "./popups";
+import { AuthPopup, PriceGuaranteePopup, ReferalPopup } from "./popups";
 import { EmailOrTradeUrlPopup } from "./popups/EmailOrTradeUrlPopup/EmailOrTradeUrlPopup";
 
 const MODALS_ENTRIES: [TModalId, FC<IModal>][] = [
   [MODAL.P_AUTH, AuthPopup],
-  [MODAL.P_COUPON, CouponPopup],
-  [MODAL.P_PRICE_GUARANTEE, PriceGuaranteePopup],
   [MODAL.P_EMAIL_OR_TRADEURL, EmailOrTradeUrlPopup],
+
+  [MODAL.P_PRICE_GUARANTEE, PriceGuaranteePopup],
+  [MODAL.P_REFERAL, ReferalPopup],
+
   [MODAL.B_SUBSCR, SubscriptionBaner],
   [MODAL.B_BONUS, BonusBaner],
 ];
@@ -24,6 +27,8 @@ export const ModalContainer = () => {
       registerModal(id, component);
     });
   }, [registerModal]);
+
+  useShowBaners();
 
   return (
     <>

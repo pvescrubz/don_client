@@ -1,6 +1,7 @@
 import { AddBalance } from "@/shared/components/sections/AddBalance/AddBalance";
 import { Faq } from "@/shared/components/sections/Faq/Faq";
 import { HowToAddBalance } from "@/shared/components/sections/HowAddBalance/HowAddBalance";
+import { RedContainer } from "@/shared/components/ui/containers/RedContainer/RedContainer";
 import { Title } from "@/shared/components/ui/Title/Title";
 import { FC } from "react";
 
@@ -13,10 +14,11 @@ export const AddBalanceScreen: FC<IAddBalanceScreen> = ({ platform }) => {
 
   return (
     <>
-
-      <AddBalance platform={platform} />;
-      <HowToAddBalance platform={platform} />
-      <Faq platform={platform} />
+      <RedContainer>
+        <AddBalance platform={platform} />;
+        <HowToAddBalance platform={platform} />
+        <Faq platform={platform} />
+      </RedContainer>
     </>
   );
 };

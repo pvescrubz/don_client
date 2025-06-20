@@ -8,13 +8,10 @@ import { Reviews } from "@/shared/components/sections/Reviews/Reviews";
 import { Statistic } from "@/shared/components/sections/Statistics/Statistics";
 import { WeeklyProducts } from "@/shared/components/sections/WeeklyProducts/WeeklyProducts";
 import { RedContainer } from "@/shared/components/ui/containers/RedContainer/RedContainer";
-import { BlogConfig } from "@/shared/content/blog.config";
 import { APP_PAGES } from "@/shared/dashboard/app.dashboard";
 import { FC } from "react";
 
 export const HomeScreen: FC = () => {
-  const posts = Object.values(BlogConfig);
-
   return (
     <>
       <Hero />
@@ -28,7 +25,7 @@ export const HomeScreen: FC = () => {
       <Bloggers />
 
       <Faq platform={APP_PAGES.FAQ.slug} />
-      <BlogSlider posts={posts} />
+      <BlogSlider />
     </>
   );
 };

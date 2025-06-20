@@ -1,9 +1,10 @@
 "use client";
 
-import { useCartStore } from "@/feature/cart/cart.store";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { cartService } from "./cart.service";
+import { useCartStore } from "./cart.store";
+
 
 export const useGetCart = () => {
   const { cartIds, addToCart, removeFromCart } = useCartStore();

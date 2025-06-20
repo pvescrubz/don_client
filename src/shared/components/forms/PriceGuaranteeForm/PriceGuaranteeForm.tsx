@@ -1,11 +1,12 @@
+import { onError } from "@/shared/utils/error-form";
 import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "../../ui/Button/Button";
 import { FormInput } from "../FormInput/FormInput";
 import { AVAILABLE_FIELDS } from "../input.info";
-import styles from "./PriceCheckForm.module.css";
+import styles from "./PriceGuaranteeForm.module.css";
 
-export const PriceCheckForm: FC = () => {
+export const PriceGuaranteeForm: FC = () => {
   const {
     register,
     handleSubmit,
@@ -20,7 +21,7 @@ export const PriceCheckForm: FC = () => {
   };
 
   return (
-    <form className={styles.root} onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.root} onSubmit={handleSubmit(onSubmit, onError)}>
       <FormInput
         fieldName={AVAILABLE_FIELDS.LINK}
         register={register}

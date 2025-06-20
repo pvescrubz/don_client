@@ -9,7 +9,7 @@ import {
   translateStatus,
 } from "@/shared/utils/order-translators";
 import clsx from "clsx";
-import { FC, useState } from "react";
+import { FC, MouseEvent, useRef, useState } from "react";
 import { Container } from "../../ui/containers/Container/Container";
 import { Section } from "../../ui/containers/Section/Section";
 import { IconArraw } from "../../ui/svg/IconFilterArraw";
@@ -26,6 +26,34 @@ export const Orders: FC = () => {
     );
   };
 
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!scrollContainerRef.current) return;
+    isDragging.current = true;
+    startX.current = e.pageX - scrollContainerRef.current.offsetLeft;
+    scrollLeft.current = scrollContainerRef.current.scrollLeft;
+  };
+
+  const onMouseLeave = () => {
+    isDragging.current = false;
+  };
+
+  const onMouseUp = () => {
+    isDragging.current = false;
+  };
+
+  const onMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (!isDragging.current || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1;
+    scrollContainerRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
   return (
     <Section className={styles.section}>
       <Container>
@@ -37,7 +65,14 @@ export const Orders: FC = () => {
               : "История операций"}
           </h2>
           {orders && orders?.length > 0 && (
-            <div className={clsx(styles.box_table, "scrollbar")}>
+            <div
+              ref={scrollContainerRef}
+              onMouseDown={onMouseDown}
+              onMouseLeave={onMouseLeave}
+              onMouseUp={onMouseUp}
+              onMouseMove={onMouseMove}
+              className={clsx(styles.box_table, "scrollbar")}
+            >
               <table className={styles.table}>
                 <thead className={styles.thead}>
                   <tr>
@@ -47,6 +82,9 @@ export const Orders: FC = () => {
                     <th>Статус</th>
                     <th>Сумма</th>
                     <th>Метод</th>
+                    <th>Логин</th>
+                    <th>Регион</th>
+                    <th>Email-уведомление</th>
                     <th>Скины</th>
                   </tr>
                 </thead>
@@ -56,8 +94,11 @@ export const Orders: FC = () => {
                       <td className={styles.td} title="Дата">
                         {formatDate(order.createdAt)}
                       </td>
-                      <td className={styles.td} title="Тип операции">
-                        {translateOperation(order.operation)}
+                      <td
+                        className={clsx(styles.td, styles.type)}
+                        title="Тип операции"
+                      >
+                        {translateOperation(order.operation)}{" "}
                       </td>
                       <td className={styles.td} title="id Операции">
                         {order.transactionId}
@@ -79,6 +120,20 @@ export const Orders: FC = () => {
                       <td className={styles.td} title="Метод">
                         {translatePaymentMethod(order.paymentMethod)}
                       </td>
+                      <td className={styles.td} title="Логин">
+                        {order.login ? <>{order.login}</> : <>-</>}
+                      </td>
+                      <td className={styles.td} title="Регион">
+                        {order.region ? <>{order.region} </> : <>-</>}
+                      </td>
+                      <td className={styles.td} title="Регион">
+                        {order.notificationEmail ? (
+                          <>{order.notificationEmail} </>
+                        ) : (
+                          <>-</>
+                        )}
+                      </td>
+
                       <td className={styles.td} title="Скины">
                         {(order.skins || !order.skins) &&
                           order.skins?.length === 0 && <>-</>}
