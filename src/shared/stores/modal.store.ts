@@ -11,7 +11,7 @@ interface ModalInstance {
   component: ModalComponent;
   props?: ModalProps;
   open: boolean;
-  isClosing?: boolean;
+  isClosing: boolean;
 }
 
 interface IModalStore {
@@ -21,82 +21,95 @@ interface IModalStore {
   closeModal: (id: TModalId) => void;
   finalizeCloseModal: (id: TModalId) => void;
   closeAllModals: () => void;
+  anyDialogOpen: boolean;
+  setAnyDialogOpen: (value: boolean) => void;
+  anyBanerOpen: boolean;
+  setAnyBanerOpen: (value: boolean) => void;
 }
 
 export const useModalStore = create<IModalStore>()(
-  devtools((set) => ({
-    modals: {},
+  devtools(
+    (set) => ({
+      modals: {},
 
-    registerModal: (id, component) =>
-      set((state) => ({
-        modals: {
-          ...state.modals,
-          [id]: { id, component, open: false },
-        },
-      })),
-
-    openModal: (id, props) =>
-      set((state) => {
-        const modal = state.modals[id];
-        if (!modal) return state;
-
-        return {
+      registerModal: (id, component) =>
+        set((state) => ({
           modals: {
             ...state.modals,
-            [id]: {
-              ...modal,
-              open: true,
-              isClosing: false,
-              props,
-            },
+            [id]: { id, component, open: false, isClosing: false },
           },
-        };
-      }),
+        })),
 
-    closeModal: (id) =>
-      set((state) => {
-        const modal = state.modals[id];
-        if (!modal) return state;
+      openModal: (id, props) =>
+        set((state) => {
+          const modal = state.modals[id];
+          if (!modal) return state;
 
-        return {
-          modals: {
-            ...state.modals,
-            [id]: {
-              ...modal,
-              isClosing: true,
+          return {
+            modals: {
+              ...state.modals,
+              [id]: {
+                ...modal,
+                open: true,
+                isClosing: false,
+                props,
+              },
             },
-          },
-        };
-      }),
+          };
+        }),
 
-    finalizeCloseModal: (id) =>
-      set((state) => {
-        const modal = state.modals[id];
-        if (!modal) return state;
+      closeModal: (id) =>
+        set((state) => {
+          const modal = state.modals[id];
+          if (!modal) return state;
 
-        return {
-          modals: {
-            ...state.modals,
-            [id]: {
-              ...modal,
-              open: false,
-              isClosing: false,
-              props: undefined,
+          return {
+            modals: {
+              ...state.modals,
+              [id]: {
+                ...modal,
+                isClosing: true,
+              },
             },
-          },
-        };
-      }),
+          };
+        }),
 
-    closeAllModals: () =>
-      set((state) => {
-        const closed = Object.fromEntries(
-          Object.entries(state.modals).map(([id, modal]) => [
-            id,
-            { ...modal, open: false, isClosing: false, props: undefined },
-          ])
-        );
+      finalizeCloseModal: (id) =>
+        set((state) => {
+          const modal = state.modals[id];
+          if (!modal) return state;
 
-        return { modals: closed };
-      }),
-  }))
+          return {
+            modals: {
+              ...state.modals,
+              [id]: {
+                ...modal,
+                open: false,
+                isClosing: false,
+                props: undefined,
+              },
+            },
+          };
+        }),
+
+      closeAllModals: () =>
+        set((state) => {
+          const closed = Object.fromEntries(
+            Object.entries(state.modals).map(([id, modal]) => [
+              id,
+              { ...modal, open: false, isClosing: false, props: undefined },
+            ])
+          );
+
+          return { modals: closed };
+        }),
+      anyDialogOpen: false,
+      setAnyDialogOpen: (value) => set({ anyDialogOpen: value }),
+      anyBanerOpen: false,
+      setAnyBanerOpen: (value) => set({ anyBanerOpen: value }),
+    }),
+    {
+      name: "useModalStore",
+    }
+  )
 );

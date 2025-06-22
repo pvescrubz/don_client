@@ -10,6 +10,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { MyToaster } from "../MyToaster/MyToaster";
 import { IconClose } from "../svg/IconClose";
 import styles from "./Dialog.module.css";
 
@@ -18,7 +19,7 @@ interface IDialog extends HTMLAttributes<HTMLDialogElement> {
   id: TModalId;
   contentClassName?: string;
   closeOutside?: boolean;
-  isClosing?: boolean;
+  isClosing: boolean;
 }
 
 export const Dialog: FC<IDialog> = ({
@@ -34,25 +35,30 @@ export const Dialog: FC<IDialog> = ({
   const dialogRef = useRef<HTMLDialogElement | null>(null);
   const [show, setShow] = useState(false);
   const { finalizeCloseModal } = useModalStore();
+  const { setAnyDialogOpen } = useModalStore();
 
   useStopScroll(show, id);
 
   const close = useCallback(() => {
     if (dialogRef.current) {
       setShow(false);
+      setAnyDialogOpen(false);
 
       setTimeout(() => {
         dialogRef.current?.close();
         finalizeCloseModal(id);
       }, 400);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [finalizeCloseModal, id]);
 
   useEffect(() => {
     if (open && dialogRef.current) {
       setShow(true);
       dialogRef.current.showModal();
+      setAnyDialogOpen(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
   useEffect(() => {
@@ -100,6 +106,7 @@ export const Dialog: FC<IDialog> = ({
           {children}
         </div>
         <div className={styles.backdrop} onClick={close} />
+        {show && <MyToaster />}
       </dialog>
     </>
   );

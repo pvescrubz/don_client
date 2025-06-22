@@ -25,7 +25,7 @@ class UserService {
 
       return res;
     } catch (error) {
-      console.error("Ошибка при очистке корзины:", error);
+      console.error("Ошибка при обновлении профиля:", error);
       throw error;
     }
   }

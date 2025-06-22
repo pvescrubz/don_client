@@ -28,7 +28,7 @@ export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
 
   return (
     <div className={clsx(styles.root, className)} {...rest}>
-        <Link href={`/skin/${game.name}/${slug}`} className={styles.link} />
+        <Link href={`/skins/${game.name}/${slug}`} className={styles.link} />
       <Top killCounter={killCounter} souvenir={souvenir} />
       <div className={styles.box}>
         <Image
@@ -48,7 +48,7 @@ export const ProductCard: FC<IProductCard> = ({ skin, className, ...rest }) => {
       </div>
 
 
-      <Link href={`/skins/${game.name}/${slug}`} className={styles.link} />
+
 
     </div>
   );

@@ -55,6 +55,7 @@ export const Breadcrumbs: FC<IBreadcrumbs> = ({ customNames = {} }) => {
 
   const breadcrumbs = segments.map((segment, index, array) => {
     const href = `/${array.slice(0, index + 1).join("/")}`;
+
     const isLast = index === array.length - 1;
 
     const title = isLast
@@ -75,7 +76,6 @@ export const Breadcrumbs: FC<IBreadcrumbs> = ({ customNames = {} }) => {
             </span>
 
             {item.isLast && <BreadcrumbsCurrent title={item.title} />}
-
             {!item.isLast && (
               <BreadcrumbsLink href={item.href} title={item.title} />
             )}

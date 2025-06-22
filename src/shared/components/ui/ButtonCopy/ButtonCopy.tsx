@@ -3,6 +3,7 @@ import { TButton } from "@/shared/typing/elements.type";
 import clsx from "clsx";
 import { FC } from "react";
 import toast from "react-hot-toast";
+import { IconCopy } from "../svg/IconCopy";
 import styles from "./ButtonCopy.module.css";
 
 interface IButtonCopy extends TButton {
@@ -22,13 +23,16 @@ export const ButtonCopy: FC<IButtonCopy> = ({
       console.error("Failed to copy:", err);
     }
   };
+
+  
   return (
     <button
       className={clsx(styles.root, className)}
       onClick={handleClick}
       {...rest}
     >
-      {copyText}
+      <span>Скопировать ссылку</span>
+      <IconCopy />
     </button>
   );
 };

@@ -23,7 +23,7 @@ export const EmailOrTradeUrlPopup: FC<IModal> = ({ id }) => {
   };
 
   return (
-    <Dialog open={modal.open} isClosing={modal.isClosing} id={id} >
+    <Dialog open={modal.open} isClosing={modal.isClosing} id={id}>
       <div className={styles.container}>
         <Image
           src="/images/alert_button.png"

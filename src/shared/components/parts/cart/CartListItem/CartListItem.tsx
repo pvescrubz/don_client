@@ -28,7 +28,7 @@ export const CartListItem: FC<ICartListItem> = ({ skin }) => {
         </div>
         <div className={styles.descr}>
           <div className={clsx(styles.name_group)}>
-            <Link href={`/skin/${game.name}/${slug}`} className={styles.name}>
+            <Link href={`/skins/${game.name}/${slug}`} className={styles.name}>
               <span className={styles.span}>{name}</span>
             </Link>
             {game.name === "cs2" && exterior && (

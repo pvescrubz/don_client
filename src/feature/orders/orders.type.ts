@@ -42,6 +42,8 @@ export interface IOrder {
   operation: TOperation;
   amount: string;
   paymentMethod: TPaymentMethod;
+  login?: string;
+  region?: string;
   notificationEmail: string;
   userId: string;
   skins?: ISkinBase[];
