@@ -1,21 +1,21 @@
 import { CheckoutSuccessScreen } from "@/screens/CheckoutSuccess.screen";
-import { DISABLED_ROBOTS, image } from "@/shared/metadata";
+import { DISABLED_ROBOTS, OG } from "@/shared/metadata";
 import { Metadata } from "next";
 
 const META = {
   title: "Ваш платеж принят!",
-  description:
-    "",
+  description: "Платеж принят, ваша операция находится в обработке",
+  images: OG,
 };
 
 export const metadata: Metadata = {
   ...META,
-  robots: DISABLED_ROBOTS,
   openGraph: {
     ...META,
-    images: image,
-  }
-}
+  },
+  robots: DISABLED_ROBOTS,
+};
+
 const Page = () => {
   return <CheckoutSuccessScreen />;
 };

@@ -1,22 +1,21 @@
 import { CheckoutErrorScreen } from "@/screens/CheckoutError.screen";
-import { DISABLED_ROBOTS, image } from "@/shared/metadata";
+import { DISABLED_ROBOTS, OG } from "@/shared/metadata";
 import { Metadata } from "next";
 
 const META = {
   title: "Ошибка",
   description:
-    "Свяжитесь с нашей службой поддержки!Мы решим проблему в кротчайшие сроки!",
+    "Свяжитесь с нашей службой поддержки! Мы решим проблему в кротчайшие сроки!",
+  images: OG,
 };
 
 export const metadata: Metadata = {
   ...META,
-  robots: DISABLED_ROBOTS,
   openGraph: {
     ...META,
-    images: image,
-  }
-}
-
+  },
+  robots: DISABLED_ROBOTS,
+};
 
 const Page = () => {
   return <CheckoutErrorScreen />;

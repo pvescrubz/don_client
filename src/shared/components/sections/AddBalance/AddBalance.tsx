@@ -15,6 +15,7 @@ interface IAddBalance {
 export const AddBalance: FC<IAddBalance> = ({ platform }) => {
   const config = PLATFORM_CONFIG[platform];
 
+
   const customNames = { [platform]: config.formTitle };
 
   return (

@@ -1,7 +1,5 @@
 "use client";
 
-import { useShowBaners } from "@/shared/hooks/useShowBaners";
-import { useShowDislogs } from "@/shared/hooks/useShowDislogs";
 import { useModalStore } from "@/shared/stores/modal.store";
 import { IModal, MODAL, TModalId } from "@/shared/typing/modal.type";
 import { FC, useEffect } from "react";
@@ -29,8 +27,8 @@ export const ModalContainer = () => {
     });
   }, [registerModal]);
 
-  useShowBaners();
-  useShowDislogs();
+  // useShowBaners();
+  // useShowDislogs();
 
   return (
     <>
