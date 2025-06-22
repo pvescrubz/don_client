@@ -130,7 +130,13 @@ export const ENDPOINTS = {
   statistics: {
     method: "GET",
     url: "/statistics",
-    auth: true,
+    auth: false,
+  },
+
+  priceGuarantee: {
+    method: "POST",
+    url: "/price-guarantee",
+    auth: false,
   },
 } as const satisfies Record<string, TEndpointsPt>;
 

@@ -15,7 +15,7 @@ export const AuthPopup: FC<IModal> = ({ id }) => {
   const modal = modals[id];
 
   return (
-    <Dialog open={modal.open} id={id}>
+    <Dialog open={modal.open} isClosing={modal.isClosing} id={id}>
       <p className={styles.title}>Необходима авторизация</p>
       <div className={styles.container}>
         <Image

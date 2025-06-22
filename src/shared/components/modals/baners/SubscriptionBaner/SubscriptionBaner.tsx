@@ -13,8 +13,9 @@ export const SubscriptionBaner: FC<IModal> = ({ id }) => {
 
   const modal = modals[id];
 
+
   return (
-    <Baner open={modal.open} id={id}>
+    <Baner open={modal.open} isClosing={modal.isClosing} id={id}>
       <div className={styles.root}>
         <Image
           src="/images/heroicon2.png"

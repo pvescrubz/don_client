@@ -8,7 +8,7 @@ export interface IUser {
   selectedCurrency: TCurrencyCode;
   steamTradeUrl?: string;
   steamAvatar?: string;
-  isSubscribedToNews: boolean
+  isSubscribedToNews: boolean;
   balance: string;
   ref: string;
   _count: {
@@ -19,4 +19,5 @@ export interface IUser {
 export interface IUpdateData {
   steamTradeUrl?: string;
   email?: string;
+  isSubscribedToNews?: boolean;
 }

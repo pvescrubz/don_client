@@ -19,7 +19,7 @@ interface IDialog extends HTMLAttributes<HTMLDialogElement> {
   id: TModalId;
   contentClassName?: string;
   closeOutside?: boolean;
-  isClosing?: boolean;
+  isClosing: boolean;
 }
 
 export const Dialog: FC<IDialog> = ({

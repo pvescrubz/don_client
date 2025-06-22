@@ -9,30 +9,36 @@ import styles from "./Baner.module.css";
 interface IBaner extends TDiv {
   open: boolean;
   id: TModalId;
+  isClosing: boolean;
 }
 
 export const Baner: FC<IBaner> = ({
   children,
   open,
   id,
+  isClosing,
   className,
   ...rest
 }) => {
   const [show, setShow] = useState(false);
-  const { finalizeCloseModal, setAnyBanerOpen } = useModalStore();
+  const { finalizeCloseModal } = useModalStore();
 
   const close = useCallback(() => {
     setShow(false);
-    setAnyBanerOpen(false);
+
     setTimeout(() => {
       finalizeCloseModal(id);
     }, 400);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [finalizeCloseModal, id]);
 
   useEffect(() => {
+    if (isClosing) {
+      close();
+    }
+  }, [close, isClosing]);
+
+  useEffect(() => {
     if (open) {
-      setAnyBanerOpen(true);
       setTimeout(() => {
         setShow(true);
       });
@@ -40,7 +46,6 @@ export const Baner: FC<IBaner> = ({
     if (!open) {
       close();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [close, open]);
 
   return (

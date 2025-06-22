@@ -14,7 +14,7 @@ export const PriceGuaranteePopup: FC<IModal> = ({ id }) => {
   const modal = modals[id];
 
   return (
-    <Dialog open={modal.open} id={id}>
+    <Dialog open={modal.open} isClosing={modal.isClosing} id={id}>
       <div className={styles.content}>
         <Image
           src="/images/pricecheckpopup.png"

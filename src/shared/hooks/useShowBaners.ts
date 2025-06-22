@@ -1,41 +1,72 @@
 import { useAuthStore } from "@/feature/auth/auth.store";
-import { useEffect, useState } from "react";
+import { useUserStore } from "@/feature/user/user.store";
+import { useCallback, useEffect, useState } from "react";
 import { useModalStore } from "../stores/modal.store";
 import { MODAL } from "../typing/modal.type";
 
 export const useShowBaners = () => {
   const { modals, openModal } = useModalStore();
-
-  const bonus = modals[MODAL.B_BONUS];
-
+  const { user } = useUserStore();
   const { isAuth } = useAuthStore();
 
-  const [bonusWasOpen, setBonusWasOpen] = useState(false);
-  const [bonusShown, setBonusShown] = useState(false);
+  const subscr = modals[MODAL.P_REFERAL];
+
+  const [state, setState] = useState({
+    subscrWasOpen: false,
+    subscrShown: false,
+    bonusShown: false,
+  });
+
+  const updateState = useCallback((partialState: Partial<typeof state>) => {
+    setState((prev) => ({ ...prev, ...partialState }));
+  }, []);
 
   useEffect(() => {
-    if (!bonus) return;
-    if (bonus.open) {
-      setBonusWasOpen(true);
-    }
-    if (!bonus.open && bonusWasOpen) {
-      setBonusShown(true);
-    }
-  }, [bonus?.open, bonus, bonusWasOpen, bonusShown]);
+    if (user?.isSubscribedToNews) updateState({ subscrShown: true });
+  }, [user?.isSubscribedToNews, updateState]);
 
   useEffect(() => {
+    if (!subscr) return;
+
+    if (subscr.open) {
+      updateState({ subscrWasOpen: true });
+    }
+
+    if (!subscr.open && state.subscrWasOpen) {
+      updateState({ subscrShown: true });
+    }
+  }, [subscr?.open, subscr, state.subscrWasOpen, updateState]);
+
+  useEffect(() => {
+    let subscrTimer: ReturnType<typeof setTimeout>;
+    let bonusTimer: ReturnType<typeof setTimeout>;
+
     if (isAuth) {
-      if (!bonusShown) {
-        setTimeout(() => {
-          openModal(MODAL.B_BONUS);
-        }, 1000 * 30);
-      }
 
-      if (bonusShown) {
-        setTimeout(() => {
+      if (!state.subscrShown && !user?.isSubscribedToNews) {
+        subscrTimer = setTimeout(() => {
           openModal(MODAL.B_SUBSCR);
         }, 1000 * 30);
       }
+
+      if (state.subscrShown && !state.bonusShown) {
+        bonusTimer = setTimeout(() => {
+          updateState({ bonusShown: true });
+          openModal(MODAL.B_BONUS);
+        }, 1000 * 90);
+      }
     }
-  }, [bonusShown, isAuth, openModal]);
+
+    return () => {
+      clearTimeout(subscrTimer);
+      clearTimeout(bonusTimer);
+    };
+  }, [
+    state.subscrShown,
+    state.bonusShown,
+    isAuth,
+    user,
+    openModal,
+    updateState,
+  ]);
 };
