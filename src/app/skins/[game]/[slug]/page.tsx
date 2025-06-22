@@ -12,17 +12,19 @@ const getSkinMetadata = async (slug: string): Promise<Metadata> => {
       : skin.description || '';
 
     return {
-      metadataBase: new URL(`${CONFIG.APP_BASE_URL}`),
       title: skin.name,
       description: description,
+       alternates: {
+                canonical: `${CONFIG.APP_BASE_URL}/skins/${slug}${skin.name}`, 
+              },
       openGraph: {
         title: skin.name,
         description: description,
-        images: {
+        images: [{
           url: skin.image,
           width: 320,
           height: 211,
-        },
+        }],
       },
     };
 };
