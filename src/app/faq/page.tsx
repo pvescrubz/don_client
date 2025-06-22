@@ -1,5 +1,7 @@
 import { FAQScreen } from "@/screens/Faq.screen";
+import { APP_PAGES } from "@/shared/dashboard/app.dashboard";
 import { image } from "@/shared/metadata";
+import { CONFIG } from "@/shared/model/config";
 
 import { Metadata } from "next";
 
@@ -15,6 +17,9 @@ export const metadata: Metadata = {
     ...META,
     images: image,
   },
+   alternates: {
+        canonical: `${CONFIG.APP_BASE_URL}${APP_PAGES.FAQ}`, 
+      },
 };
 const Page = () => {
   return <FAQScreen />;
