@@ -1,6 +1,5 @@
-import { NotFound } from "@/shared/components/sections/NotFound/NotFound";
-import { FC } from "react";
+import { NotFound } from "@/shared/components/sections/Fallback/NotFound";
 
-export const NotFoundScreen: FC = () => {
+export const NotFoundScreen = () => {
   return <NotFound />;
 };

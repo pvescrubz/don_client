@@ -5,20 +5,24 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "lis-skins.com",
-        port: "",
-        pathname: "/market_images/**",
-      },
-      {
-        protocol: "https",
         hostname: "avatars.steamstatic.com",
         port: "",
         pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "assets.lis-skins.com",
-        pathname: "/blogfiles/**",
+        hostname: "avatars.cloudflare.steamstatic.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.fastly.steamstatic.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.akamai.steamstatic.com", 
+        pathname: "/**",
       },
     ],
   },

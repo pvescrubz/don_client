@@ -2,12 +2,12 @@ import { Breadcrumbs } from "@/shared/components/ui/BreadCrums/BreadCrums";
 import { Container } from "@/shared/components/ui/containers/Container/Container";
 import { Section } from "@/shared/components/ui/containers/Section/Section";
 import { Title } from "@/shared/components/ui/Title/Title";
-import { BlogConfig } from "@/shared/content/blog.config";
+import { BLOG_CONFIG } from "@/shared/content/blog.config";
 import { BlogItem } from "../BlogItem/BlogItem";
 import styles from "./BlogPosts.module.css";
 
 export const BlogPosts = () => {
-  const posts = Object.values(BlogConfig);
+  const posts = Object.values(BLOG_CONFIG);
 
   return (
     <>

@@ -2,7 +2,7 @@ import { BlogBlockRenderer } from "@/shared/components/ui/Blog/BlogRenderer/Blog
 import { Breadcrumbs } from "@/shared/components/ui/BreadCrums/BreadCrums";
 import { Container } from "@/shared/components/ui/containers/Container/Container";
 import { Section } from "@/shared/components/ui/containers/Section/Section";
-import { BlogConfig } from "@/shared/content/blog.config";
+import { BLOG_CONFIG } from "@/shared/content/blog.config";
 import { notFound } from "next/navigation";
 import { FC } from "react";
 
@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const BlogPost: FC<Props> = ({ slug }) => {
-  const post = BlogConfig[slug];
+  const post = BLOG_CONFIG[slug];
 
   if (!post) {
     return notFound();

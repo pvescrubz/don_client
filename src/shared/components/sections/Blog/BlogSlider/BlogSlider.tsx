@@ -3,12 +3,12 @@ import { Section } from "@/shared/components/ui/containers/Section/Section";
 import { SliderPosts } from "@/shared/components/ui/Slider/SliderPost";
 import { Title } from "@/shared/components/ui/Title/Title";
 
-import { BlogConfig } from "@/shared/content/blog.config";
+import { BLOG_CONFIG } from "@/shared/content/blog.config";
 import { BlogItem } from "../BlogItem/BlogItem";
 import styles from "./BlogSlider.module.css";
 
 export const BlogSlider = () => {
-  const posts = Object.values(BlogConfig);
+  const posts = Object.values(BLOG_CONFIG);
 
   return (
     <Section className={styles.root}>

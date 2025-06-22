@@ -1,6 +1,6 @@
 import { IBlogArticle } from "../typing/blog.type";
 
-export const BlogConfig: Record<string, IBlogArticle> = {
+export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "kakie-urovni-sloznosti-botov-est-v-cs2": {
     name: "kakie-urovni-sloznosti-botov-est-v-cs2",
     title: "Какие уровни сложности ботов есть в CS2?",

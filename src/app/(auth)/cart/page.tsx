@@ -1,20 +1,21 @@
 import { CartScreen } from "@/screens/Cart.screen";
-import { image } from "@/shared/metadata";
+import { DISABLED_ROBOTS, OG } from "@/shared/metadata";
 import { Metadata } from "next";
 
 const META = {
   title: "Корзина | DonViche",
-  description:
-    "",
+  description: "Корзина | DonViche",
+  images: OG,
 };
 
 export const metadata: Metadata = {
   ...META,
   openGraph: {
     ...META,
-    images: image,
-  }
+  },
+  robots: DISABLED_ROBOTS,
 };
+
 const Page = () => {
   return <CartScreen />;
 };

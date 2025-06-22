@@ -1,21 +1,20 @@
 import { ReferalScreen } from "@/screens/Referal.screen";
-import { image } from "@/shared/metadata";
+import { DISABLED_ROBOTS, OG } from "@/shared/metadata";
 import { Metadata } from "next";
 
 const META = {
   title: "Реферальная программа | DonViche",
-  description:
-    "Реферальная программа | DonViche",
+  description: "Реферальная программа | DonViche",
+  images: OG,
 };
 
 export const metadata: Metadata = {
   ...META,
   openGraph: {
     ...META,
-    images: image,
-  }
+  },
+  robots: DISABLED_ROBOTS,
 };
-
 
 const Page = () => {
   return <ReferalScreen />;

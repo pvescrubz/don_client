@@ -1,21 +1,20 @@
 import { AccountBalanceScreen } from "@/screens/AccountBalance.screen";
-import { image } from "@/shared/metadata";
+import { DISABLED_ROBOTS, OG } from "@/shared/metadata";
 import { Metadata } from "next";
 
 const META = {
   title: "Баланс Аккаунта | DonViche",
-  description:
-    "Баланс Аккаунта | DonViche",
+  description: "Баланс Аккаунта | DonViche",
+  images: OG,
 };
 
 export const metadata: Metadata = {
   ...META,
   openGraph: {
     ...META,
-    images: image,
-  }
+  },
+  robots: DISABLED_ROBOTS,
 };
-
 
 const Page = () => {
   return <AccountBalanceScreen />;
