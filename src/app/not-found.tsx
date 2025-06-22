@@ -1,36 +1,21 @@
 import { NotFoundScreen } from "@/screens/NotFound.screen";
-import { CONFIG } from "@/shared/model/config";
+import { DISABLED_ROBOTS, image } from "@/shared/metadata";
 import { Metadata } from "next";
 
+const META = {
+   title: "Страница не найдена (404) | DonViche",
+  description: "Запрошенной страницы не существует. Вернитесь в магазин скинов CS2, Dota 2 и Rust.",
+}
 
 export const metadata: Metadata = {
-  title: "Страница не найдена (404) | DonViche",
-  description: "Запрошенной страницы не существует. Вернитесь в магазин скинов CS2, Dota 2 и Rust.",
-
-  
-  robots: {
-    index: false,
-    follow: false, 
-    nocache: true, 
-    googleBot: {
-      index: false,
-      follow: false,
-    }
-  },
-
-
+  ...META,
+  robots: DISABLED_ROBOTS,
   openGraph: {
-    title: "404 - DonViche | Магазин скинов CS2, Dota 2, Rust",
-    description: "Страница не найдена. Перейдите на главную DonViche для покупки скинов.",
-    images: [{
-      url: `${CONFIG.APP_BASE_URL}/images/metabg.webp`,
-      width: 1200,
-      height: 630,
-      alt: "404 DonViche",
-    }]
-  },
+    ...META,
+    images: image,
+  }
+}
 
-};
 
  const Page = () => {
   return <NotFoundScreen />;
