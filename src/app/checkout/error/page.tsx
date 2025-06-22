@@ -3,9 +3,10 @@ import { DISABLED_ROBOTS, image } from "@/shared/metadata";
 import { Metadata } from "next";
 
 const META = {
-   title: "Страница не найдена (404) | DonViche",
-  description: "Запрошенной страницы не существует. Вернитесь в магазин скинов CS2, Dota 2 и Rust.",
-}
+  title: "Ошибка",
+  description:
+    "Свяжитесь с нашей службой поддержки!Мы решим проблему в кротчайшие сроки!",
+};
 
 export const metadata: Metadata = {
   ...META,

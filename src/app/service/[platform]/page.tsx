@@ -1,10 +1,8 @@
 import { AddBalanceScreen } from "@/screens/AddBalance.screen";
 import { PLATFORM_CONFIG } from "@/shared/content/platorms.config";
 import { image } from "@/shared/metadata";
+import { CONFIG } from "@/shared/model/config";
 import { Metadata } from "next";
-
-
-
 
 const generatePageMetadata = async (platform: string): Promise<Metadata> => {
   const config = PLATFORM_CONFIG[platform as keyof typeof PLATFORM_CONFIG];
@@ -14,7 +12,6 @@ const generatePageMetadata = async (platform: string): Promise<Metadata> => {
   }
 
   return {
-
     title: config.formTitle,
     description: config.formTitle,
     openGraph: {
@@ -27,6 +24,9 @@ const generatePageMetadata = async (platform: string): Promise<Metadata> => {
       description: config.formTitle,
       images: image,
     },
+     alternates: {
+          canonical: `${CONFIG.APP_BASE_URL}/service/${config.name}`, 
+        },
   };
 };
 
@@ -39,7 +39,6 @@ export async function generateMetadata({
   return generatePageMetadata(platform);
 }
 
-// Основной компонент страницы
 const Page = async ({ params }: { params: Promise<{ platform: string }> }) => {
   const { platform } = await params;
 
