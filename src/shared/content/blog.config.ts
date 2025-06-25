@@ -4,7 +4,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "kakie-urovni-sloznosti-botov-est-v-cs2": {
     name: "kakie-urovni-sloznosti-botov-est-v-cs2",
     title: "Какие уровни сложности ботов есть в CS2?",
-    image: "/images/stage1.png",
+    image: "/images/blog/stage1.png",
     content: [
       {
         type: "heading",
@@ -19,8 +19,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
 
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/UZ9wi6HY9YcZp6kD1nxQhRYcHCdY4Wz1ooIF3v7s.png",
+        content: "/images/blog/UZ9wi6HY9YcZp6kD1nxQhRYcHCdY4Wz1ooIF3v7s.png",
       },
       {
         type: "paragraph",
@@ -58,8 +57,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/2SLL14QBDw7u7ovvs4fJMYHPe23t2pT714bnglww.png",
+        content: "/images/blog/2SLL14QBDw7u7ovvs4fJMYHPe23t2pT714bnglww.png",
       },
       {
         type: "paragraph",
@@ -73,8 +71,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/3AxOOhpJLpSVNgYHVJDo5gilQczynIzTn7oN2e00.png",
+        content: "/images/blog/3AxOOhpJLpSVNgYHVJDo5gilQczynIzTn7oN2e00.png",
       },
       {
         type: "paragraph",
@@ -110,8 +107,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/EBdcihWJvTPtRJQN6ltxCyalYymgi8Ya4I2ei4jg.png",
+        content: "/images/blog/EBdcihWJvTPtRJQN6ltxCyalYymgi8Ya4I2ei4jg.png",
       },
       {
         type: "paragraph",
@@ -186,8 +182,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/2J8pcUXCdxJdN2WGttkAWEFEbauKzsXCevFCVvZl.png",
+        content: "/images/blog/2J8pcUXCdxJdN2WGttkAWEFEbauKzsXCevFCVvZl.png",
       },
       {
         type: "paragraph",
@@ -247,7 +242,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "samye-dorogie-nakleiki-v-cs2-v-2025": {
     name: "samye-dorogie-nakleiki-v-cs2-v-2025",
     title: "Самые дорогие наклейки в CS2 в 2025 году",
-    image: "/images/stage2.png",
+    image: "/images/blog/stage2.png",
     content: [
       {
         type: "heading",
@@ -261,8 +256,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/n5Fxde4cvruofFopj1CdVNMaWQ0Gxqu0dQ1SLcFE.png",
+        content: "/images/blog/n5Fxde4cvruofFopj1CdVNMaWQ0Gxqu0dQ1SLcFE.png",
       },
       {
         type: "paragraph",
@@ -302,8 +296,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/yKtLOCYDPgQHJnHpEclAeqmuTLC6O2Wnv0HT0aC6.png",
+        content: "/images/blog/yKtLOCYDPgQHJnHpEclAeqmuTLC6O2Wnv0HT0aC6.png",
       },
       {
         type: "paragraph",
@@ -317,8 +310,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/o5syguj2PEjA9QyxdlVpFjoUvsaVgmhs4Z9U0GHD.png",
+        content: "/images/blog/o5syguj2PEjA9QyxdlVpFjoUvsaVgmhs4Z9U0GHD.png",
       },
       {
         type: "paragraph",
@@ -332,8 +324,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/o5iCan04IgSm50KVRp2wA0ZoYvadG24bnD1SeROh.png",
+        content: "/images/blog/o5iCan04IgSm50KVRp2wA0ZoYvadG24bnD1SeROh.png",
       },
       {
         type: "paragraph",
@@ -347,8 +338,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/5YycTRmV3kLT9bJQ3qAoU0Jzh7yUDdI6tulBdRSn.png",
+        content: "/images/blog/5YycTRmV3kLT9bJQ3qAoU0Jzh7yUDdI6tulBdRSn.png",
       },
       {
         type: "paragraph",
@@ -362,8 +352,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/OhXSLXh2SlnETbcPSpq09s1aqtYdfzuEj0BE4xRy.png",
+        content: "/images/blog/OhXSLXh2SlnETbcPSpq09s1aqtYdfzuEj0BE4xRy.png",
       },
       {
         type: "paragraph",
@@ -377,8 +366,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/zQIpYdrDeW7IsP6QceW0remyKVRtxwBGsPC4TMfx.png",
+        content: "/images/blog/zQIpYdrDeW7IsP6QceW0remyKVRtxwBGsPC4TMfx.png",
       },
       {
         type: "paragraph",
@@ -400,7 +388,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "luchshie-retro-stikery-v-cs2": {
     name: "luchshie-retro-stikery-v-cs2",
     title: "Лучшие ретро-стикеры в CS2",
-    image: "/images/stage3.png",
+    image: "/images/blog/stage3.png",
     content: [
       {
         type: "heading",
@@ -419,8 +407,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/t0z3zmuBxeeXuEJleV9uksGRMB9D6M1kThTRJlA9.png",
+        content: "/images/blog/t0z3zmuBxeeXuEJleV9uksGRMB9D6M1kThTRJlA9.png",
       },
       {
         type: "paragraph",
@@ -434,8 +421,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/kykshghbyEeW7H9Dc8n5QPRVlk88neYAkuPH4paw.png",
+        content: "/images/blog/kykshghbyEeW7H9Dc8n5QPRVlk88neYAkuPH4paw.png",
       },
       {
         type: "paragraph",
@@ -449,8 +435,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/TeRpOJGkJacXkMoA8bYDE3FHYSDbBmseVR8ZBuRa.png",
+        content: "/images/blog/TeRpOJGkJacXkMoA8bYDE3FHYSDbBmseVR8ZBuRa.png",
       },
       {
         type: "paragraph",
@@ -464,8 +449,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/HH3NwcUum7IhB4ezERmacGI8ILGgLw0gxYYpUDWz.png",
+        content: "/images/blog/HH3NwcUum7IhB4ezERmacGI8ILGgLw0gxYYpUDWz.png",
       },
       {
         type: "paragraph",
@@ -479,8 +463,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/IHjim6oXeBjRv8rlSopf5gV7i3s1TJWGFZ2qwQcM.png",
+        content: "/images/blog/IHjim6oXeBjRv8rlSopf5gV7i3s1TJWGFZ2qwQcM.png",
       },
       {
         type: "paragraph",
@@ -494,8 +477,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/myMDjlaRxAojeRSVYJnpzWyTwx0BI5oVPXIobsRn.png",
+        content: "/images/blog/myMDjlaRxAojeRSVYJnpzWyTwx0BI5oVPXIobsRn.png",
       },
       {
         type: "paragraph",
@@ -509,8 +491,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/NRCVWMYZ1kPku11qF9B79rnbjxbbuAdZ8aXjemfa.png",
+        content: "/images/blog/NRCVWMYZ1kPku11qF9B79rnbjxbbuAdZ8aXjemfa.png",
       },
       {
         type: "paragraph",
@@ -524,8 +505,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/9Hw10Rd1ZCSOcQUSGFE9w7kmK8h5sPdpTyuVlQu2.png",
+        content: "/images/blog/9Hw10Rd1ZCSOcQUSGFE9w7kmK8h5sPdpTyuVlQu2.png",
       },
       {
         type: "paragraph",
@@ -539,8 +519,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/Dm0add1uvdez8QTMmr5gIYJTEy3lmQYGqsxeFbbH.png",
+        content: "/images/blog/Dm0add1uvdez8QTMmr5gIYJTEy3lmQYGqsxeFbbH.png",
       },
       {
         type: "paragraph",
@@ -554,8 +533,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/GNWypDJeA7BLSpPwic3tx70oNtjCjLcVmikcUf6N.png",
+        content: "/images/blog/GNWypDJeA7BLSpPwic3tx70oNtjCjLcVmikcUf6N.png",
       },
       {
         type: "paragraph",
@@ -567,7 +545,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "luchshie-pricely-v-cs2": {
     name: "luchshie-pricely-v-cs2",
     title: "Лучшие прицелы в CS2",
-    image: "/images/stage4.png",
+    image: "/images/blog/stage4.png",
     content: [
       {
         type: "heading",
@@ -620,8 +598,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/VyQIxc0S1GkqAN6J3WxovmneEMfoVCIPBDJDBWp1.png",
+        content: "/images/blog/VyQIxc0S1GkqAN6J3WxovmneEMfoVCIPBDJDBWp1.png",
       },
       {
         type: "heading",
@@ -654,8 +631,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/3eBdLmD8DrrWqidf15sT7F05qO91uJOvujVut0Iu.png",
+        content: "/images/blog/3eBdLmD8DrrWqidf15sT7F05qO91uJOvujVut0Iu.png",
       },
       {
         type: "heading",
@@ -784,8 +760,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/l7Sqqbp0yobRGZ4RItGlvSypkq50bmj3t0NyX15l.png",
+        content: "/images/blog/l7Sqqbp0yobRGZ4RItGlvSypkq50bmj3t0NyX15l.png",
       },
       {
         type: "heading",
@@ -849,8 +824,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/v0VrXjONld4uR4yivnU9XGxqjUAZujRZbBDgyUmF.png",
+        content: "/images/blog/v0VrXjONld4uR4yivnU9XGxqjUAZujRZbBDgyUmF.png",
       },
       {
         type: "heading",
@@ -912,7 +886,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "luchshie-aim-karty-v-cs2": {
     name: "luchshie-aim-karty-v-cs2",
     title: "Лучшие аим-карты в CS2",
-    image: "/images/stage5.png",
+    image: "/images/blog/stage5.png",
     content: [
       {
         type: "heading",
@@ -967,8 +941,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/QdYCHvx8pRvYatWLYEYt1zf7pj9tvHRKQLql8UkB.png",
+        content: "/images/blog/QdYCHvx8pRvYatWLYEYt1zf7pj9tvHRKQLql8UkB.png",
       },
       {
         type: "heading",
@@ -1067,8 +1040,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/gdRVUzaMV8xbGf9ib7WPz6rc8XUakUYlVVNzZdBd.png",
+        content: "/images/blog/gdRVUzaMV8xbGf9ib7WPz6rc8XUakUYlVVNzZdBd.png",
       },
       {
         type: "heading",
@@ -1112,8 +1084,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/ZD0BmL7h9E4dmQob4H4puycXmKAEUfI0aOcBowmD.png",
+        content: "/images/blog/ZD0BmL7h9E4dmQob4H4puycXmKAEUfI0aOcBowmD.png",
       },
       {
         type: "heading",
@@ -1147,8 +1118,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/FEaX0RwBWNBQbLQBElYB0g99lJRQYJnxkLYW23Jt.png",
+        content: "/images/blog/FEaX0RwBWNBQbLQBElYB0g99lJRQYJnxkLYW23Jt.png",
       },
       {
         type: "heading",
@@ -1170,7 +1140,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "luchshie-nakleiki-v-cs2": {
     name: "luchshie-nakleiki-v-cs2",
     title: "Лучшие наклейки в CS2",
-    image: "/images/stage6.png",
+    image: "/images/blog/stage6.png",
     content: [
       {
         type: "heading",
@@ -1214,8 +1184,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://lh7-rt.googleusercontent.com/docsz/AD_4nXcE5ftcnaXZS0bv8e0VkFpET8jycUoY2G_pzm0e4MIrG71LX-I2hZaD_ztMI9W85O0cSHRw8Y-x9GSjPsUybLSH-PKj33GP5WHVLhrY9l3IWavMtW2fIVFOpglc6AqAtfmsU7USJA?key=neOA_MsQKCXJuiAx7zgfm0i8",
+        content: "/images/blog/PKj33GP5WHVLhrY9l3IWavMtW2fIVFOpg.png",
       },
       {
         type: "paragraph",
@@ -1239,8 +1208,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/o5syguj2PEjA9QyxdlVpFjoUvsaVgmhs4Z9U0GHD.png",
+        content: "/images/blog/o5syguj2PEjA9QyxdlVpFjoUvsaVgmhs4Z9U0GHD.png",
       },
       {
         type: "paragraph",
@@ -1274,8 +1242,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://lh7-rt.googleusercontent.com/docsz/AD_4nXeyQq18CyHcSs8jvltTipX9CAmoDxrnKPziSwgmdblhscl4QmMDMISJ9vdLxnAZ3RwnaIwGey9F6N4d7ts8rfy7xqgln4BnQbUg1W4PJwNMkmPe5nLZyYndpQbQr-qHa1wSoR1h8g?key=neOA_MsQKCXJuiAx7zgfm0i8",
+        content: "/images/blog/mMDMISJ9vdLxnAZ3RwnaIwGey9F6N4d7ts8rfy7xqg.png",
       },
       {
         type: "paragraph",
@@ -1334,8 +1301,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://lh7-rt.googleusercontent.com/docsz/AD_4nXf1Jo2eS2KoqnrsGsgPUFX2BRW32qzZu1tVXn5L_dM8Di10hHOQrjPiw1WRR2BgKWJ6fdcV9kHOCvWsWynGAac-U5cN45ONoyqd9eOq2-emHD7vI897BKEd1ExeI-dR-lGfK3w8mg?key=neOA_MsQKCXJuiAx7zgfm0i8",
+        content: "/images/blog/i10hHOQrjPiw1WRR2BgKWJ6fdcV9kHOCvW.png",
       },
       {
         type: "paragraph",
@@ -1346,7 +1312,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "kak-kupit-praim-status-v-cs2": {
     name: "kak-kupit-praim-status-v-cs2",
     title: "Как купить прайм статус в CS2?",
-    image: "/images/stage7.png",
+    image: "/images/blog/stage7.png",
     content: [
       {
         type: "heading",
@@ -1523,7 +1489,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "pocemu-ne-slysno-v-ks-2": {
     name: "pocemu-ne-slysno-v-ks-2",
     title: "Почему не слышно в CS2?",
-    image: "/images/stage8.png",
+    image: "/images/blog/stage8.png",
     content: [
       {
         type: "heading",
@@ -1567,8 +1533,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/KTjow3VV2JdyD0fY98Q2CWLi8ZbVwOk7htFFcKnn.png",
+        content: "/images/blog/KTjow3VV2JdyD0fY98Q2CWLi8ZbVwOk7htFFcKnn.png",
       },
       {
         type: "heading",
@@ -1701,8 +1666,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/8zDEseO2VBX7PQ00UxVtOYRr8O7kpOWRLlbRKH99.png",
+        content: "/images/blog/8zDEseO2VBX7PQ00UxVtOYRr8O7kpOWRLlbRKH99.png",
       },
       {
         type: "heading",
@@ -1724,7 +1688,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "pocemu-vyletaet-ks-2": {
     name: "pocemu-vyletaet-ks-2",
     title: "Почему вылетает CS2?",
-    image: "/images/stage9.png",
+    image: "/images/blog/stage9.png",
     content: [
       {
         type: "heading",
@@ -1872,8 +1836,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/8zDEseO2VBX7PQ00UxVtOYRr8O7kpOWRLlbRKH99.png",
+        content: "/images/blog/8zDEseO2VBX7PQ00UxVtOYRr8O7kpOWRLlbRKH99.png",
       },
       {
         type: "heading",
@@ -1952,7 +1915,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "kak-sdelat-razresenie-1080-na-1080-v-cs2": {
     name: "kak-sdelat-razresenie-1080-na-1080-v-cs2",
     title: "Как сделать разрешение 1080 на 1080 в CS2?",
-    image: "/images/stage10.png",
+    image: "/images/blog/stage10.png",
     content: [
       {
         type: "heading",
@@ -1966,8 +1929,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/PYjEFPimILLRKaskRrpiH2FG7s5HggkzrMciOPy3.png",
+        content: "/images/blog/PYjEFPimILLRKaskRrpiH2FG7s5HggkzrMciOPy3.png",
       },
       {
         type: "heading",
@@ -2019,8 +1981,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/3W5Pv7uPZGvRtSZULD1ZAjuKeXY6RFdHIptBuw0c.png",
+        content: "/images/blog/3W5Pv7uPZGvRtSZULD1ZAjuKeXY6RFdHIptBuw0c.png",
       },
       {
         type: "heading",
@@ -2060,8 +2021,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/nFMWo1BKfGDSiuMnOsZeXQriCm4UjLxA3nXK2V6u.png",
+        content: "/images/blog/nFMWo1BKfGDSiuMnOsZeXQriCm4UjLxA3nXK2V6u.png",
       },
       {
         type: "paragraph",
@@ -2075,8 +2035,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/BVyVkSrCADgws4izDUlRcmlB0rMaiX8AO0HF7wG2.png",
+        content: "/images/blog/BVyVkSrCADgws4izDUlRcmlB0rMaiX8AO0HF7wG2.png",
       },
       {
         type: "paragraph",
@@ -2130,7 +2089,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "kak-sdelat-pryjok-na-kolesiko-v-cs2": {
     name: "kak-sdelat-pryjok-na-kolesiko-v-cs2",
     title: "Как сделать прыжок на колесико в CS2?",
-    image: "/images/stage11.png",
+    image: "/images/blog/stage11.png",
     content: [
       {
         type: "heading",
@@ -2144,8 +2103,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/hA8FAE3N474I57n5AvefUMHA5hwB43ZDoRnqFP14.png",
+        content: "/images/blog/hA8FAE3N474I57n5AvefUMHA5hwB43ZDoRnqFP14.png",
       },
       {
         type: "heading",
@@ -2191,8 +2149,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/Ba5mh83Z8INjB06y3lckiyUhfFcDp07uTBoiw4aM.png",
+        content: "/images/blog/Ba5mh83Z8INjB06y3lckiyUhfFcDp07uTBoiw4aM.png",
       },
       {
         type: "paragraph",
@@ -2206,8 +2163,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/eRHzijHQtOYqYQPRioueo5qwtWsXPGbOzPD1CWLT.png",
+        content: "/images/blog/eRHzijHQtOYqYQPRioueo5qwtWsXPGbOzPD1CWLT.png",
       },
       {
         type: "paragraph",
@@ -2263,8 +2219,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/ibIMy1dpvi49bs0fxhIl0vr2n8eHc48Iobdsu4V9.png",
+        content: "/images/blog/ibIMy1dpvi49bs0fxhIl0vr2n8eHc48Iobdsu4V9.png",
       },
       {
         type: "paragraph",
@@ -2286,7 +2241,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "kak-sdelat-ks2-plavnee": {
     name: "kak-sdelat-ks2-plavnee",
     title: "Как сделать CS2 плавнее?",
-    image: "/images/stage12.png",
+    image: "/images/blog/stage12.png",
     content: [
       {
         type: "heading",
@@ -2359,8 +2314,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/Mb75BRzmC3QgIiNbao8FQOUm4uGLHUhfQmHrLZE3.png",
+        content: "/images/blog/Mb75BRzmC3QgIiNbao8FQOUm4uGLHUhfQmHrLZE3.png",
       },
       {
         type: "heading",
@@ -2441,8 +2395,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/ILABDObwrxJWGSyGd2ImZmjtdb8yldjr7301xgrc.png",
+        content: "/images/blog/ILABDObwrxJWGSyGd2ImZmjtdb8yldjr7301xgrc.png",
       },
       {
         type: "paragraph",
@@ -2454,7 +2407,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "the-armory-pass-samoe-krupnoe-obnovlenie-v-cs2": {
     name: "the-armory-pass-samoe-krupnoe-obnovlenie-v-cs2",
     title: "Самое крупное обновление в CS2 — The Armory Pass",
-    image: "/images/stage13.png",
+    image: "/images/blog/stage13.png",
     content: [
       {
         type: "heading",
@@ -2468,8 +2421,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/AYq3a9rAXHGGMjSsyIoK14RrgNJJi1nALWkXZUgD.png",
+        content: "/images/blog/AYq3a9rAXHGGMjSsyIoK14RrgNJJi1nALWkXZUgD.png",
       },
       {
         type: "paragraph",
@@ -2497,8 +2449,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/XqyaWDl1f0cHlWGBnyAttEUCttf6c7KbN2HkJbh3.png",
+        content: "/images/blog/XqyaWDl1f0cHlWGBnyAttEUCttf6c7KbN2HkJbh3.png",
       },
       {
         type: "paragraph",
@@ -2512,8 +2463,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/aJwGvlr9relgXDw4IEDoM1fi987rTJf1aIyjWB5f.png",
+        content: "/images/blog/aJwGvlr9relgXDw4IEDoM1fi987rTJf1aIyjWB5f.png",
       },
       {
         type: "paragraph",
@@ -2617,8 +2567,9 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
   "10-lucshih-graffiti-v-cs2": {
     name: "10-lucshih-graffiti-v-cs2",
     title: "10 лучших граффити в CS2",
-    image: "/images/stage14.png",
-    content: [   {
+    image: "/images/blog/stage14.png",
+    content: [
+      {
         type: "heading",
         level: 1,
         content: "10 лучших граффити в CS2",
@@ -2635,8 +2586,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/bRsdPqo0roVbCHLbrnX0wRH9ghlEs0QTOsHUbBis.png",
+        content: "/images/blog/bRsdPqo0roVbCHLbrnX0wRH9ghlEs0QTOsHUbBis.png",
       },
       {
         type: "paragraph",
@@ -2650,8 +2600,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/FNhctZnvhN6kRD0Vp5LF8oMqZnTx0t5hE3TA2hKQ.png",
+        content: "/images/blog/FNhctZnvhN6kRD0Vp5LF8oMqZnTx0t5hE3TA2hKQ.png",
       },
       {
         type: "paragraph",
@@ -2675,8 +2624,7 @@ export const BLOG_CONFIG: Record<string, IBlogArticle> = {
       },
       {
         type: "image",
-        content:
-          "https://assets.lis-skins.com/blogfiles/e2lCmh4vg9rNuM2W6ByzN5nNzZIhX6BKheRDgqja.png",
+        content: "/images/blog/e2lCmh4vg9rNuM2W6ByzN5nNzZIhX6BKheRDgqja.png",
       },
       {
         type: "paragraph",
