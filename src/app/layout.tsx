@@ -3,6 +3,7 @@ import { Header } from "@/shared/components/layout/Header/Header";
 import { Page } from "@/shared/components/ui/containers/Page/Page";
 import { fonts } from "@/shared/lib/fonts";
 import { OG } from "@/shared/metadata";
+import { Gtag } from "@/shared/metadata/Gtag";
 import { CONFIG } from "@/shared/model/config";
 import { RootProviders } from "@/shared/providers/RootProviders";
 import "@/shared/styles/globals.css";
@@ -39,6 +40,7 @@ export default function RootLayout({
             <main>{children}</main>
             <Footer />
           </Page>
+          <Gtag/>
         </RootProviders>
       </body>
     </html>

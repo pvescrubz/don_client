@@ -1,10 +1,13 @@
 import { Metadata } from "next";
+import { NOT_FOUND } from ".";
 import { BLOG_CONFIG } from "../content/blog.config";
 import { APP_PAGES } from "../dashboard/app.dashboard";
 import { CONFIG } from "../model/config";
 
 export const generateMetadataPost = (slug: string): Metadata => {
   const post = BLOG_CONFIG[slug];
+
+  if (!post) return NOT_FOUND;
 
   const firstParagraph = post.content.find(
     (block) => block.type === "paragraph"
