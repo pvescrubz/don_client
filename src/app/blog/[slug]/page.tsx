@@ -16,7 +16,6 @@ export async function generateMetadata({
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const post = BLOG_CONFIG[slug];
-  console.log(post);
 
   if (!post) return <NotFoundScreen />;
 
