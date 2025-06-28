@@ -52,7 +52,6 @@ export const AddBalanceForm: FC<IAddBalanceForm> = ({ config }) => {
     AVAILABLE_FIELDS.CURRENCY,
   ]);
 
-  
   const { checkout, checkoutIsPending } = useCheckout();
 
   const onSubmit = (data: FieldValues) => {

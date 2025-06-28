@@ -33,7 +33,7 @@
 }
 .image {
   border-radius: 10px;
-  object-fit: none;
+  object-fit: cover;
   width: auto;
   height: 100%;
   max-width: 100%;

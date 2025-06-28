@@ -1,6 +1,6 @@
 class CONTACTS {
-  TELEGRAM = "https://t.me/makeallperfect_bot";
-  WHATSAPP = "https://wa.me/79267977816";
+  TELEGRAM = "https://t.me/DVichesupport";
+  WHATSAPP = "https://wa.me/79335683788";
 }
 
 export const CONTACTS_PUBLIC = new CONTACTS();

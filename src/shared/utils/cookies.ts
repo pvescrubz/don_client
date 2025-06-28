@@ -46,10 +46,12 @@ export function setCookie(
   }
 
   if (secure) {
-    cookieString += "; secure";
+    cookieString += "; Secure";
   }
 
-  cookieString += `; samesite=${sameSite}`;
+  if (sameSite) {
+    cookieString += `; SameSite=${sameSite}`;
+  }
 
   document.cookie = cookieString;
 }
