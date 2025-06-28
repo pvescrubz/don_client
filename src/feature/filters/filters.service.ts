@@ -9,7 +9,7 @@ class FiltersService {
       const data = await apiFetch<IFilters>({
         endpoint: ENDPOINTS.filters,
         params: game,
-    
+        cacheTime: 3600
       });
 
       return data;

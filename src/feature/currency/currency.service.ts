@@ -7,6 +7,7 @@ class CurrencyService {
     try {
       const data = await apiFetch<ICurrencyRate>({
         endpoint: ENDPOINTS.currencyRate,
+        cacheTime: 1800,
       });
 
       return data;

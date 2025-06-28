@@ -22,6 +22,7 @@ class SkinsService {
       return null;
     }
   }
+
   async getSkinBySlug(slug: string): Promise<TSkin | null> {
     try {
       const data = await apiFetch<TSkin>({
@@ -39,8 +40,7 @@ class SkinsService {
     try {
       const data = await apiFetch<ICatalogSkin[]>({
         endpoint: ENDPOINTS.weekly,
-        // cacheTime: 60 * 60,
-        cacheTime: 1,
+        cacheTime: 3600 * 24,
       });
       return data;
     } catch (error) {
@@ -52,7 +52,7 @@ class SkinsService {
     try {
       const data = await apiFetch<ICatalogSkin[]>({
         endpoint: ENDPOINTS.lastBuy,
-        // cacheTime: 60 * 5,
+        cacheTime: 60 * 3,
       });
       return data;
     } catch (error) {
