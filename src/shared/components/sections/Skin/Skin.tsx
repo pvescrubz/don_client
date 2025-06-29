@@ -19,7 +19,7 @@ interface ISkin {
 }
 
 export const Skin: FC<ISkin> = async ({ slug }) => {
-  const skin = await skinsService.getSkinBySlug(slug);
+  const skin = await skinsService.getSkinBySlug(slug, true);
   if (!skin) return null;
 
   const { id, name, price, image, description, slug: dbSlug, ...rest } = skin;
