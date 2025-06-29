@@ -101,6 +101,7 @@ export const CategoryTooltip: FC<ICategoryTooltip> = ({ item }) => {
               </div>
             </div>
           )}
+          
           {windowWidth <= 1024 && portalContainer && (
             <>
               {createPortal(
@@ -123,7 +124,7 @@ export const CategoryTooltip: FC<ICategoryTooltip> = ({ item }) => {
                         <CategoryCheckbox
                           key={item.id}
                           item={item}
-                          filter={"type"}
+                          filter={"model"}
                         />
                       ))}
                     </div>
