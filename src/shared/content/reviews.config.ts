@@ -11,11 +11,6 @@ export const REVIEWS_CONFIG = [
     "comment": "имбааа, денежки приходят быстро"
   },
   {
-    "name": "m0rg",
-    "avatar": "https://avatars.fastly.steamstatic.com/5cb2586a2d4a800505581dd8c286b02a2a35cd60_full.jpg",
-    "comment": "Продал перчатки амфибия немного поношенные за 148к.\nДеньги поступили сразу на внутренний счет. Оттуда себе на карту. Все супер и быстро. Советую всем!"
-  },
-  {
     "name": "♡ MANTA AIO ♡",
     "avatar": "https://avatars.fastly.steamstatic.com/561260eacdc4b44cbb1516e90b29266a205184e5_full.jpg",
     "comment": "все пришло за 5 минут, сервис полностью оправдал ожидания"
