@@ -38,7 +38,7 @@ export const translateOperation = (operation: string): string => {
     case OPERATION.RECHARGE_EPIC_BALANCE:
       return "Пополнение Epic Games";
     case OPERATION.RECHARGE_XBOX_BALANCE:
-      return "Пополнение Xbox";
+      return "Пополнение XBox";
     case OPERATION.BUY_SKINS:
       return "Покупка скинов";
     default:

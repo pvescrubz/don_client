@@ -5,8 +5,8 @@ import { redirect } from "next/navigation";
 
 const META = {
   title:
-    "DonViche | Пополнение баланса Steam, Epic Games, PlayStation, Xbox и Blizzard",
-  description: `Надёжное пополнение баланса Steam, Epic Games, PlayStation, Xbox и Blizzard . Быстро, безопасно и без скрытых комиссий. — с Don Viche легко.`,
+    "DonViche | Пополнение баланса Steam, Epic Games, PlayStation, XBox и Blizzard",
+  description: `Надёжное пополнение баланса Steam, Epic Games, PlayStation, XBox и Blizzard . Быстро, безопасно и без скрытых комиссий. — с Don Viche легко.`,
   images: OG,
 };
 
