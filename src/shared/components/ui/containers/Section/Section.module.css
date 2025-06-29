@@ -1,0 +1,6 @@
+.root {
+  width: 100%;
+  max-width: 100dvw;
+  padding-top: clamp(30px, 2.865dvw, 55px);
+  padding-bottom: clamp(30px, 2.865dvw, 55px);
+}

@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  width: 100%;
+}
+
+.input {
+  max-width: 488px;
+  flex-grow: 1;
+}
+@media screen and (max-width: 1024px) {
+  .input {
+    max-width: unset;
+  }
+}

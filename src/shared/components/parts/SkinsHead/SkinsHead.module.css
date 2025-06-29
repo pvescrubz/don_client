@@ -1,0 +1,37 @@
+.bgimage {
+  position: absolute;
+  z-index: -1;
+  right: 10px;
+  bottom: -50px;
+  width: auto;
+  height: 330px;
+}
+
+.root {
+  position: relative;
+}
+
+.title {
+  text-align: left;
+}
+
+@media screen and (max-width: 1024px) {
+  .bgimage {
+    position: relative;
+    bottom: unset;
+    right: unset;
+    max-width: 100%;
+    height: unset;
+    object-fit: cover;
+  }
+  h1.title {
+    margin-bottom: 0;
+  }
+  .root {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+}

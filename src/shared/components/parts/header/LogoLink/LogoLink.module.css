@@ -1,0 +1,15 @@
+
+.root {
+  z-index: 5;
+}
+
+@media screen and (max-width: 576px) {
+  .root {
+    max-width: 100px;
+    margin-left: -6px;
+  }
+  .root svg  {
+    max-width: 100%;
+  }
+}
+

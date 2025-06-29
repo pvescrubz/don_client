@@ -1,0 +1,28 @@
+.root {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 180px));
+  justify-content: center;
+  gap: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  .root {
+    min-width: 100%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .root {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 576px) {
+  .root {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

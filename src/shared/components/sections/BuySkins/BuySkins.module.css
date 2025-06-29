@@ -1,0 +1,59 @@
+.root {
+  position: relative;
+  display: flex;
+  visibility: hidden;
+  gap: 20px;
+}
+
+.item {
+  visibility: visible;
+  position: relative;
+  transition: filter 0.4s ease-in-out, opacity 0.4s ease-in-out,
+    transform 0.4s ease-in-out;
+}
+
+.link {
+  display: block;
+  transition: transform 0.4s ease-in-out;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .root {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .item {
+    width: calc(100% / 2 - 20px);
+  }
+}
+@media screen and (max-width: 576px) {
+  .root {
+    flex-direction: column;
+    align-items: center;
+  }
+  .item {
+    width: 100%;
+    max-width: 460px;
+  }
+}
+
+@media (hover: hover) {
+  .root:hover > :not(:hover) {
+    filter: blur(3px);
+    opacity: 0.5;
+  }
+  .item:hover {
+    transform: scale(1.05);
+  }
+
+  .link:focus-within {
+    transform: scale(1.05);
+  }
+}

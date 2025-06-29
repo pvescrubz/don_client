@@ -1,0 +1,16 @@
+.root {
+  max-width: fit-content;
+  padding-inline: 20px;
+  z-index: 5;
+}
+
+.root span {
+  display: inline;
+}
+
+.svg {
+  margin-top: 1px;
+}
+
+@media screen and (max-width: 1200px) {
+}

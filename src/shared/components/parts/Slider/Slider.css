@@ -1,0 +1,11 @@
+.slide {
+  max-width: 180px;
+}
+
+.swiper-slide {
+  min-height: 260px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 180px;
+}
