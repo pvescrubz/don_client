@@ -11,7 +11,7 @@ class OrdersService {
 
       return data;
     } catch (error) {
-      console.error("Ошибка при получении рейтов валют:", error);
+      console.error("Ошибка списка ордеров:", error);
       throw error;
     }
   }
