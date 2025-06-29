@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  gap: 8px;
+  padding-inline: 16px;
+  border-left: 1px solid rgba(225, 225, 225, 0.2);
+  border-right: 1px solid rgba(225, 225, 225, 0.2);
+  max-width: fit-content;
+}
+
+@media screen and (max-width: 1024px) {
+  .root {
+    border-left: unset;
+    padding-left: unset;
+  }
+}
+@media screen and (max-width: 768px) {
+  .root {
+    border-right: unset;
+    padding-right: unset;
+  }
+}
+@media screen and (max-width: 567px) {
+  .root {
+   gap: 4px;
+  }
+}

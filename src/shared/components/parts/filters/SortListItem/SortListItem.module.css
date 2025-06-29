@@ -1,0 +1,50 @@
+.root {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.6);
+  background: none;
+  border: none;
+  padding-block: 5px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  transition: color 0.4s ease-in-out;
+}
+
+.root.active {
+  color: rgba(255, 255, 255, 1);
+}
+
+.span {
+  position: relative;
+}
+
+.span::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  transform-origin: center;
+  transform: scale(0);
+  transition: transform 0.4s ease-in-out;
+  background-color: #fff;
+  bottom: 0px;
+  left: 0;
+}
+
+.root:focus-visible span::after {
+  transform: scale(1);
+}
+
+.svg {
+  transform: rotate(90deg);
+  margin-left: -8px;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+.root:hover .svg {
+  opacity: 1;
+}

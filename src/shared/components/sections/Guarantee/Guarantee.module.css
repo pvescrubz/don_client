@@ -1,0 +1,105 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.text {
+  font-family: var(--second-family);
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.title {
+  font-family: var(--second-family);
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.red {
+  color: #de1717;
+}
+
+.image {
+  opacity: 0.05;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.notic {
+  margin: 30px auto 0;
+  width: 100%;
+  max-width: 940px;
+  padding-top: clamp(40px, 2.1dvw, 120px);
+  padding-bottom: clamp(40px, 2.1dvw, 120px);
+  padding-left: clamp(20px, 2.1dvw, 40px);
+  padding-right: clamp(20px, 2.1dvw, 40px);
+  border-radius: 10px;
+  margin-bottom: 80px;
+  backdrop-filter: blur(120px);
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
+  background: rgba(35, 37, 42, 0.3);
+}
+
+.notic_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.notic_title {
+  font-family: var(--second-family);
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+
+.notic_text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  text-align: center;
+  backdrop-filter: blur(24px);
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
+  background: #23252a;
+  padding: clamp(20px, 2.1dvw, 30px);
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style: decimal;
+  padding-left: 22px;
+}
+.item {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.6);
+  list-style: decimal;
+}

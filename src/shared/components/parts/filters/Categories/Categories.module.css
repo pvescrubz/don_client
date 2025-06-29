@@ -1,0 +1,18 @@
+.root {
+  padding-block: 12px;
+  border-bottom: 1px solid rgba(225, 225, 225, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+@media screen and (max-width: 1024px) {
+  .root {
+    flex-wrap: nowrap;
+
+    overflow-x: scroll;
+    scrollbar-width: none;
+    white-space: nowrap;
+    width: 100%;
+  }
+}

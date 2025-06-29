@@ -1,0 +1,56 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.helper {
+  padding-left: 140px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: #fff;
+}
+
+.box {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 120px 1fr 260px;
+  gap: 20px;
+  width: 100%;
+}
+
+.lable {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+  color: #fff;
+  min-width: 120px;
+}
+
+.red {
+  text-transform: uppercase;
+  color: #de1717;
+}
+
+.input {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .box {
+    display: contents;
+  }
+
+  .helper {
+    padding-left: unset;
+    order: 1;
+  }
+  .input,
+  .button {
+    order: 2;
+  }
+}
+

@@ -1,0 +1,39 @@
+.reviewBox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #1E1E1E;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 180px;
+  width: 100%;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 20px;
+line-height: 130%;
+color: #fff;
+}
+
+.comment {
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 120%;
+color: #fff;
+}
+
