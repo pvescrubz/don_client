@@ -123,7 +123,7 @@ export const CategoryTooltip: FC<ICategoryTooltip> = ({ item }) => {
                         <CategoryCheckbox
                           key={item.id}
                           item={item}
-                          filter={"type"}
+                          filter={"model"}
                         />
                       ))}
                     </div>

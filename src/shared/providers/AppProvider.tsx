@@ -20,7 +20,6 @@ export function AppProvider({ children }: PropsWithChildren) {
       {children}
       <SpeedDial />
       {!anyDialogOpen && <MyToaster />}
-      <MyToaster />
       <ModalContainer />
       <Suspense>
         <RefCookiesParser />
