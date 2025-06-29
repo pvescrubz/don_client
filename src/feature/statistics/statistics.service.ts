@@ -11,7 +11,7 @@ class StatisticsService {
 
       return data;
     } catch (error) {
-      console.error("Ошибка при получении рейтов валют:", error);
+      console.error("Ошибка при получении статистики:", error);
       return null
     }
   }
