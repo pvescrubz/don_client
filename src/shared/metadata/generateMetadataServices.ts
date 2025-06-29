@@ -11,7 +11,7 @@ export const generateMetadataServices = async (
 
   const META = {
     title: config.formTitle + " | Don Viche",
-    description: `Надёжное пополнение баланса ${config.name} — быстро, безопасно и без скрытых комиссий. Steam, Epic Games, PlayStation, Xbox и Blizzard — с Don Viche легко.`,
+    description: `Надёжное пополнение баланса ${config.name} — быстро, безопасно и без скрытых комиссий. Steam, Epic Games, PlayStation, XBox и Blizzard — с Don Viche легко.`,
   };
 
   return {

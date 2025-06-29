@@ -57,7 +57,7 @@ class Dashboard {
   } satisfies IDashboardItem;
 
   BALANCE_XBOX = {
-    name: "Пополнить баланс Xbox",
+    name: "Пополнить баланс XBox",
     slug: "/service/xbox",
     tag: "balance",
   } satisfies IDashboardItem;
