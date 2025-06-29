@@ -11,7 +11,7 @@ import styles from "./RedLoginButton.module.css";
 
 export const RedLoginButton: FC = () => {
   const handleClick = async () => {
-    redirect(CONFIG.API_BASE_URL + ENDPOINTS.steamLogin.url);
+    redirect(CONFIG.API_BASE_URL_CLIENT + ENDPOINTS.steamLogin.url);
   };
 
   return (

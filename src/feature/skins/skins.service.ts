@@ -14,7 +14,9 @@ class SkinsService {
     try {
       const data = await apiFetch<ICatalogRes>({
         endpoint: ENDPOINTS.skins,
+        cacheTime: 60 * 60,
         query: { ...query, game: game },
+        isServerFn: true,
       });
       return data;
     } catch (error) {
@@ -23,11 +25,16 @@ class SkinsService {
     }
   }
 
-  async getSkinBySlug(slug: string): Promise<TSkin | null> {
+  async getSkinBySlug(
+    slug: string,
+    isServerFn: boolean = false
+  ): Promise<TSkin | null> {
     try {
       const data = await apiFetch<TSkin>({
         endpoint: ENDPOINTS.skin,
         query: { slug },
+        cacheTime: 60,
+        isServerFn,
       });
       return data;
     } catch (error) {
@@ -41,6 +48,7 @@ class SkinsService {
       const data = await apiFetch<ICatalogSkin[]>({
         endpoint: ENDPOINTS.weekly,
         cacheTime: 3600 * 24,
+        isServerFn: true,
       });
       return data;
     } catch (error) {
@@ -53,6 +61,7 @@ class SkinsService {
       const data = await apiFetch<ICatalogSkin[]>({
         endpoint: ENDPOINTS.lastBuy,
         cacheTime: 60 * 3,
+        isServerFn: true,
       });
       return data;
     } catch (error) {
