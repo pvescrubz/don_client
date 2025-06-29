@@ -24,6 +24,7 @@ export const Catalog: FC<ICatalog> = async ({
   ...rest
 }) => {
   const res = await skinsService.getSkins(game, query, isMobile);
+  console.log(res)
 
   if (!res)
     return <Title className={styles.empty}>Ошибка загрузки скинов</Title>;

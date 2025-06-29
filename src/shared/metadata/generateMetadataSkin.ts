@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { NOT_FOUND } from ".";
 
 export const generateMetadataSkin = async (slug: string): Promise<Metadata> => {
-  const skin = await skinsService.getSkinBySlug(slug);
+  const skin = await skinsService.getSkinBySlug(slug, true);
 
   if (!skin) return NOT_FOUND;
   const description = `Скин ${skin.name} — для игры ${skin.game?.name}. Приобретите скин по лучшей цене с гарантией безопасности и быстрой доставкой на Don Viche.`;

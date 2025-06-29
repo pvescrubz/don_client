@@ -14,6 +14,7 @@ import { FC, useEffect } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { PrivacyNotice } from "../addBalanceForm/PrivacyNotice/PrivacyNotice";
 import { CurrencySelect } from "../CurrencySelect/CurrencySelect";
+
 import { FormInput } from "../FormInput/FormInput";
 import { PayMethods } from "../PayMethods/PayMethods";
 import styles from "./AccountBalanceForm.module.css";

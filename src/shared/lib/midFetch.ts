@@ -1,7 +1,7 @@
 import { ENDPOINTS, TEndpoints } from "../api/endpoints";
-import { CONFIG } from "../model/config";
 import { TQuery } from "../typing/query.type";
 import { buildQueryString } from "./buildQueryString";
+import { getApiBaseUrl } from "./getApiBaseUrl";
 
 export interface IRequestOptions {
   endpoint: TEndpoints;
@@ -10,15 +10,24 @@ export interface IRequestOptions {
   body?: unknown;
   headers?: Record<string, string>;
   cacheTime?: number;
+  isServerFn?: boolean;
 }
 
 export async function midFetch(options: IRequestOptions): Promise<Response> {
-  const { endpoint, body, headers, query, params, cacheTime } = options;
+  const {
+    endpoint,
+    body,
+    headers,
+    query,
+    params,
+    cacheTime,
+    isServerFn = false,
+  } = options;
   const { method, url, auth } = endpoint;
 
   const isGetOrDelete = method === "GET";
 
-  let requestUrl = CONFIG.API_BASE_URL + url;
+  let requestUrl = getApiBaseUrl(isServerFn) + url;
 
   if (params) requestUrl += `/${params}`;
 

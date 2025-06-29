@@ -58,13 +58,12 @@ export const RegionSelect: FC<IRegionSelect> = ({
               inert={true}
               error={error}
             />
-            {/* <div> */}
-              <Select
-                items={REGIONS}
-                selected={selectedRegion}
-                onChange={handleSelect}
-              />
-            {/* </div> */}
+
+            <Select
+              items={REGIONS}
+              selected={selectedRegion}
+              onChange={handleSelect}
+            />
           </div>
         );
       }}

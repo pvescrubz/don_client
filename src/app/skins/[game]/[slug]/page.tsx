@@ -20,7 +20,7 @@ const Page = async ({
 }) => {
   const { game, slug } = await params;
 
-  const skin = await skinsService.getSkinBySlug(slug);
+  const skin = await skinsService.getSkinBySlug(slug, true);
 
   if (!skin) return <NotFoundScreen />;
 
