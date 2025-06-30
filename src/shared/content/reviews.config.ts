@@ -157,7 +157,7 @@ export const REVIEWS_CONFIG = [
   {
     "name": "boyka",
     "avatar": "https://avatars.cloudflare.steamstatic.com/dbeac7828ba4e34cd97437cd9673484ebc598139_full.jpg",
-    "comment": "хороший сайт , 30к пришли за 2 минуты без воды без всего , надежный и легендарный сайт , СОВЕТУЮ если продавать то только Don Viche-SKINS"
+    "comment": "хороший сайт , 30к пришли за 2 минуты без воды без всего , надежный и легендарный сайт , СОВЕТУЮ если продавать то только Don Viche"
   },
   {
     "name": "Disclaimer",

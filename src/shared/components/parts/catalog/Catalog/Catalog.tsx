@@ -24,7 +24,6 @@ export const Catalog: FC<ICatalog> = async ({
   ...rest
 }) => {
   const res = await skinsService.getSkins(game, query, isMobile);
-  console.log(res)
 
   if (!res)
     return <Title className={styles.empty}>Ошибка загрузки скинов</Title>;
@@ -37,7 +36,9 @@ export const Catalog: FC<ICatalog> = async ({
         (!data.length && (
           <div>
             <Title className={styles.empty}>Ничего не найдено</Title>
-            <p className={styles.text_fallback}>Измените фильтры или сбросьте их</p>
+            <p className={styles.text_fallback}>
+              Измените фильтры или сбросьте их
+            </p>
           </div>
         ))}
       <CatalogList skins={data} />
