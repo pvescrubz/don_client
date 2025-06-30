@@ -15,6 +15,8 @@ export const ButtonCopy: FC<IButtonCopy> = ({
   className,
   ...rest
 }) => {
+
+  
   const handleClick = async () => {
     try {
       await navigator.clipboard.writeText(copyText);

@@ -59,7 +59,6 @@ export const Orders: FC = () => {
       <Container>
         <div className={styles.root}>
           <h2 className={styles.title}>
-            {" "}
             {orders && orders?.length === 0
               ? "История операций пуста"
               : "История операций"}
@@ -100,7 +99,10 @@ export const Orders: FC = () => {
                       >
                         {translateOperation(order.operation)}{" "}
                       </td>
-                      <td className={styles.td} title="id Операции">
+                      <td
+                        className={clsx(styles.td, styles.id)}
+                        title="id Операции"
+                      >
                         {order.transactionId}
                       </td>
                       <td className={styles.td} title="Статус">
@@ -126,7 +128,7 @@ export const Orders: FC = () => {
                       <td className={styles.td} title="Регион">
                         {order.region ? <>{order.region} </> : <>-</>}
                       </td>
-                      <td className={styles.td} title="Регион">
+                      <td className={styles.td} title="E-mail">
                         {order.notificationEmail ? (
                           <>{order.notificationEmail} </>
                         ) : (

@@ -27,7 +27,7 @@ const ReviewSlider: FC<ISlider> = ({ items }) => {
         <Swiper
           modules={[Mousewheel, Autoplay]}
           slidesPerView="auto"
-          speed={5000}
+          speed={1500}
           spaceBetween={20}
           loop={true}
           grabCursor={true}

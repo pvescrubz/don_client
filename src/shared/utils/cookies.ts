@@ -1,11 +1,19 @@
-export function getCookie(name: string): string | null {
+export function getCookie<T extends string | boolean>(name: string): T | null {
   if (typeof document === "undefined") return null;
 
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
+  
   if (parts.length === 2) {
     const cookieValue = parts.pop()?.split(";").shift();
-    return cookieValue ? decodeURIComponent(cookieValue) : null;
+    if (cookieValue) {
+      const decodedValue = decodeURIComponent(cookieValue);
+
+      if (decodedValue === 'true') return true as T;
+      if (decodedValue === 'false') return false as T;
+
+      return decodedValue as T;
+    }
   }
   return null;
 }

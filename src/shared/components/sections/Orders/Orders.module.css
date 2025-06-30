@@ -48,14 +48,19 @@ section.section {
   font-size: 14px;
   font-weight: 500;
   line-height: 130%;
-
+  user-select: none;
 }
 
 .box_table:active {
   cursor: grabbing;
-
 }
 
+.id {
+  position: relative;
+  z-index: 2;
+  user-select: text;
+  cursor: text;
+}
 
 
 .table {
