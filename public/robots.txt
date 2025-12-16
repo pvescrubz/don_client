@@ -15,7 +15,7 @@ Disallow: /*type*
 Disallow: /*id*
 
 # Host
-Host: http://localhost:3000
+Host: https://vigames.online
 
 # Sitemaps
-Sitemap: http://localhost:3000/sitemap.xml
+Sitemap: https://vigames.online/sitemap.xml
