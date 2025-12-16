@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: `${CONFIG.APP_BASE_URL}}`,
+    canonical: `${CONFIG.APP_BASE_URL}`,
   },
 };
 
