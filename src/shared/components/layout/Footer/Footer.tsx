@@ -76,6 +76,19 @@ export const Footer: FC<TFooter> = ({ className, ...rest }) => {
               </FooterLink>
             </div>
           </div>
+          <div className={styles.details}>
+            <p className={styles.copy}><b>Юр. лицо:</b> ОсОО &quot;Ай Т и Партнерсшифт&quot;</p>
+            <p className={styles.copy}><b>ИНН:</b> 02901202510297</p>
+            <p className={styles.copy}>
+              <b>Регистрационный номер:</b> 312768-3301-000
+            </p>
+            <div className={styles.copy}>
+              <p>
+                <b>Адрес:</b> Кыргызская Республика,
+              </p>
+              <p>Бишкек, Ленинский район, ул. Бейшеналиева, 31, 8</p>
+            </div>
+          </div>
         </div>
       </Container>
     </footer>
