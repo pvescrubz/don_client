@@ -38,9 +38,10 @@
 }
 
 .bot {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
   padding-top: 30px;
+  gap: 10px;
 }
 
 .copy {
@@ -56,6 +57,18 @@
   gap: 20px;
 }
 
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-right: 30px;
+  max-width: 500px;
+}
+
+.details b {
+    color: rgba(255, 255, 255, 0.6);
+}
+
 @media screen and (max-width: 768px) {
   .title {
     margin-bottom: 15px;
@@ -65,4 +78,10 @@
     flex-direction: column;
     gap: 0;
   }
+
+  .bot {
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
 }
